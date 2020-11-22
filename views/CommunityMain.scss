@@ -1,0 +1,48 @@
+.section_second_nav_swiper {
+  .swiper-slide {
+    &:nth-child(2n) {
+      .swiper-slide-inner {
+        background-color: paleturquoise;
+      }
+    }
+    .swiper-slide-inner {
+      height: 500px;
+      background-color: palegoldenrod;
+    }
+  }
+  .swiper-pagination_wrapper {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 55;
+    .swiper-pagination {
+      display: flex;
+      width: 100%;
+      .swiper-pagination-bullet {
+        background-color: black;
+        color: #fff;
+        opacity: 1;
+        flex: 1;
+        border-radius: 0;
+        height: 100%;
+
+        &.swiper-pagination-bullet-active {
+          background-color: darkslateblue;
+        }
+      }
+    }
+  }
+}
+
+.section_third_slider.myhometraining {
+  .swiper-slide {
+    width: 100%;
+    height: 200px;
+    background-color: powderblue;
+    &:nth-child(2n) {
+      .swiper-slide-inner {
+        background-color: darkmagenta;
+      }
+    }
+  }
+}
