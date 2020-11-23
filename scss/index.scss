@@ -604,10 +604,8 @@
       float: initial;
     }
     .router-nav_list {
-      position: absolute;
       width: 100%;
-      display: none;
-      flex-direction: column;
+
       &.display {
         display: flex;
       }
