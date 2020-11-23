@@ -1,13 +1,32 @@
 <template>
-  <main id="main" class="subscribe_main" role="main">
-    <section class="section_first on">
-      <div>
-        card
-        <div @click="$router.push('/subscription/info')">info</div>
-      </div>
-    </section>
-    <section class="section_second">slider</section>
-  </main>
+  <Fragment>
+    <nav class="router-nav" v-if="this.$route.path !== '/scription'">
+      <h4>홈트레이닝</h4>
+      <ul class="router-nav_list">
+        <li @click="$router.push('/reservation')">
+          <a href="#">나의홈트</a>
+        </li>
+        <li>
+          <a href="#">나의홈트</a>
+        </li>
+        <li>
+          <a href="#">나의홈트</a>
+        </li>
+        <li>
+          <a href="#">나의홈트</a>
+        </li>
+      </ul>
+    </nav>
+    <main id="main" class="subscribe_main" role="main">
+      <section class="section_first on">
+        <div>
+          card
+          <div @click="$router.push('/subscription/info')">info</div>
+        </div>
+      </section>
+      <section class="section_second">slider</section>
+    </main>
+  </Fragment>
 </template>
 
 <script>
@@ -102,7 +121,7 @@ export default {
 
 .subscribe_main section.on {
   display: block;
-  z-index: 11;
+  z-index: 4;
   opacity: 1;
 }
 

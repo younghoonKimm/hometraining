@@ -11,17 +11,12 @@
           <ul class="depth1 clearfix">
             <li v-for="(v, i) in navList" :key="i">
               <div v-if="i === 5">
-                <a href="javascript:;" @mouseenter.prevent="onMouseEnter(i)">
-                  {{ v }}
-                </a>
-                <div
-                  :class="[navDepthToggle ? 'open' : '', activeIndex === i ? 'active' : '']"
-                  class="depth2_wrapper"
-                >
+                <a href="javascript:;" @mouseenter.prevent="onMouseEnter(i)">{{ v }}</a>
+                <div :class="navDepthToggle ? 'open' : ''" class="depth2_wrapper">
                   <div class="depth2_inner" :class="activeIndex === i ? 'open' : ''">
                     <h3 class="title">Smart Home</h3>
                     <ul class="depth2 clearfix">
-                      <li>
+                      <li class="active">
                         Featured
                         <div class="depth3_wrapper">
                           <div class="depth3_inner">
@@ -29,10 +24,18 @@
                               <li>123</li>
                             </ul>
                           </div>
-                          <li>View</li>
                         </div>
                       </li>
-                      <li>Home Entertainment</li>
+                      <li>
+                        Home Entertainment
+                        <div class="depth3_wrapper">
+                          <div class="depth3_inner">
+                            <ul>
+                              <li>123</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
                       <li>Home Fitness</li>
                       <li>Home Management</li>
                       <li>Cleaning & Hyhiene</li>
@@ -42,17 +45,12 @@
                 </div>
               </div>
               <div v-else-if="i === 6">
-                <a href="javascript:;" @mouseenter.prevent="onMouseEnter(i)">
-                  {{ v }}
-                </a>
-                <div
-                  :class="[navDepthToggle ? 'open' : '', activeIndex === i ? 'active' : '']"
-                  class="depth2_wrapper"
-                >
+                <a href="javascript:;" @mouseenter.prevent="onMouseEnter(i)">{{ v }}</a>
+                <div :class="navDepthToggle ? 'open' : ''" class="depth2_wrapper">
                   <div class="depth2_inner" :class="activeIndex === i ? 'open' : ''">
                     <h3 class="title">Service</h3>
                     <ul class="depth2 clearfix">
-                      <li>
+                      <li class="active">
                         Featured
                         <div class="depth3_wrapper">
                           <div class="depth3_inner">
@@ -60,7 +58,6 @@
                               <li>123</li>
                             </ul>
                           </div>
-                          <li>View</li>
                         </div>
                       </li>
                       <li>Home Entertainment</li>
@@ -73,9 +70,7 @@
                 </div>
               </div>
               <div v-else>
-                <a href="javascript:;" @mouseenter.prevent="onMouseLeave()">
-                  {{ v }}
-                </a>
+                <a href="javascript:;" @mouseenter.prevent="onMouseLeave()">{{ v }}</a>
               </div>
             </li>
           </ul>
@@ -89,11 +84,6 @@
             2
             <span class="ir_su">찾기</span>
           </button>
-          <!-- <button
-            class="icons_clickable"
-            type="button"
-            @click="this.onToggleNav"
-          > -->
           <button
             class="icons_clickable"
             type="button"
@@ -112,54 +102,98 @@
               </ul>
             </div>
           </button>
+          <button class="icons_clickable" type="button" @click="this.onToggleNav">4</button>
         </div>
       </div>
+      <div class="depth2_wrapper" ref="depth2" />
     </header>
-    <div class="nav_dim" :class="navDepthToggle ? 'open' : ''" @mouseenter="onMouseLeave()"></div>
-    <div class="icons_bg" :class="{ on: navToggle }" @click="this.onToggleNav"></div>
+    <div class="nav_dim" :class="navDepthToggle ? 'open' : ''" @mouseenter="onMouseLeave()" />
+    <div class="icons_bg" :class="{ on: navToggle }" @click="this.onToggleNav" />
     <div class="nav_slide" :class="{ on: navToggle }">
-      <div
+      <div>
+        <button type="button" :class="{ on: navToggle }">X</button>
+      </div>
+      <div class="nav_slide_wrapper" ref="nav_slide_wrapper">
+        <div class="nav_slide_main">
+          <ul class="slider_gnb_main first" :class="{ on: navToggle }">
+            <li v-for="(v, i) in navList" :key="i">
+              <a href="#" @click="slideGnbOpen(i)">{{v}}</a>
+              <div class="slide_gnb" v-if="i === 5" ref="gnb5">
+                <div>
+                  <button type="button" @click="slideGnbRemove()">X</button>
+                </div>
+                <h5>Smart Home</h5>
+                <ul class="slide_gnb_depth2">
+                  <li>Featured</li>
+                  <li>Home Entertainment</li>
+                  <li>Home Fitness</li>
+                  <li>Home Management</li>
+                  <li>Cleaning & Hygiene</li>
+                  <li>SmartThings</li>
+                </ul>
+              </div>
+              <div class="slide_gnb" v-if="i === 6" ref="gnb6">
+                <h5>Service</h5>
+                <ul class="slide_gnb_depth2">
+                  <li>Featured</li>
+                  <li>Home Entertainment</li>
+                  <li>Home Fitness</li>
+                  <li>Home Management</li>
+                  <li>Cleaning & Hygiene</li>
+                  <li>SmartThings</li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="nav_slide_sub">
+          <ul class="slider_gnb_main" :class="{ on: navToggle }">
+            <li>
+              <a href="#">Explore</a>
+            </li>
+            <li>
+              <a href="#">Support</a>
+            </li>
+            <li>
+              <a href="#">Buissness</a>
+            </li>
+          </ul>
+          <ul class="slider_gnb_main" :class="{ on: navToggle }">
+            <li>
+              <a href="#">Sign In/Sign-Up</a>
+            </li>
+            <li>
+              <a href="#">Orders</a>
+            </li>
+            <li>
+              <a href="#">Members</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- <div
         @click.prevent="
           (e) => {
             this.onToggleNav();
             $router.push('/subscribe');
           }
         "
-      >
-        Subscribe
-      </div>
+      >Subscribe</div>-->
     </div>
-    <nav class="router-nav" v-if="this.$route.path !== '/store'">
-      <h4>홈트레이닝</h4>
-      <ul class="router-nav_list">
-        <li @click="$router.push('/reservation')">
-          <a href="#">나의홈트</a>
-        </li>
-        <li>
-          <a href="#">나의홈트</a>
-        </li>
-        <li>
-          <a href="#">나의홈트</a>
-        </li>
-        <li>
-          <a href="#">나의홈트</a>
-        </li>
-      </ul>
-    </nav>
   </Fragment>
 </template>
 
 <style></style>
 
 <script>
-import { Fragment } from 'vue-fragment';
-import '../../assets/logo.svg';
-import { navList } from '../../config';
+import { Fragment } from "vue-fragment";
+import "../../assets/logo.svg";
+import { navList } from "../../config";
 
 export default {
   created() {
     const active = this.$route.path;
-    if (active === '/store') {
+    if (active === "/store") {
       this.storeNav = true;
     }
   },
@@ -177,21 +211,46 @@ export default {
     Fragment,
   },
   methods: {
-    onToggleNav() {
-      const wrap = document.querySelector('.wrap');
-      this.navToggle = !this.navToggle;
+    secondNav() {
+      return this.$route.path == "/main";
     },
+    onToggleNav() {
+      const wrap = document.querySelector(".wrap");
+      this.navToggle = !this.navToggle;
+      this.slideGnbRemove();
+    },
+
     onMouseEnter(i) {
       this.navDepthToggle = true;
       this.activeIndex = i;
-      console.log(this.activeIndex);
+      this.$refs.depth2.classList.add("open");
     },
+
     onMouseLeave() {
       this.navDepthToggle = false;
       this.activeIndex = null;
+      this.$refs.depth2.classList.remove("open");
     },
+
     onMouseToggleProfile() {
       this.profileToggle = !this.profileToggle;
+    },
+
+    slideGnbOpen(i) {
+      if (i === 5) {
+        this.$refs.nav_slide_wrapper.classList.add("slide");
+        this.$refs.gnb5[0].classList.add("open");
+      } else if (i == 6) {
+        this.$refs.nav_slide_wrapper.classList.add("slide");
+        this.$refs.gnb6[0].classList.add("open");
+      }
+      return;
+    },
+
+    slideGnbRemove() {
+      this.$refs.nav_slide_wrapper.classList.remove("slide");
+      this.$refs.gnb5[0].classList.remove("open");
+      this.$refs.gnb6[0].classList.remove("open");
     },
   },
 };

@@ -56,7 +56,7 @@ export default {
 
 .subscribe_main section.on {
   display: block;
-  z-index: 11;
+  z-index: 4;
   opacity: 1;
 }
 
