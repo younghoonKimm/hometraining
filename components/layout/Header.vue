@@ -151,7 +151,7 @@
         <div class="nav_slide_main">
           <ul class="slider_gnb_main first" :class="{ on: navToggle }">
             <li v-for="(v, i) in navList" :key="i">
-              <a href="#" @click="slideGnbOpen(i)">{{v}}</a>
+              <a href="#" @click="slideGnbOpen(i)">{{ v }}</a>
               <div class="slide_gnb" v-if="i === 5" ref="gnb5">
                 <div class="slide_btn_wrap">
                   <button type="button" @click="slideGnbRemove()">back</button>
@@ -161,9 +161,9 @@
                 <ul class="slide_gnb_depth2">
                   <li>Featured</li>
                   <li>Home Entertainment</li>
-                  <li>
+                  <li @click="slideGnbDepth3Open(i)">
                     Home Fitness
-                    <div class="depth3_wrapper">
+                    <div class="depth3_wrapper" ref="depth3">
                       <div class="depth3_inner">
                         <ul class="slide_gnb_depth3">
                           <li>
@@ -185,12 +185,19 @@
                 </div>
                 <h5>Service</h5>
                 <ul class="slide_gnb_depth2">
-                  <li>Featured</li>
-                  <li>Home Entertainment</li>
-                  <li>Home Fitness</li>
-                  <li>Home Management</li>
-                  <li>Cleaning & Hygiene</li>
-                  <li>SmartThings</li>
+                  <li>Samsung Kid+</li>
+                  <li @click="slideGnbDepth3Open(i)">
+                    Samsung HomeFit
+                    <div class="depth3_wrapper" ref="depth3">
+                      <div class="depth3_inner">
+                        <ul class="slide_gnb_depth3">
+                          <li>
+                            <a href="javascript:;">Workout at Your HomeFit</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
                 </ul>
               </div>
             </li>
@@ -208,7 +215,7 @@
               <a href="#">Buissness</a>
             </li>
           </ul>
-          <ul class="slider_gnb_main" :class="{ on: navToggle }">
+          <ul class="slider_gnb_main noarrow" :class="{ on: navToggle }">
             <li>
               <a href="#">Client</a>
             </li>
@@ -240,15 +247,15 @@
 <style></style>
 
 <script>
-import { Fragment } from "vue-fragment";
-import "../../assets/logo.svg";
-import "../../assets/icons/icon_bold_shopping_cart.png";
-import { navList, depth2SmatHomeList } from "../../config";
+import { Fragment } from 'vue-fragment';
+import '../../assets/logo.svg';
+import '../../assets/icons/icon_bold_shopping_cart.png';
+import { navList, depth2SmatHomeList } from '../../config';
 
 export default {
   created() {
     const active = this.$route.path;
-    if (active === "/store") {
+    if (active === '/store') {
       this.storeNav = true;
     }
   },
@@ -269,11 +276,11 @@ export default {
 
   methods: {
     secondNav() {
-      return this.$route.path == "/main";
+      return this.$route.path == '/main';
     },
 
     onToggleNav() {
-      const wrap = document.querySelector(".wrap");
+      const wrap = document.querySelector('.wrap');
       this.navToggle = !this.navToggle;
       this.slideGnbRemove();
     },
@@ -281,17 +288,17 @@ export default {
     onMouseEnter(i) {
       this.navDepthToggle = true;
       this.activeIndex = i;
-      this.$refs.depth2.classList.add("open");
+      this.$refs.depth2.classList.add('open');
     },
 
     onMouseLeave() {
       this.navDepthToggle = false;
       this.activeIndex = null;
-      this.$refs.depth2.classList.remove("open");
+      this.$refs.depth2.classList.remove('open');
     },
 
     onDepth2Open(i) {
-      return this.navDepthToggle && this.activeIndex === i ? "open" : "";
+      return this.navDepthToggle && this.activeIndex === i ? 'open' : '';
     },
 
     onMouseToggleProfile() {
@@ -300,19 +307,26 @@ export default {
 
     slideGnbOpen(i) {
       if (i === 5) {
-        this.$refs.nav_slide_wrapper.classList.add("slide");
-        this.$refs.gnb5[0].classList.add("open");
+        this.$refs.nav_slide_wrapper.classList.add('slide');
+        this.$refs.gnb5[0].classList.add('open');
       } else if (i == 6) {
-        this.$refs.nav_slide_wrapper.classList.add("slide");
-        this.$refs.gnb5[1].classList.add("open");
+        this.$refs.nav_slide_wrapper.classList.add('slide');
+        this.$refs.gnb5[1].classList.add('open');
       }
       return;
     },
 
+    slideGnbDepth3Open(i) {
+      if (i === 5) return this.$refs.depth3[0].classList.toggle('open');
+      if (i === 6) return this.$refs.depth3[1].classList.toggle('open');
+    },
+
     slideGnbRemove() {
-      this.$refs.nav_slide_wrapper.classList.remove("slide");
-      this.$refs.gnb5[0].classList.remove("open");
-      this.$refs.gnb5[1].classList.remove("open");
+      this.$refs.nav_slide_wrapper.classList.remove('slide');
+      this.$refs.gnb5[0].classList.remove('open');
+      this.$refs.gnb5[1].classList.remove('open');
+      this.$refs.depth3[0].classList.remove('open');
+      this.$refs.depth3[1].classList.remove('open');
     },
 
     slideGnbClose() {
@@ -321,7 +335,7 @@ export default {
     },
 
     goToMyPage() {
-      this.$router.push("/mypage");
+      this.$router.push('/mypage');
       this.slideGnbRemove();
       this.onToggleNav();
     },

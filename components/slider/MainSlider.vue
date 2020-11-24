@@ -1,10 +1,6 @@
 <template>
   <section class="section_first">
-    <div
-      class="first-slider swiper-container"
-      :class="{ pause: playToggle }"
-      ref="mainSlider"
-    >
+    <div class="first-slider swiper-container" :class="{ pause: playToggle }" ref="mainSlider">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <div class="swiper-slide-inner">
@@ -69,46 +65,43 @@
 </style>
 
 <script>
-import Swiper from "swiper/bundle";
+import Swiper from 'swiper/bundle';
 // import 'swiper/swiper-bundle.css';
 
-const config = ["Samsung", "Samsung", "Samsung", "Samsung", "Samsung"];
+const config = ['Samsung', 'Samsung', 'Samsung', 'Samsung', 'Samsung'];
 
 export const mainSliderMobileVideo = [
   {
     src:
-      "https://images.samsung.com/kdp/cms_contents/100109/4c6a7dda-2803-4436-b1d9-a7bbd86d311d.mp4",
+      'https://images.samsung.com/kdp/cms_contents/100109/4c6a7dda-2803-4436-b1d9-a7bbd86d311d.mp4',
   },
   {
     src:
-      "https://images.samsung.com/kdp/cms_contents/100109/4c6a7dda-2803-4436-b1d9-a7bbd86d311d.mp4",
+      'https://images.samsung.com/kdp/cms_contents/100109/4c6a7dda-2803-4436-b1d9-a7bbd86d311d.mp4',
   },
 ];
 
 export const mainSliderWebVideo = [
   {
     src:
-      "https://images.samsung.com/kdp/cms_contents/100109/9f174465-03f5-44ff-9f8e-eb6ad0b3f396.mp4",
+      'https://images.samsung.com/kdp/cms_contents/100109/9f174465-03f5-44ff-9f8e-eb6ad0b3f396.mp4',
   },
   {
     src:
-      "https://images.samsung.com/kdp/cms_contents/100109/9f174465-03f5-44ff-9f8e-eb6ad0b3f396.mp4",
+      'https://images.samsung.com/kdp/cms_contents/100109/9f174465-03f5-44ff-9f8e-eb6ad0b3f396.mp4',
   },
 ];
 
 export default {
   created() {
     this.$nextTick(() => {
-      this.mainSlider = new Swiper(
-        this.$refs.mainSlider,
-        this.mainSliderOption
-      );
+      this.mainSlider = new Swiper(this.$refs.mainSlider, this.mainSliderOption);
       this.resizeBullet();
       this.autoPlaySlider();
       this.onChangeSlideVideoSet();
       this.responsiveVideo();
     });
-    window.addEventListener("resize", this.init);
+    window.addEventListener('resize', this.init);
   },
   data() {
     return {
@@ -116,16 +109,16 @@ export default {
       playToggle: false,
       mainSlider: null,
       mainSliderOption: {
-        direction: "horizontal",
+        direction: 'horizontal',
         loop: true,
         preventClicks: false,
         preventClicksPropagation: false,
         slideToClickedSlide: true,
-        touchEventsTarget: "wrapper",
+        touchEventsTarget: 'wrapper',
         pagination: {
-          el: ".swiper-pagination",
+          el: '.swiper-pagination',
           clickable: true,
-          renderBullet: function (index, className) {
+          renderBullet: function(index, className) {
             return `<div class=${className}>
                     <div class='activebar'>
                     </div>
@@ -152,19 +145,16 @@ export default {
   mounted() {},
 
   beforeDestroy() {
-    window.removeEventListener("resize", this.init);
-
+    window.removeEventListener('resize', this.init);
     window.clearInterval(this.timer);
   },
 
   methods: {
     onChangeSlideVideoSet() {
-      this.mainSlider.on("slideChangeTransitionStart", () => {
+      this.mainSlider.on('slideChangeTransitionStart', () => {
         const mainSlider = this.$refs.mainSlider;
-        const videos = mainSlider.querySelectorAll("video");
-        const activeVideoFind = mainSlider.querySelector(
-          ".swiper-slide-active video"
-        );
+        const videos = mainSlider.querySelectorAll('video');
+        const activeVideoFind = mainSlider.querySelector('.swiper-slide-active video');
 
         if (activeVideoFind) {
           this.activeVideo = activeVideoFind;
@@ -189,7 +179,7 @@ export default {
 
     resizeBullet() {
       this.mainSliderBulletWidth = this.$refs.mainSlider.querySelector(
-        ".swiper-pagination-bullet-active"
+        '.swiper-pagination-bullet-active'
       ).clientWidth;
       return this.mainSliderBulletWidth;
     },
@@ -205,7 +195,7 @@ export default {
     autoPlaySlider() {
       this.timer = setInterval(() => {
         const nowBulletWidth = this.$refs.mainSlider.querySelector(
-          ".swiper-pagination-bullet-active .activebar"
+          '.swiper-pagination-bullet-active .activebar'
         ).clientWidth;
         if (nowBulletWidth === undefined) window.clearInterval(this.timer);
         if (this.canAutoPlayWidthNotPaused(nowBulletWidth)) {
@@ -227,10 +217,10 @@ export default {
     },
 
     responsiveVideoSet(videos, nowBullet, srcArray, device) {
-      const activebar = "activebar";
+      const activebar = 'activebar';
       videos.forEach((video, i) => {
-        if (video.getAttribute("data-media") === device) return;
-        video.setAttribute("data-media", device);
+        if (video.getAttribute('data-media') === device) return;
+        video.setAttribute('data-media', device);
         video.src = srcArray[i].src;
         video.load();
         nowBullet.classList.remove(activebar);
@@ -241,19 +231,12 @@ export default {
 
     responsiveVideo() {
       const windowInnerWidth = window.innerWidth;
-      const videos = document.querySelectorAll("video");
-      const nowBullet = document.querySelector(
-        ".swiper-pagination-bullet-active .activebar"
-      );
+      const videos = document.querySelectorAll('video');
+      const nowBullet = document.querySelector('.swiper-pagination-bullet-active .activebar');
       if (windowInnerWidth > 800) {
-        this.responsiveVideoSet(videos, nowBullet, mainSliderWebVideo, "web");
+        this.responsiveVideoSet(videos, nowBullet, mainSliderWebVideo, 'web');
       } else {
-        this.responsiveVideoSet(
-          videos,
-          nowBullet,
-          mainSliderMobileVideo,
-          "mobile"
-        );
+        this.responsiveVideoSet(videos, nowBullet, mainSliderMobileVideo, 'mobile');
       }
     },
 

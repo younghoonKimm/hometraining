@@ -416,7 +416,7 @@
           left: 0;
           width: 100%;
           height: 56px;
-          padding: 0;
+          padding-right: 40px;
           border-radius: 0;
           color: #000;
           font-weight: normal;
@@ -426,6 +426,19 @@
           transform: translateX(0);
           transition: transform 0.5s cubic-bezier(0.6, 0, 0.4, 1),
             opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+          &:after {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            content: '';
+            display: block;
+            clear: both;
+            width: 16px;
+            height: 16px;
+            background-image: url('../assets/icons/icon_regular_navigation_next.png');
+            background-size: cover;
+          }
         }
         .slide_gnb {
           overflow: hidden;
@@ -473,6 +486,10 @@
               transform: translateX(0);
               transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
                 opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+              &.open {
+                height: 66px;
+                opacity: 1;
+              }
             }
           }
         }
@@ -493,6 +510,26 @@
           margin: 16px 0;
           background: #ddd;
           opacity: 1;
+        }
+      }
+      &.first {
+        > li {
+          &:first-child {
+            > a {
+              &:after {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+      &.noarrow {
+        > li {
+          > a {
+            &:after {
+              display: none;
+            }
+          }
         }
       }
     }
@@ -680,6 +717,11 @@ section {
 
 @include navDestroy {
   #header {
+    .header_inner {
+      .logo {
+        margin-right: 0;
+      }
+    }
     nav {
       display: none;
     }
