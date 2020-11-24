@@ -60,6 +60,11 @@ const routes = [
     props: true,
   },
   {
+    name: 'mypage',
+    path: '/mypage',
+    component: () => import('~/views/Mypage'),
+  },
+  {
     name: 'Subscription',
     path: '/subscription',
     component: () => import('~/views/MyScriptions'),

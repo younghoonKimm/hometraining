@@ -1,66 +1,26 @@
 <template>
-  <main id="main" class="subscribe_main" role="main">
-    <section class="section_first on">
-      <div>
-        card
-        <div @click="$router.push('/store')">store</div>
-      </div>
-    </section>
-    <section class="section_second">
-      <SubscribePage />
-    </section>
-    <section class="section_third">
-      <SubscribePage />
-    </section>
-  </main>
+  <Fragment>
+    <MypageNavigation />
+    <main id="main" role="main">
+      <section class="section_first on">
+        <div>
+          my page
+          <div @click="$router.push('/store')">store</div>
+        </div>
+      </section>
+      <section class="section_second"></section>
+      <section class="section_third"></section>
+      <div>Home > Mypage</div>
+    </main>
+  </Fragment>
 </template>
 
 <script>
 import { Fragment } from "vue-fragment";
 import Swiper from "swiper/bundle";
-import "./HometrainingMain.scss";
+import "./Mypage.scss";
 import SubscribePage from "../components/layout/SubscribePage";
-
-const date = [
-  {
-    1: {
-      day: "Fri",
-      date: 16,
-    },
-    2: {
-      day: "Fri",
-      date: 16,
-    },
-    3: {
-      day: "Fri",
-      date: 16,
-    },
-    4: {
-      day: "Fri",
-      date: 16,
-    },
-    5: {
-      day: "Fri",
-      date: 16,
-    },
-    6: {
-      day: "Fri",
-      date: 16,
-    },
-    7: {
-      day: "Fri",
-      date: 16,
-    },
-    8: {
-      day: "Fri",
-      date: 16,
-    },
-    9: {
-      day: "Fri",
-      date: 16,
-    },
-  },
-];
+import MypageNavigation from "../components/layout/MypageNavigation";
 
 const configs = ["Samsung", "hyu"];
 
@@ -72,10 +32,10 @@ export default {
   components: {
     SubscribePage,
     Fragment,
+    MypageNavigation,
   },
   data() {
     return {
-      date,
       dummy,
       configs,
       first_slider: null,

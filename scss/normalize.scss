@@ -68,7 +68,8 @@ figcaption {
 
 /* a 링크 초기화 */
 a {
-  color: #252525;
+  color: #000;
+
   text-decoration: none;
 }
 
@@ -80,7 +81,7 @@ select,
 button,
 table {
   font-family: 'SamsungOne', 'Malgun-Gothic', dotum, '돋움', sans-serif;
-  color: #252525;
+  color: #000;
   font-size: 16px;
   line-height: 1.5;
 }

@@ -2,13 +2,7 @@
   <Fragment>
     <nav>
       <ul>
-        <li
-          v-for="(value, i) in this.dummy"
-          :key="i"
-          @click="onToggleSection(i)"
-        >
-          {{ value }}
-        </li>
+        <li v-for="(value, i) in this.dummy" :key="i" @click="onToggleSection(i)">{{ value }}</li>
       </ul>
     </nav>
     <main id="main" class="subscribe_main" role="main">
@@ -31,47 +25,6 @@ import Swiper from "swiper/bundle";
 import "./HometrainingMain.scss";
 import SubscribePage from "../components/layout/SubscribePage";
 
-const date = [
-  {
-    1: {
-      day: "Fri",
-      date: 16,
-    },
-    2: {
-      day: "Fri",
-      date: 16,
-    },
-    3: {
-      day: "Fri",
-      date: 16,
-    },
-    4: {
-      day: "Fri",
-      date: 16,
-    },
-    5: {
-      day: "Fri",
-      date: 16,
-    },
-    6: {
-      day: "Fri",
-      date: 16,
-    },
-    7: {
-      day: "Fri",
-      date: 16,
-    },
-    8: {
-      day: "Fri",
-      date: 16,
-    },
-    9: {
-      day: "Fri",
-      date: 16,
-    },
-  },
-];
-
 const configs = ["Samsung", "hyu"];
 
 const dummy = ["1", "2", "3"];
@@ -85,7 +38,6 @@ export default {
   },
   data() {
     return {
-      date,
       dummy,
       configs,
       first_slider: null,

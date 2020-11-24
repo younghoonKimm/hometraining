@@ -9,17 +9,44 @@ export const navList = [
   'Offers',
 ];
 
+export const depth2SmatHomeList = [
+  'Featured',
+  'Home Entertainment',
+  'Home Fitness',
+  'Home Management',
+  'Cleaning & Hygiene',
+  'SmartThings',
+];
+
+export const dummycost = [
+  {
+    id: 1,
+    month: 4,
+    cost: 39.0,
+  },
+  {
+    id: 2,
+    month: 8,
+    cost: 78.0,
+  },
+  {
+    id: 3,
+    month: 12,
+    cost: 117.0,
+  },
+];
+
 export const dummyProduct = [
   {
     id: 'GRLTPK001',
-    name: '이너주스',
-    cost: 32550,
+    name: 'Daily Juice 7Days',
+    cost: 32.55,
     check: false,
   },
   {
-    id: 'KQ_MS',
-    name: '버즈',
-    cost: 1999050,
+    id: 'K143LST0B-MS',
+    name: 'The Sero Space White + Galaxy Buds Live',
+    cost: 1782.16,
     check: false,
   },
 ];

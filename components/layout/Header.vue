@@ -10,62 +10,94 @@
         <nav id="nav">
           <ul class="depth1 clearfix">
             <li v-for="(v, i) in navList" :key="i">
-              <div v-if="i === 5">
+              <div v-if="i === 5" :class="activeIndex === i ? 'hover' : ''">
                 <a href="javascript:;" @mouseenter.prevent="onMouseEnter(i)">{{ v }}</a>
-                <div :class="navDepthToggle ? 'open' : ''" class="depth2_wrapper">
+                <div :class="onDepth2Open(i) ? 'open' : ''" class="depth2_wrapper">
                   <div class="depth2_inner" :class="activeIndex === i ? 'open' : ''">
                     <h3 class="title">Smart Home</h3>
                     <ul class="depth2 clearfix">
+                      <li>
+                        <a href="#">Featured</a>
+                      </li>
+                      <li>
+                        <a href="#">Home Entertainment</a>
+                      </li>
                       <li class="active">
-                        Featured
+                        <a href="#">Home Fitness</a>
+                        <div class="arrow"></div>
                         <div class="depth3_wrapper">
                           <div class="depth3_inner">
                             <ul>
-                              <li>123</li>
+                              <li>
+                                <a href="javascript:;">View all Packages</a>
+                              </li>
                             </ul>
                           </div>
                         </div>
                       </li>
                       <li>
-                        Home Entertainment
-                        <div class="depth3_wrapper">
-                          <div class="depth3_inner">
-                            <ul>
-                              <li>123</li>
-                            </ul>
-                          </div>
-                        </div>
+                        <a href="#">Home Management</a>
                       </li>
-                      <li>Home Fitness</li>
-                      <li>Home Management</li>
-                      <li>Cleaning & Hyhiene</li>
-                      <li>SmartThings</li>
+                      <li>
+                        <a href="#">Cleaning & Hyhiene</a>
+                      </li>
+                      <li>
+                        <a href="#">Home Management</a>
+                      </li>
+                      <li>
+                        <a href="#">SmartThings</a>
+                      </li>
                     </ul>
+                    <div class="photo_wrapper">
+                      <a href="javascript:;">
+                        <div class="img">
+                          <img src="../../assets/main/image2.png" alt="hometarining" />
+                        </div>
+                        <div class="desc">
+                          <p>Fitness from Anywhere</p>
+                          <span>Learn more</span>
+                        </div>
+                      </a>
+                    </div>
+                    <button class="depth2_close" type="button" @click="onMouseLeave()" />
                   </div>
                 </div>
               </div>
-              <div v-else-if="i === 6">
+              <div v-else-if="i === 6" :class="activeIndex === i ? 'hover' : ''">
                 <a href="javascript:;" @mouseenter.prevent="onMouseEnter(i)">{{ v }}</a>
-                <div :class="navDepthToggle ? 'open' : ''" class="depth2_wrapper">
+                <div :class="onDepth2Open(i) ? 'open' : ''" class="depth2_wrapper">
                   <div class="depth2_inner" :class="activeIndex === i ? 'open' : ''">
                     <h3 class="title">Service</h3>
                     <ul class="depth2 clearfix">
+                      <li>
+                        <a href="javascript:;">Samsung Kid+</a>
+                      </li>
                       <li class="active">
-                        Featured
+                        <a href="javascript:;">Samsung Homefit</a>
+                        <div class="arrow"></div>
                         <div class="depth3_wrapper">
                           <div class="depth3_inner">
                             <ul>
-                              <li>123</li>
+                              <li>
+                                <a href="javascript:;">Work out at Your Homefit</a>
+                              </li>
                             </ul>
                           </div>
                         </div>
                       </li>
-                      <li>Home Entertainment</li>
-                      <li>Home Fitness</li>
-                      <li>Home Management</li>
-                      <li>Cleaning & Hyhiene</li>
-                      <li>SmartThings</li>
                     </ul>
+                    <div class="photo_wrapper">
+                      <a href="javascript:;">
+                        <div class="img">
+                          <img src="../../assets/main/image.png" alt="hometarining" />
+                        </div>
+                        <div class="desc">
+                          <p>Fitness from Anywhere</p>
+                          <span>Learn more</span>
+                        </div>
+                      </a>
+                    </div>
+                    <button class="depth2_close" type="button" @click="onMouseLeave()" />
                   </div>
                 </div>
               </div>
@@ -75,64 +107,82 @@
             </li>
           </ul>
         </nav>
-        <div class="icons">
-          <button type="button">
-            1
-            <span class="ir_su">카트</span>
-          </button>
-          <button type="button">
-            2
-            <span class="ir_su">찾기</span>
-          </button>
-          <button
-            class="icons_clickable"
-            type="button"
-            @mouseenter="onMouseToggleProfile()"
-            @mouseleave="onMouseToggleProfile()"
-          >
-            3
-            <span class="ir_su">프로필</span>
-            <div class="profile" :class="profileToggle ? 'on' : ''">
-              <h5>이름</h5>
-              <ul>
-                <li>1</li>
-                <li>2</li>
-                <li @click="$router.push('/subscription')">3</li>
-                <li>4</li>
-              </ul>
-            </div>
-          </button>
-          <button class="icons_clickable" type="button" @click="this.onToggleNav">4</button>
+        <div class="sub_gnb_wrapper">
+          <ul class="sub_gnb">
+            <li>Explore</li>
+            <li>Support</li>
+            <li>Buissness</li>
+          </ul>
+
+          <div class="icons">
+            <button class="cart" type="button">
+              <span class="ir_su">카트</span>
+            </button>
+            <button class="search" type="button">
+              <span class="ir_su">찾기</span>
+            </button>
+            <button
+              class="profile icons_clickable"
+              type="button"
+              @mouseenter="onMouseToggleProfile()"
+              @mouseleave="onMouseToggleProfile()"
+            >
+              <span class="ir_su">프로필</span>
+              <div class="profile" :class="profileToggle ? 'on' : ''">
+                <h5>이름</h5>
+                <ul>
+                  <li>1</li>
+                  <li>2</li>
+                  <li @click="$router.push('/mypage')">3</li>
+                  <li>4</li>
+                </ul>
+              </div>
+            </button>
+            <button class="hamburger" type="button" @click="onToggleNav()">4</button>
+          </div>
         </div>
       </div>
-      <div class="depth2_wrapper" ref="depth2" />
+      <div class="depth2_Bg" ref="depth2" />
     </header>
     <div class="nav_dim" :class="navDepthToggle ? 'open' : ''" @mouseenter="onMouseLeave()" />
-    <div class="icons_bg" :class="{ on: navToggle }" @click="this.onToggleNav" />
+    <div class="icons_bg" :class="{ on: navToggle }" @click="onToggleNav()" />
     <div class="nav_slide" :class="{ on: navToggle }">
-      <div>
-        <button type="button" :class="{ on: navToggle }">X</button>
-      </div>
       <div class="nav_slide_wrapper" ref="nav_slide_wrapper">
         <div class="nav_slide_main">
           <ul class="slider_gnb_main first" :class="{ on: navToggle }">
             <li v-for="(v, i) in navList" :key="i">
               <a href="#" @click="slideGnbOpen(i)">{{v}}</a>
               <div class="slide_gnb" v-if="i === 5" ref="gnb5">
-                <div>
-                  <button type="button" @click="slideGnbRemove()">X</button>
+                <div class="slide_btn_wrap">
+                  <button type="button" @click="slideGnbRemove()">back</button>
+                  <button type="button" @click="slideGnbClose()">X</button>
                 </div>
                 <h5>Smart Home</h5>
                 <ul class="slide_gnb_depth2">
                   <li>Featured</li>
                   <li>Home Entertainment</li>
-                  <li>Home Fitness</li>
+                  <li>
+                    Home Fitness
+                    <div class="depth3_wrapper">
+                      <div class="depth3_inner">
+                        <ul class="slide_gnb_depth3">
+                          <li>
+                            <a href="javascript:;">View All Packages</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
                   <li>Home Management</li>
                   <li>Cleaning & Hygiene</li>
                   <li>SmartThings</li>
                 </ul>
               </div>
-              <div class="slide_gnb" v-if="i === 6" ref="gnb6">
+              <div class="slide_gnb" v-if="i === 6" ref="gnb5">
+                <div class="slide_btn_wrap">
+                  <button type="button" @click="slideGnbRemove()">back</button>
+                  <button type="button" @click="slideGnbClose()">X</button>
+                </div>
                 <h5>Service</h5>
                 <ul class="slide_gnb_depth2">
                   <li>Featured</li>
@@ -160,25 +210,29 @@
           </ul>
           <ul class="slider_gnb_main" :class="{ on: navToggle }">
             <li>
-              <a href="#">Sign In/Sign-Up</a>
+              <a href="#">Client</a>
+            </li>
+            <li @click="goToMyPage()">
+              <a href="#">My page</a>
             </li>
             <li>
               <a href="#">Orders</a>
             </li>
             <li>
-              <a href="#">Members</a>
+              <a href="#">Wishlist</a>
+            </li>
+            <li>
+              <a href="#">Subscriptions</a>
+            </li>
+            <li>
+              <a href="#">Community</a>
+            </li>
+            <li>
+              <a href="#">Sign out</a>
             </li>
           </ul>
         </div>
       </div>
-      <!-- <div
-        @click.prevent="
-          (e) => {
-            this.onToggleNav();
-            $router.push('/subscribe');
-          }
-        "
-      >Subscribe</div>-->
     </div>
   </Fragment>
 </template>
@@ -188,7 +242,8 @@
 <script>
 import { Fragment } from "vue-fragment";
 import "../../assets/logo.svg";
-import { navList } from "../../config";
+import "../../assets/icons/icon_bold_shopping_cart.png";
+import { navList, depth2SmatHomeList } from "../../config";
 
 export default {
   created() {
@@ -200,6 +255,7 @@ export default {
   data() {
     return {
       navList,
+      depth2SmatHomeList,
       storeNav: false,
       navDepthToggle: false,
       navToggle: false,
@@ -210,10 +266,12 @@ export default {
   components: {
     Fragment,
   },
+
   methods: {
     secondNav() {
       return this.$route.path == "/main";
     },
+
     onToggleNav() {
       const wrap = document.querySelector(".wrap");
       this.navToggle = !this.navToggle;
@@ -232,6 +290,10 @@ export default {
       this.$refs.depth2.classList.remove("open");
     },
 
+    onDepth2Open(i) {
+      return this.navDepthToggle && this.activeIndex === i ? "open" : "";
+    },
+
     onMouseToggleProfile() {
       this.profileToggle = !this.profileToggle;
     },
@@ -242,7 +304,7 @@ export default {
         this.$refs.gnb5[0].classList.add("open");
       } else if (i == 6) {
         this.$refs.nav_slide_wrapper.classList.add("slide");
-        this.$refs.gnb6[0].classList.add("open");
+        this.$refs.gnb5[1].classList.add("open");
       }
       return;
     },
@@ -250,7 +312,18 @@ export default {
     slideGnbRemove() {
       this.$refs.nav_slide_wrapper.classList.remove("slide");
       this.$refs.gnb5[0].classList.remove("open");
-      this.$refs.gnb6[0].classList.remove("open");
+      this.$refs.gnb5[1].classList.remove("open");
+    },
+
+    slideGnbClose() {
+      this.onToggleNav();
+      this.slideGnbRemove();
+    },
+
+    goToMyPage() {
+      this.$router.push("/mypage");
+      this.slideGnbRemove();
+      this.onToggleNav();
     },
   },
 };
