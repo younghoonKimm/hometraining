@@ -18,7 +18,12 @@
             <div class="left">
               <figure>
                 <img
+                  class="web_img"
                   src="https://images.samsung.com/is/image/samsung/assets/uk/p6_gro1/p6_initial_home/P6_Big_Tile_DT_684x684_QE85Q950TSTXXU-1.png?$684_684_PNG$"
+                />
+                <img
+                  class="mobile_img"
+                  src="https://images.samsung.com/is/image/samsung/assets/uk/p6_gro1/p6_initial_home/MO_624x352_QE85Q950TSTXXU.png?$624_352_PNG$"
                 />
               </figure>
             </div>
@@ -125,6 +130,13 @@
         <h3 class="title">Mobile</h3>
       </div>
       <div class="third-section-gallery">
+        <ul class="third-section-nav">
+          <li class="active">Black Friday</li>
+          <li>Mobile</li>
+          <li>TV & AV</li>
+          <li>Home Appliances</li>
+          <li>IT</li>
+        </ul>
         <div class="img_wrapper">
           <figure>
             <img
@@ -166,16 +178,16 @@
 </template>
 
 <script>
-import { mapState, mapGetters, mapMutations, mapActions } from "vuex";
-import MainSlider from "../components/slider/MainSlider";
-import "./Home.scss";
+import { mapState, mapGetters, mapMutations, mapActions } from 'vuex';
+import MainSlider from '../components/slider/MainSlider';
+import './Home.scss';
 
 export default {
   created() {
     // this.$store.dispatch('login/LOGOUT', idInfo);
     // const reservation = this.$store.state.login.reservation;
 
-    this.$store.dispatch("login/RESERVATIONINIT");
+    this.$store.dispatch('login/RESERVATIONINIT');
   },
   components: {
     MainSlider,

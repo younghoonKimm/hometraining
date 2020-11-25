@@ -893,8 +893,19 @@ section {
     display: none;
   }
 }
-
-@include mobile {
+.web_img {
+  display: block;
+}
+.mobile_img {
+  display: none;
+}
+@include B767 {
+  .web_img {
+    display: none;
+  }
+  .mobile_img {
+    display: block;
+  }
 }
 
 #footer {
