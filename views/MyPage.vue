@@ -1,6 +1,6 @@
 <template>
   <Fragment>
-    <MypageNavigation />
+    <!-- <MypageNavigation /> -->
     <main id="main" role="main">
       <section class="section_first on">
         <div>

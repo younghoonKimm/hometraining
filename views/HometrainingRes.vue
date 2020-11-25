@@ -2,16 +2,12 @@
   <Fragment>
     <nav>
       <ul>
-        <li v-for="(value, i) in this.dummy" :key="i" @click="onToggleSection(i)">
-          {{ value }}
-        </li>
+        <li v-for="(value, i) in this.dummy" :key="i" @click="onToggleSection(i)">{{ value }}</li>
       </ul>
     </nav>
     <main id="main" class="subscribe_main" role="main">
       <div class="dd">
-        <section class="section_first" v-if="this.activeIndex === 0">
-          first
-        </section>
+        <section class="section_first" v-if="this.activeIndex === 0">first</section>
         <section class="section_second" v-if="this.activeIndex === 1">
           <div>주</div>
           <div>월</div>
@@ -44,56 +40,56 @@
 </template>
 
 <script>
-import { Fragment } from 'vue-fragment';
-import Swiper from 'swiper/bundle';
-import './HometrainingMain.scss';
-import WeekCalender from '../components/WeekCalender';
-import MonthCalender from '../components/MonthCalender';
+import { Fragment } from "vue-fragment";
+import Swiper from "swiper/bundle";
+import "./HomeFit.scss";
+import WeekCalender from "../components/WeekCalender";
+import MonthCalender from "../components/MonthCalender";
 
 const date = [
   {
     1: {
-      day: 'Fri',
+      day: "Fri",
       date: 16,
     },
     2: {
-      day: 'Fri',
+      day: "Fri",
       date: 16,
     },
     3: {
-      day: 'Fri',
+      day: "Fri",
       date: 16,
     },
     4: {
-      day: 'Fri',
+      day: "Fri",
       date: 16,
     },
     5: {
-      day: 'Fri',
+      day: "Fri",
       date: 16,
     },
     6: {
-      day: 'Fri',
+      day: "Fri",
       date: 16,
     },
     7: {
-      day: 'Fri',
+      day: "Fri",
       date: 16,
     },
     8: {
-      day: 'Fri',
+      day: "Fri",
       date: 16,
     },
     9: {
-      day: 'Fri',
+      day: "Fri",
       date: 16,
     },
   },
 ];
 
-const configs = ['Samsung', 'hyu'];
+const configs = ["Samsung", "hyu"];
 
-const dummy = ['1', '2', '3'];
+const dummy = ["1", "2", "3"];
 export default {
   created() {
     const active = this.$route.params.active;
@@ -127,10 +123,10 @@ export default {
       this.toggleDate = !this.toggleDate;
     },
     onReservation() {
-      this.$store.dispatch('login/CHANGERESERVATION');
+      this.$store.dispatch("login/CHANGERESERVATION");
     },
     showAlert(i) {
-      alert('event received' + i);
+      alert("event received" + i);
     },
   },
 };

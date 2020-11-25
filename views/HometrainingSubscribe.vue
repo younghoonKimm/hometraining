@@ -22,7 +22,7 @@
 <script>
 import { Fragment } from "vue-fragment";
 import Swiper from "swiper/bundle";
-import "./HometrainingMain.scss";
+import "./HomeFit.scss";
 import SubscribePage from "../components/layout/SubscribePage";
 
 const configs = ["Samsung", "hyu"];

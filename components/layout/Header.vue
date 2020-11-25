@@ -3,7 +3,7 @@
     <header id="header">
       <div class="header_inner clearfix">
         <h1 class="logo">
-          <a @click="$router.push('/')">
+          <a @click="goToMyPage('/')">
             <img id="logo" src="../../assets/logo.svg" alt="samsung logo" />
           </a>
         </h1>
@@ -125,10 +125,10 @@
               class="profile icons_clickable"
               type="button"
               @mouseenter="onMouseToggleProfile()"
-              @mouseleave="onMouseToggleProfile()"
+              @mouseleave="onLeaveToggleProfile()"
             >
               <span class="ir_su">프로필</span>
-              <div class="profile" :class="profileToggle ? 'on' : ''">
+              <div class="profile" ref="profileRef">
                 <h5>이름</h5>
                 <ul>
                   <li>1</li>
@@ -146,49 +146,98 @@
     </header>
     <div class="nav_dim" :class="navDepthToggle ? 'open' : ''" @mouseenter="onMouseLeave()" />
     <div class="icons_bg" :class="{ on: navToggle }" @click="onToggleNav()" />
-    <div class="nav_slide" :class="{ on: navToggle }">
+    <div class="nav_slide" :class="{ on: navToggle }" ref="navSlideRef">
       <div class="nav_slide_wrapper" ref="nav_slide_wrapper">
+        <button type="button" class="slide_remove" @click="slideGnbClose()"></button>
         <div class="nav_slide_main">
           <ul class="slider_gnb_main first" :class="{ on: navToggle }">
             <li v-for="(v, i) in navList" :key="i">
               <a href="#" @click="slideGnbOpen(i)">{{ v }}</a>
               <div class="slide_gnb" v-if="i === 5" ref="gnb5">
                 <div class="slide_btn_wrap">
-                  <button type="button" @click="slideGnbRemove()">back</button>
-                  <button type="button" @click="slideGnbClose()">X</button>
+                  <button type="button" class="slide_back_btn" @click="slideGnbRemove()"></button>
+                  <button type="button" class="slide_remove_btn" @click="slideGnbClose()"></button>
                 </div>
-                <h5>Smart Home</h5>
+                <h5>
+                  <a href="javascript:;">Smart Home</a>
+                </h5>
                 <ul class="slide_gnb_depth2">
-                  <li>Featured</li>
-                  <li>Home Entertainment</li>
-                  <li @click="slideGnbDepth3Open(i)">
-                    Home Fitness
-                    <div class="depth3_wrapper" ref="depth3">
+                  <li>
+                    <a href="javascript:;">
+                      Featured
+                      <div class="close"></div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:;">
+                      Home Entertainment
+                      <div class="close"></div>
+                    </a>
+                  </li>
+                  <li @click="slideGnbDepth3Open(i)" ref="depth3">
+                    <a href="javascript:;">
+                      Home Fitness
+                      <div class="close"></div>
+                    </a>
+                    <div class="depth3_wrapper">
                       <div class="depth3_inner">
                         <ul class="slide_gnb_depth3">
                           <li>
-                            <a href="javascript:;">View All Packages</a>
+                            <a
+                              href="javascript:;"
+                              @click="$router.push('/subscription')"
+                            >View All Packages</a>
                           </li>
                         </ul>
                       </div>
                     </div>
                   </li>
-                  <li>Home Management</li>
-                  <li>Cleaning & Hygiene</li>
-                  <li>SmartThings</li>
+                  <li>
+                    <a href="javascript:;">
+                      Home Management
+                      <div class="close"></div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:;">
+                      Cleaning & Hygiene
+                      <div class="close"></div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:;">
+                      SmartThings
+                      <div class="close"></div>
+                    </a>
+                  </li>
                 </ul>
+                <div class="depth2_image_container">
+                  <img src="../../assets/main/image.png" alt="hometarining" />
+                </div>
+                <div class="depth2_desc_container">
+                  <p>Fitness from Anywhere</p>
+                  <span>Learn more</span>
+                </div>
               </div>
               <div class="slide_gnb" v-if="i === 6" ref="gnb5">
                 <div class="slide_btn_wrap">
-                  <button type="button" @click="slideGnbRemove()">back</button>
-                  <button type="button" @click="slideGnbClose()">X</button>
+                  <button type="button" class="slide_back_btn" @click="slideGnbRemove()"></button>
+                  <button type="button" class="slide_remove_btn" @click="slideGnbClose()"></button>
                 </div>
                 <h5>Service</h5>
                 <ul class="slide_gnb_depth2">
-                  <li>Samsung Kid+</li>
-                  <li @click="slideGnbDepth3Open(i)">
-                    Samsung HomeFit
-                    <div class="depth3_wrapper" ref="depth3">
+                  <li>
+                    <a href="javascript:;">
+                      Samsung Kid+
+                      <div class="close"></div>
+                    </a>
+                  </li>
+                  <li @click="slideGnbDepth3Open(i)" ref="depth3">
+                    <a href="javascript:;">
+                      Samsung HomeFit
+                      <div class="close"></div>
+                    </a>
+                    <div class="depth3_wrapper">
                       <div class="depth3_inner">
                         <ul class="slide_gnb_depth3">
                           <li>
@@ -199,6 +248,13 @@
                     </div>
                   </li>
                 </ul>
+                <div class="depth2_image_container">
+                  <img src="../../assets/main/image.png" alt="hometarining" />
+                </div>
+                <div class="depth2_desc_container">
+                  <p>Fitness from Anywhere</p>
+                  <span>Learn more</span>
+                </div>
               </div>
             </li>
           </ul>
@@ -219,7 +275,7 @@
             <li>
               <a href="#">Client</a>
             </li>
-            <li @click="goToMyPage()">
+            <li @click="goToMyPage('/mypage')">
               <a href="#">My page</a>
             </li>
             <li>
@@ -247,26 +303,19 @@
 <style></style>
 
 <script>
-import { Fragment } from 'vue-fragment';
-import '../../assets/logo.svg';
-import '../../assets/icons/icon_bold_shopping_cart.png';
-import { navList, depth2SmatHomeList } from '../../config';
+import { Fragment } from "vue-fragment";
+import "../../assets/logo.svg";
+import "../../assets/icons/icon_bold_shopping_cart.png";
+import { navList, depth2SmatHomeList } from "../../config";
 
 export default {
-  created() {
-    const active = this.$route.path;
-    if (active === '/store') {
-      this.storeNav = true;
-    }
-  },
+  created() {},
   data() {
     return {
       navList,
       depth2SmatHomeList,
-      storeNav: false,
       navDepthToggle: false,
       navToggle: false,
-      profileToggle: false,
       activeIndex: null,
     };
   },
@@ -276,11 +325,10 @@ export default {
 
   methods: {
     secondNav() {
-      return this.$route.path == '/main';
+      return this.$route.path == "/main";
     },
 
     onToggleNav() {
-      const wrap = document.querySelector('.wrap');
       this.navToggle = !this.navToggle;
       this.slideGnbRemove();
     },
@@ -288,56 +336,69 @@ export default {
     onMouseEnter(i) {
       this.navDepthToggle = true;
       this.activeIndex = i;
-      this.$refs.depth2.classList.add('open');
+      this.$refs.depth2.classList.add("open");
     },
 
     onMouseLeave() {
       this.navDepthToggle = false;
       this.activeIndex = null;
-      this.$refs.depth2.classList.remove('open');
+      this.$refs.depth2.classList.remove("open");
     },
 
     onDepth2Open(i) {
-      return this.navDepthToggle && this.activeIndex === i ? 'open' : '';
+      return this.navDepthToggle && this.activeIndex === i ? "open" : "";
     },
 
     onMouseToggleProfile() {
-      this.profileToggle = !this.profileToggle;
+      this.$refs.profileRef.classList.add("on");
+    },
+
+    onLeaveToggleProfile() {
+      this.$refs.profileRef.classList.remove("on");
     },
 
     slideGnbOpen(i) {
       if (i === 5) {
-        this.$refs.nav_slide_wrapper.classList.add('slide');
-        this.$refs.gnb5[0].classList.add('open');
+        this.$refs.nav_slide_wrapper.classList.add("slide");
+        this.$refs.gnb5[0].classList.add("open");
       } else if (i == 6) {
-        this.$refs.nav_slide_wrapper.classList.add('slide');
-        this.$refs.gnb5[1].classList.add('open');
+        this.$refs.nav_slide_wrapper.classList.add("slide");
+        this.$refs.gnb5[1].classList.add("open");
       }
       return;
     },
 
     slideGnbDepth3Open(i) {
-      if (i === 5) return this.$refs.depth3[0].classList.toggle('open');
-      if (i === 6) return this.$refs.depth3[1].classList.toggle('open');
+      if (i === 5) return this.$refs.depth3[0].classList.toggle("open");
+      if (i === 6) return this.$refs.depth3[1].classList.toggle("open");
     },
 
     slideGnbRemove() {
-      this.$refs.nav_slide_wrapper.classList.remove('slide');
-      this.$refs.gnb5[0].classList.remove('open');
-      this.$refs.gnb5[1].classList.remove('open');
-      this.$refs.depth3[0].classList.remove('open');
-      this.$refs.depth3[1].classList.remove('open');
+      this.$refs.nav_slide_wrapper.classList.remove("slide");
+      this.$refs.gnb5[0].classList.remove("open");
+      this.$refs.gnb5[1].classList.remove("open");
+      this.$refs.depth3[0].classList.remove("open");
+      this.$refs.depth3[1].classList.remove("open");
     },
 
     slideGnbClose() {
-      this.onToggleNav();
+      this.navToggle = false;
       this.slideGnbRemove();
     },
 
-    goToMyPage() {
-      this.$router.push('/mypage');
+    goToMyPage(page) {
+      // this.slideGnbClose();
+      this.$router.push(page);
+    },
+  },
+
+  watch: {
+    $route(to, from) {
+      this.navToggle = false;
+      this.$refs.navSlideRef.classList.remove("on");
       this.slideGnbRemove();
-      this.onToggleNav();
+      this.onMouseLeave();
+      this.onLeaveToggleProfile();
     },
   },
 };

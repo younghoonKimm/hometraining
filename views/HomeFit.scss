@@ -1,5 +1,9 @@
 @import 'scss/mixins.scss';
 
+.section_sub {
+  height: 300px;
+}
+
 .section_first_slider {
   perspective: 500px;
   .swiper-slide {

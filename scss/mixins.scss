@@ -53,6 +53,18 @@
   }
 }
 
+@mixin B767 {
+  @media (max-width: #{$breakpoint-tablet - 1px}) {
+    @content;
+  }
+}
+
+@mixin B768-1440 {
+  @media (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-1440}) {
+    @content;
+  }
+}
+
 @mixin hoverNav {
   @media (min-width: #{$breakpoint-hovermin}) and (max-width: #{$breakpoint-1440 - 1px}) {
     @content;

@@ -39,7 +39,9 @@ const configs = ["Samsung", "hyu"];
 
 const dummy = ["1", "2", "3"];
 export default {
+  props: {},
   created() {
+    this.$route.path;
     this.$nextTick(() => {
       this.navSlider = new Swiper(this.$refs.slide, {
         loop: false,
@@ -50,16 +52,18 @@ export default {
         allowSlideNext: true,
         allowSlidePrev: true,
         breakpoints: {
-          600: {
+          800: {
             allowSlideNext: false,
             allowSlidePrev: false,
           },
         },
       });
-      if (window.innerWidth < 600) {
-        this.navSlider.slideTo(4, false, false);
-      }
+      this.navSlider.slideTo(4);
     });
+    window.addEventListener("resize", this.onResize);
+  },
+  beforeDestroy() {
+    window.removeEventListener("resize", this.onResize);
   },
   components: {
     SubscribePage,
@@ -72,7 +76,6 @@ export default {
       navSlider: null,
     };
   },
-
   methods: {
     onToggleSection(i) {
       const sectionAll = document.querySelectorAll("section");
@@ -82,6 +85,11 @@ export default {
           v.classList.add("on");
         }
       });
+    },
+    onResize() {
+      if (window.innerWidth < 800) {
+        this.navSlider.slideTo(4);
+      }
     },
   },
 };

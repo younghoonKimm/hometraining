@@ -3,15 +3,6 @@ import VueRouter from 'vue-router';
 
 Vue.use(VueRouter);
 
-const leave = (to, from, next) => {
-  const answer = window.confirm('Do you really want to leave? you have unsaved changes!');
-  if (answer) {
-    return next();
-  } else {
-    next(false);
-  }
-};
-
 const routes = [
   {
     name: 'index',
@@ -30,12 +21,17 @@ const routes = [
   },
   {
     name: 'HomeTraining',
-    path: '/main',
-    component: () => import('~/views/HometrainingMain'),
+    path: '/HomeFit',
+    component: () => import('~/views/HomeFit'),
+  },
+  {
+    name: 'HomeTraining',
+    path: '/HomeFit/d',
+    component: () => import('~/views/HomeFit'),
   },
   {
     name: 'HomeTrainingDetail',
-    path: '/main/:id',
+    path: '/HomeFit/:id',
     component: () => import('~/views/HometrainingDetail'),
   },
   {

@@ -69,7 +69,7 @@ article {
 import { mapState, mapGetters, mapMutations, mapActions } from "vuex";
 import Swiper from "swiper/bundle";
 import { Fragment } from "vue-fragment";
-import "./HometrainingMain.scss";
+import "./HomeFit.scss";
 import { dummycost, dummyProduct } from "../config";
 
 const dummy = [
