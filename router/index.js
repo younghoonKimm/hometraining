@@ -26,7 +26,7 @@ const routes = [
   },
   {
     name: 'HomeTraining',
-    path: '/HomeFit/d',
+    path: '/allhomefit',
     component: () => import('~/views/HomeFit'),
   },
   {

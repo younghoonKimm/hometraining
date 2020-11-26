@@ -10,6 +10,14 @@
   top: 0px;
 }
 
+.bold {
+  font-weight: 700 !important;
+}
+
+.section_inner {
+  @include sectioninner;
+}
+
 //header
 #header {
   background: #fff;
@@ -893,18 +901,22 @@ section {
     display: none;
   }
 }
+.web,
 .web_img {
-  display: block;
+  display: block !important;
 }
+.mobile,
 .mobile_img {
-  display: none;
+  display: none !important;
 }
 @include B767 {
+  .web,
   .web_img {
-    display: none;
+    display: none !important;
   }
+  .mobile,
   .mobile_img {
-    display: block;
+    display: block !important;
   }
 }
 
@@ -1004,6 +1016,12 @@ section {
         }
       }
     }
+  }
+}
+
+@include B767 {
+  #header {
+    border-bottom: none;
   }
 }
 

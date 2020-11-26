@@ -4,10 +4,15 @@
       <h4>HomeFit</h4>
       <div class="router-nav_list clearfix swiper-container" ref="slide">
         <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <a href="javascript:;">My HomeFit</a>
+          <div
+            class="swiper-slide"
+            v-for="(v,i) in this.list"
+            :key="i"
+            :class="activeNumber === i+1 ? 'active':''"
+          >
+            <a href="javascript:;">{{v}}</a>
           </div>
-          <div class="swiper-slide">
+          <!-- <div class="swiper-slide">
             <a href="javascript:;">All HomeFit</a>
           </div>
           <div class="swiper-slide">
@@ -15,7 +20,7 @@
           </div>
           <div class="swiper-slide third" @click="$router.push('/subscription')">
             <a href="javascript:;">Get inspired</a>
-          </div>
+          </div>-->
         </div>
       </div>
     </div>
@@ -28,7 +33,25 @@ import Swiper from "swiper/bundle";
 import "../../views/Mypage.scss";
 import SubscribePage from "./SubscribePage";
 
+const list = ["My HomeFit", "All HomeFit", "HomeFit Community", "Get inspired"];
+
 export default {
+  watch: {
+    $route(to, from) {
+      this.routerPathSwitch(this.$route.path);
+
+      this.navSlider.slideTo(this.activeNumber, false, false);
+    },
+  },
+
+  // watch: {
+  //   $route(to, from) {
+  //     console.log(2);
+  //     this.routerPathSwitch(this.$route.path);
+  //     console.log(this.activeNumber);
+  //   },
+  // },
+
   created() {
     this.routerPathSwitch(this.$route.path);
     this.$nextTick(() => {
@@ -41,13 +64,13 @@ export default {
         allowSlideNext: true,
         allowSlidePrev: true,
         breakpoints: {
-          800: {
+          620: {
             allowSlideNext: false,
             allowSlidePrev: false,
           },
         },
       });
-      this.navSlider.slideTo(this.activeNumber);
+      this.navSlider.slideTo(this.activeNumber, false, false);
     });
     window.addEventListener("resize", this.onResize);
   },
@@ -63,7 +86,8 @@ export default {
 
   data() {
     return {
-      activeNumber: null,
+      list,
+      activeNumber: 0,
       navSlider: null,
     };
   },
@@ -80,25 +104,26 @@ export default {
     },
     onResize() {
       if (window.innerWidth < 800) {
-        this.navSlider.slideTo(this.activeNumber);
+        this.routerPathSwitch(this.$route.path);
+        this.navSlider.slideTo(this.activeNumber, false, false);
       }
     },
     routerPathSwitch(path) {
       switch (true) {
-        case path.includes("HomeFit"):
-          return (this.activeNumber = 0);
-          break;
-        case path.includes("All HomeFit"):
+        case path.includes("myhomefit"):
           return (this.activeNumber = 1);
           break;
-        case path.includes("HomeFit Community"):
+        case path.includes("allhomefit"):
           return (this.activeNumber = 2);
           break;
-        case path.includes("Get inspired"):
+        case path.includes("homefitcommunity"):
           return (this.activeNumber = 3);
           break;
+        case path.includes("getinspired"):
+          return (this.activeNumber = 4);
+          break;
         default:
-          return 0;
+          return 6;
       }
     },
   },
@@ -131,7 +156,7 @@ export default {
   margin-right: 0;
 }
 
-.router-nav.homefit .swiper-slide-active::after {
+.router-nav.homefit .swiper-slide.active::after {
   display: block;
   position: absolute;
   bottom: 0;

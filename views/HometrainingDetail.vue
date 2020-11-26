@@ -25,7 +25,7 @@
 import TimerUp from "../components/TimerUp";
 import TimerDown from "../components/TimerDown";
 import Swiper from "swiper/bundle";
-import "./HomeFit.scss";
+import "./Hometraining.scss";
 import { mapState, mapGetters, mapMutations, mapActions } from "vuex";
 import { subscribeSliderOptions } from "../config";
 

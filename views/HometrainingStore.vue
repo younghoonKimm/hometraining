@@ -1,59 +1,159 @@
 <template>
   <Fragment>
     <nav class="store_nav">
-      <div class="option_title">Premium Membership, 1:8 Group Training Class Subscription</div>
-      <div class="option_cost">{{ setRealCost() }}</div>
-      <div class="option_cart" @click.prevent="onSubmit()">장바구니</div>
+      <div class="option_title bold">Premium Membership, 1:8 Group Training Class Subscription</div>
+      <div class="option_cost bold">{{ setRealCost() }}</div>
+      <div class="option_cart" @click.prevent="onSubmit()">
+        <a href="javascript:;" class="bold">Add to cart</a>
+      </div>
     </nav>
-    <main id="main" role="main">
+    <main id="main" role="main" class="hometraining_main">
       <section class="section_first">
-        <div class="cardsection">card</div>
-        <div class="option">
-          <div class="option_cost">{{ setRealCost() }}</div>
-          <div class="option_cost_select">
-            <div v-for="(value, index) in this.dummycost" :key="value.id">
-              <div>{{ value.month }}</div>
+        <div class="first_section_inner section_inner clearfix">
+          <div class="desc_wrapper">
+            <div class="button_wrapper">
+              <a class="link" href="javascript:;"></a>
+              <a class="heart" href="javascript:;"></a>
+            </div>
+            <h4 class="bold">Samsung Home Fitness Service</h4>
+            <p class="bold">Premium membership</p>
+            <span class="product_id">DF10T9701BT7Q1</span>
+            <div class="star_wrapper">
+              <ul>
+                <li v-for="(v,i) in new Array(5)" :key="i"></li>
+              </ul>
+              <span class="rate bold">4.5(12)</span>
+            </div>
+          </div>
+          <div class="img_wrapper">
+            <img
+              class="mobile_img"
+              src="../assets/hometraining/image_product_pd_premiummembership_mo.png"
+            />
+            <img
+              class="web_img"
+              src="../assets/hometraining/image_product_pd_premiummembership_pc.png"
+            />
+          </div>
+
+          <div class="option_wrapper">
+            <h3 class="bold">Option</h3>
+            <div class="option_cost_select">
               <div
-                @click="onClickSubscribeCost(index, value.cost)"
                 :class="activeIndex === index ? 'activeIndex' : ''"
-              >{{ '$'+value.cost+'.00' }}</div>
+                class="option_cost_inner"
+                v-for="(value, index) in this.dummycost"
+                :key="value.id"
+                @click="onClickSubscribeCost(index, value.cost)"
+              >
+                <div>{{ value.month + ' classes per month' }}</div>
+                <div>{{ '$'+value.cost+'/ Auto monthly-Payment' }}</div>
+              </div>
+            </div>
+          </div>
+          <div class="payment-desc_wrapper clearfix">
+            <h5 class="bold">Payment Confirmation</h5>
+            <ul class="clearfix">
+              <li>Based on the initial payment date, your card will be charged automatically every month.</li>
+              <li>
+                If you choose to terminate subscription, classes you've attended or the number of days
+                <br />you've enrolled will be deducted. Refunds will be made to the original payment method.
+              </li>
+            </ul>
+          </div>
+          <div class="together-desc_wrapper clearfix">
+            <h5 class="bold">Buy together to Save even more when you buy</h5>
+            <span>Save even more when you buy together!</span>
+          </div>
+          <div class="slider_wrapper">
+            <div class="section_second_product_slider swiper-container" ref="navSlider">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="swiper-slide-inner">
+                    <div class="title web">
+                      <h5 class="bold">Daily Juice 7Days</h5>
+                    </div>
+                    <div class="title mobile">
+                      <h5 class="bold">
+                        Daily Juice
+                        <br />7Days
+                      </h5>
+                    </div>
+                    <span class="bold">GRLTPK001</span>
+                    <figure>
+                      <img src="../assets/hometraining/image_product_juice.png" alt />
+                    </figure>
+                    <span class="bold now">$32.55</span>
+                    <span class="sale">$35</span>
+                  </div>
+                </div>
+                <div class="swiper-slide" @click="clickable" ref="checkedSwiper">
+                  <div class="swiper-slide-inner">
+                    <div class="title web">
+                      <h5 class="bold">
+                        The Sero Space White
+                        <br />+ Galaxy Buds Live
+                      </h5>
+                    </div>
+                    <div class="title mobile">
+                      <h5 class="bold">
+                        The Sero Space White
+                        + Galaxy Buds Live
+                      </h5>
+                    </div>
+                    <span class="bold">KQ43LST05B-MS</span>
+                    <figure>
+                      <img src="../assets/hometraining/image_product_serowhite.png" alt />
+                    </figure>
+                    <div class="bold now">$1,782.16</div>
+                    <span class="sale">$1,835.95</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="total_cost_wrapper clearfix">
+            <div class="option_cost">
+              {{ setRealCost() +'/ mo'}}
+              <div class="option_cart margin" @click.prevent="onSubmit()">
+                <a href="javascript:;" class="bold">Add to cart</a>
+              </div>
             </div>
           </div>
         </div>
       </section>
       <section class="section_second">
-        <div class="section_second_product_slider swiper-container" ref="navSlider">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide" v-for="(v, i) in this.dummyProduct" :key="i">
-              <div class="swiper-slide-inner" v-if="i===1" @click="clickable" ref="checkedSwiper">
-                <div>
-                  <div>{{ v.name }}</div>
-                  <div>{{ v.id }}</div>
-                  <div>{{ v.cost }}</div>
-                </div>
-              </div>
-              <div class="swiper-slide-inner" v-else>
-                <div>
-                  <div>{{ v.name }}</div>
-                  <div>{{ v.id }}</div>
-                  <div>{{ v.cost }}</div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="section_second_inner section_inner">
+          <h3 class="bold">Online Coaching</h3>
+          <p>
+            You can get live feedback from the best trainers as well as the
+            <br />workout analysis through wearable device.
+          </p>
+          <span>* This product does not include wearable device.</span>
+          <figure>
+            <img src="../assets/hometraining/image_pd_1.png" alt />
+          </figure>
+        </div>
+        <div class="section_second_inner section_inner">
+          <h3 class="bold">Let's get fit together</h3>
+          <p>
+            You can virtually train with others who share similar fitness goals to boost your motivation.
+            <br />It's a great way to keep each other motivated, socialize, and compete!
+          </p>
+          <span>*This service links your contacts with Samsung Account</span>
+          <figure>
+            <img src="../assets/hometraining/image_pd_2.png" alt />
+          </figure>
         </div>
       </section>
     </main>
+    <div>Home > Smart Home > Home Fitness >Basic Membership</div>
   </Fragment>
 </template>
 
 <style>
 .cardsection {
   height: 200px;
-}
-
-.activeIndex {
-  color: aqua;
 }
 
 article {
@@ -69,7 +169,7 @@ article {
 import { mapState, mapGetters, mapMutations, mapActions } from "vuex";
 import Swiper from "swiper/bundle";
 import { Fragment } from "vue-fragment";
-import "./HomeFit.scss";
+import "./Hometraining.scss";
 import { dummycost, dummyProduct } from "../config";
 
 const dummy = [
@@ -91,7 +191,14 @@ export default {
         preventClicksPropagation: true,
         slideToClickedSlide: false,
         touchEventsTarget: "wrapper",
-        slidesPerView: "auto",
+        slidesPerView: 2,
+        spaceBetween: 16,
+        breakpoints: {
+          768: {
+            slidesPerView: "auto",
+            spaceBetween: 24,
+          },
+        },
       });
       // this.$store.subscribe.cartLength = 1;
     });
@@ -138,8 +245,12 @@ export default {
       return this.$router.push("/cart");
     },
     clickable(i) {
-      this.$refs.checkedSwiper[0].classList.add("redline");
-      this.productCost = 1782.16;
+      this.$refs.checkedSwiper.classList.toggle("active");
+      if (this.$refs.checkedSwiper.classList.contains("active")) {
+        this.productCost = 1782.16;
+      } else {
+        this.productCost = 0;
+      }
     },
 
     setRealCost() {
@@ -151,28 +262,4 @@ export default {
 };
 </script>
 <style lang="scss">
-.store_nav {
-  position: sticky;
-  top: 0;
-  margin: 0 auto;
-  padding: 0 24px;
-  max-width: 1440px;
-  display: flex;
-}
-.option_title {
-  margin-right: auto;
-}
-
-.section_second_product_slider .swiper-slide {
-  width: 400px;
-}
-
-.redline {
-  border: 1px solid red;
-}
-
-.section_second_product_slider {
-  width: 600px;
-  margin: 0 auto;
-}
 </style>

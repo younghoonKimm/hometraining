@@ -22,17 +22,17 @@ export const dummycost = [
   {
     id: 1,
     month: 4,
-    cost: 39.0,
+    cost: 39,
   },
   {
     id: 2,
     month: 8,
-    cost: 78.0,
+    cost: 78,
   },
   {
     id: 3,
     month: 12,
-    cost: 117.0,
+    cost: 117,
   },
 ];
 
