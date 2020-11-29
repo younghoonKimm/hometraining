@@ -17,6 +17,7 @@ import 'swiper/swiper-bundle.css';
 //   }
 // });
 // eslint-disable-next-line
+
 new Vue({
   el: '#app',
   router,

@@ -27,7 +27,14 @@
             src="https://images.samsung.com/kdp/cms_contents/100109/6c26d85e-30c2-43a4-b382-3c88bf878c4a.mp4"
           />
         </video>
-        <video class="webcam" ref="videoRef" @click="this.removeWebCamera"></video>
+        <video
+          autoplay
+          playsinline
+          muted
+          class="webcam"
+          ref="videoRef"
+          @click="this.removeWebCamera"
+        ></video>
       </div>
     </section>
   </main>
@@ -68,8 +75,8 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 600px;
-  height: 600px;
+  width: 640px;
+  height: 480px;
 }
 </style>
 <script>
@@ -90,41 +97,76 @@ export default {
       };
     },
   },
-
+  beforeRouteLeave(to, from, next) {
+    const answer = window.confirm('Do you really want to leave? you have unsaved changes!');
+    if (answer) {
+      next();
+    } else {
+      next(false);
+    }
+  },
   methods: {
     useWebCamera(e) {
       e.preventDefault();
-      const webcam = this.$refs.videoRef;
-      navigator.getUserMedia =
-        navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+      // const webcam = this.$refs.videoRef;
 
-      if (navigator.getUserMedia) {
+      // if (navigator.getUserMedia) {
+      //   this.videoToggle = true;
+      //   navigator.getUserMedia(
+      //     { audio: false, video: true },
+      //     (stream) => {
+      //       this.videoStream = stream;
+      //       webcam.srcObject = stream;
+      //       webcam.onloadedmetadata = () => webcam.play();
+      //       webcam.requestFullscreen();
+      //     },
+      //     (err) => {
+      //       return console.log(err);
+      //     }
+      //   );
+      // }
+      const getUserMedia =
+        navigator.getUserMedia ||
+        navigator.webkitGetUserMedia ||
+        navigator.mozGetUserMedia ||
+        navigator.msGetUserMedia;
+      const userMedia = navigator.mediaDevices.getUserMedia({
+        audio: false,
+        video: {
+          width: 600,
+          height: 480,
+          facingMode: 'user',
+        },
+      });
+      const webcam = this.$refs.videoRef;
+      if (navigator.mediaDevices.getUserMedia) {
         this.videoToggle = true;
-        navigator.getUserMedia(
-          { audio: false, video: true },
-          (stream) => {
-            this.videoStream = stream;
+        userMedia
+          .then(function(stream) {
+            const videoTracks = stream.getVideoTracks()[0];
+            console.log('카메라 이름 : ' + videoTracks.label);
+            console.log(stream);
+
             webcam.srcObject = stream;
-            webcam.onloadedmetadata = () => webcam.play();
-          },
-          (err) => {
-            return console.log(err);
-          }
-        );
+          })
+          .catch(function(error) {
+            console.error(error.message);
+          });
       }
     },
 
     removeWebCamera(e) {
-      e.preventDefault();
-      const webcam = this.$refs.videoRef;
-      const videoSrcObject = webcam.srcObject;
+      // e.preventDefault();
+      // const webcam = this.$refs.videoRef;
+      // const videoSrcObject = webcam.srcObject;
 
-      if (e.target.tagName === 'VIDEO') {
-        this.videoToggle = false;
-        webcam.pause();
-        webcam.src = '';
-        this.videoStream.getTracks()[0].stop();
-      }
+      // if (e.target.tagName === 'VIDEO') {
+      //   this.videoToggle = false;
+      //   webcam.pause();
+      //   webcam.src = '';
+      //   this.videoStream.getTracks()[0].stop();
+      // }
+      this.$refs.videoRef.requestFullscreen();
     },
   },
 };

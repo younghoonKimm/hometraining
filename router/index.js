@@ -45,6 +45,11 @@ const routes = [
     component: () => import('~/views/Cart'),
   },
   {
+    name: 'MyHomeStoreOrder',
+    path: '/order',
+    component: () => import('~/views/Order'),
+  },
+  {
     name: 'HometrainingSubscribe',
     path: '/subscribe',
     component: () => import('~/views/HometrainingSubscribe'),

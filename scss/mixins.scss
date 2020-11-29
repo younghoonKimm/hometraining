@@ -9,7 +9,10 @@
   transition: height 0.4s;
   z-index: 2;
 }
-
+@mixin link {
+  color: #2189ff;
+  text-decoration: underline;
+}
 @mixin gnblistWebSize {
   font-size: 14px;
   font-weight: 700;
@@ -29,11 +32,13 @@
 }
 
 @mixin mainSubNav {
+  margin-top: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 58px;
+
   li {
+    cursor: pointer;
     position: relative;
     margin-right: 48px;
     font-size: 18px;

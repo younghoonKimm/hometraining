@@ -1,14 +1,14 @@
 <template>
   <Fragment>
     <MypageNavigation />
-    <main id="main" role="main">
+    <main id="main" role="main" class="myscription_main">
       <section class="section_first">
         <div class="section_first_inner section_inner">
           <h3>Manage Subscription</h3>
         </div>
       </section>
       <section class="section_second">
-        <div class="section_second_inner section_inner_info">
+        <div class="section_second_inner section_inner_info section_inner">
           <div class="first_contents first date_wrapper">
             <span class="date web_img">
               Subscription ID : DF10T9701BT7Q1
@@ -49,9 +49,10 @@
                 <br />00:00:00
               </span>
               <span>Amount Paid : $ 78</span>
-              <span
-                class="web"
-              >Payment Method : Your credit card will be charged on the first of every month. (VISA ****)</span>
+              <span class="web"
+                >Payment Method : Your credit card will be charged on the first of every month.
+                (VISA ****)</span
+              >
               <span class="mobile">
                 Payment Method : Your credit card will be
                 <br />charged on the first of every month. (VISA ****)
@@ -75,14 +76,12 @@
 </template>
 
 <script>
-import { Fragment } from "vue-fragment";
-import Swiper from "swiper/bundle";
+import { Fragment } from 'vue-fragment';
+import Swiper from 'swiper/bundle';
 
-import "./MyScriptions.scss";
-import SubscribePage from "../components/layout/SubscribePage";
-import MypageNavigation from "../components/layout/MypageNavigation";
-
-const gauge = [1, 2, 3, 4, 5, 6, 7];
+import SubscribePage from '../components/layout/SubscribePage';
+import MypageNavigation from '../components/layout/MypageNavigation';
+import './MyScriptions.scss';
 
 export default {
   created() {
@@ -92,23 +91,23 @@ export default {
         preventClicks: true,
         preventClicksPropagation: true,
         slideToClickedSlide: true,
-        direction: "vertical",
+        direction: 'vertical',
         spaceBetween: 24,
-        slidesPerView: "auto",
+        slidesPerView: 'auto',
         navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
         },
         pagination: {
-          el: ".swiper-pagination",
+          el: '.swiper-pagination',
           clickable: true,
-          renderBullet: function (index, className) {
+          renderBullet: function(index, className) {
             return `<div class=${className}></div>`;
           },
         },
         breakpoints: {
           768: {
-            direction: "horizontal",
+            direction: 'horizontal',
             slidesPerView: 3,
           },
         },
@@ -125,40 +124,19 @@ export default {
   data() {
     return {
       mypageSlider: null,
-      gauge,
     };
   },
 
   methods: {
     onToggleSection(i) {
-      const sectionAll = document.querySelectorAll("section");
+      const sectionAll = document.querySelectorAll('section');
       sectionAll.forEach((v, index) => {
-        v.classList.remove("on");
+        v.classList.remove('on');
         if (index === i) {
-          v.classList.add("on");
+          v.classList.add('on');
         }
       });
     },
   },
 };
 </script>
-
-<style style="scss">
-.subscribe_main section {
-  position: relative;
-  z-index: -1;
-  opacity: 0;
-  display: none;
-  will-change: opacity;
-}
-
-.subscribe_main section.on {
-  display: block;
-  z-index: 4;
-  opacity: 1;
-}
-
-.row {
-  flex-direction: column;
-}
-</style>

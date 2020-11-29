@@ -1,10 +1,24 @@
 <template>
   <Fragment>
     <nav class="store_nav">
-      <div class="option_title bold">Premium Membership, 1:8 Group Training Class Subscription</div>
-      <div class="option_cost bold">{{ setRealCost() }}</div>
-      <div class="option_cart" @click.prevent="onSubmit()">
-        <a href="javascript:;" class="bold">Add to cart</a>
+      <div class="nav_option_wrapper ">
+        <div class="option_title bold">
+          Premium Membership, 1:8 Group Training Class Subscription
+        </div>
+        <div class="option_costs bold">{{ setRealCost() }}</div>
+        <div class="option_cart" @click.prevent="onSubmit()">
+          <a href="javascript:;" class="bold">Add to cart</a>
+        </div>
+      </div>
+      <div class="sub_nav">
+        <ul class="clearfix">
+          <li>Featured</li>
+          <li>Specs</li>
+          <li>Revies</li>
+          <li>Support</li>
+          <li>Compare</li>
+          <li>Where to buy</li>
+        </ul>
       </div>
     </nav>
     <main id="main" role="main" class="hometraining_main">
@@ -20,7 +34,7 @@
             <span class="product_id">DF10T9701BT7Q1</span>
             <div class="star_wrapper">
               <ul>
-                <li v-for="(v,i) in new Array(5)" :key="i"></li>
+                <li v-for="(v, i) in new Array(5)" :key="i"></li>
               </ul>
               <span class="rate bold">4.5(12)</span>
             </div>
@@ -35,7 +49,6 @@
               src="../assets/hometraining/image_product_pd_premiummembership_pc.png"
             />
           </div>
-
           <div class="option_wrapper">
             <h3 class="bold">Option</h3>
             <div class="option_cost_select">
@@ -47,17 +60,22 @@
                 @click="onClickSubscribeCost(index, value.cost)"
               >
                 <div>{{ value.month + ' classes per month' }}</div>
-                <div>{{ '$'+value.cost+'/ Auto monthly-Payment' }}</div>
+                <div>{{ '$' + value.cost + '/ Auto monthly-Payment' }}</div>
               </div>
             </div>
           </div>
           <div class="payment-desc_wrapper clearfix">
             <h5 class="bold">Payment Confirmation</h5>
             <ul class="clearfix">
-              <li>Based on the initial payment date, your card will be charged automatically every month.</li>
               <li>
-                If you choose to terminate subscription, classes you've attended or the number of days
-                <br />you've enrolled will be deducted. Refunds will be made to the original payment method.
+                Based on the initial payment date, your card will be charged automatically every
+                month.
+              </li>
+              <li>
+                If you choose to terminate subscription, classes you've attended or the number of
+                days
+                <br />you've enrolled will be deducted. Refunds will be made to the original payment
+                method.
               </li>
             </ul>
           </div>
@@ -97,8 +115,7 @@
                     </div>
                     <div class="title mobile">
                       <h5 class="bold">
-                        The Sero Space White
-                        + Galaxy Buds Live
+                        The Sero Space White + Galaxy Buds Live
                       </h5>
                     </div>
                     <span class="bold">KQ43LST05B-MS</span>
@@ -111,10 +128,12 @@
                 </div>
               </div>
             </div>
+            <div class="swiper-scrollbar"></div>
           </div>
           <div class="total_cost_wrapper clearfix">
             <div class="option_cost">
-              {{ setRealCost() +'/ mo'}}
+              {{ setRealCost() + '/ mo' }}
+              <p class="mobile">$78.00 / Auto monthly-Payment</p>
               <div class="option_cart margin" @click.prevent="onSubmit()">
                 <a href="javascript:;" class="bold">Add to cart</a>
               </div>
@@ -137,7 +156,8 @@
         <div class="section_second_inner section_inner">
           <h3 class="bold">Let's get fit together</h3>
           <p>
-            You can virtually train with others who share similar fitness goals to boost your motivation.
+            You can virtually train with others who share similar fitness goals to boost your
+            motivation.
             <br />It's a great way to keep each other motivated, socialize, and compete!
           </p>
           <span>*This service links your contacts with Samsung Account</span>
@@ -166,36 +186,35 @@ article {
 }
 </style>
 <script>
-import { mapState, mapGetters, mapMutations, mapActions } from "vuex";
-import Swiper from "swiper/bundle";
-import { Fragment } from "vue-fragment";
-import "./Hometraining.scss";
-import { dummycost, dummyProduct } from "../config";
+import { mapState, mapGetters, mapMutations, mapActions } from 'vuex';
+import Swiper from 'swiper/bundle';
+import { Fragment } from 'vue-fragment';
+import './Hometraining.scss';
+import { dummycost, dummyProduct } from '../config';
 
-const dummy = [
-  "베이직",
-  "베이직",
-  "베이직",
-  "베이직",
-  "프리미엄",
-  "1:1트레이닝",
-];
+const dummy = ['베이직', '베이직', '베이직', '베이직', '프리미엄', '1:1트레이닝'];
 
 export default {
   created() {
     this.$nextTick(() => {
       this.nav_slider = new Swiper(this.$refs.navSlider, {
-        direction: "horizontal",
+        direction: 'horizontal',
         touchStartPreventDefault: true,
         preventClicks: true,
         preventClicksPropagation: true,
         slideToClickedSlide: false,
-        touchEventsTarget: "wrapper",
-        slidesPerView: 2,
+        touchEventsTarget: 'wrapper',
+        slidesPerView: 'auto',
         spaceBetween: 16,
+        scrollbar: {
+          el: '.swiper-scrollbar',
+          draggable: true,
+          snapOnRelease: true,
+          dragSize: 171,
+        },
         breakpoints: {
           768: {
-            slidesPerView: "auto",
+            slidesPerView: 'auto',
             spaceBetween: 24,
           },
         },
@@ -242,11 +261,11 @@ export default {
     },
 
     onSubmit() {
-      return this.$router.push("/cart");
+      return this.$router.push('/cart');
     },
     clickable(i) {
-      this.$refs.checkedSwiper.classList.toggle("active");
-      if (this.$refs.checkedSwiper.classList.contains("active")) {
+      this.$refs.checkedSwiper.classList.toggle('active');
+      if (this.$refs.checkedSwiper.classList.contains('active')) {
         this.productCost = 1782.16;
       } else {
         this.productCost = 0;
@@ -254,12 +273,8 @@ export default {
     },
 
     setRealCost() {
-      return this.productCost === 0
-        ? "$" + this.RealCost + ".00"
-        : "$" + this.RealCost;
+      return this.productCost === 0 ? '$' + this.RealCost + '.00' : '$' + this.RealCost;
     },
   },
 };
 </script>
-<style lang="scss">
-</style>

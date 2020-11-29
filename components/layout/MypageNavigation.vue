@@ -6,11 +6,11 @@
         <div class="swiper-wrapper">
           <div
             class="swiper-slide"
-            v-for="(v,i) in this.list"
+            v-for="(v, i) in this.list"
             :key="i"
-            :class="activeNumber === i+1 ? 'active':''"
+            :class="activeNumber === i + 1 ? 'active' : ''"
           >
-            <a href="javascript:;">{{v}}</a>
+            <a href="javascript:;">{{ v }}</a>
           </div>
           <!-- <div class="swiper-slide">
             <a href="javascript:;">All HomeFit</a>
@@ -28,12 +28,20 @@
 </template>
 
 <script>
-import { Fragment } from "vue-fragment";
-import Swiper from "swiper/bundle";
-import "../../views/Mypage.scss";
-import SubscribePage from "./SubscribePage";
+import { Fragment } from 'vue-fragment';
+import Swiper from 'swiper/bundle';
+import '../../views/Mypage.scss';
+import SubscribePage from './SubscribePage';
 
-const list = ["My HomeFit", "All HomeFit", "HomeFit Community", "Get inspired"];
+const list = [
+  'My Products',
+  'Orders',
+  'Wishlist',
+  'Subscriptions',
+  'Rewards',
+  'Vouchers',
+  'Service',
+];
 
 export default {
   watch: {
@@ -60,7 +68,7 @@ export default {
         preventClicks: true,
         preventClicksPropagation: true,
         slideToClickedSlide: false,
-        slidesPerView: "auto",
+        slidesPerView: 'auto',
         allowSlideNext: true,
         allowSlidePrev: true,
         breakpoints: {
@@ -72,11 +80,11 @@ export default {
       });
       this.navSlider.slideTo(this.activeNumber, false, false);
     });
-    window.addEventListener("resize", this.onResize);
+    window.addEventListener('resize', this.onResize);
   },
 
   beforeDestroy() {
-    window.removeEventListener("resize", this.onResize);
+    window.removeEventListener('resize', this.onResize);
   },
 
   components: {
@@ -94,11 +102,11 @@ export default {
 
   methods: {
     onToggleSection(i) {
-      const sectionAll = document.querySelectorAll("section");
+      const sectionAll = document.querySelectorAll('section');
       sectionAll.forEach((v, index) => {
-        v.classList.remove("on");
+        v.classList.remove('on');
         if (index === i) {
-          v.classList.add("on");
+          v.classList.add('on');
         }
       });
     },
@@ -110,16 +118,7 @@ export default {
     },
     routerPathSwitch(path) {
       switch (true) {
-        case path.includes("myhomefit"):
-          return (this.activeNumber = 1);
-          break;
-        case path.includes("allhomefit"):
-          return (this.activeNumber = 2);
-          break;
-        case path.includes("homefitcommunity"):
-          return (this.activeNumber = 3);
-          break;
-        case path.includes("getinspired"):
+        case path.includes('subscription'):
           return (this.activeNumber = 4);
           break;
         default:
@@ -129,40 +128,3 @@ export default {
   },
 };
 </script>
-
-<style style="scss">
-.subscribe_main section {
-  position: relative;
-  z-index: -1;
-  opacity: 0;
-  display: none;
-  will-change: opacity;
-}
-
-.subscribe_main section.on {
-  display: block;
-  z-index: 4;
-  opacity: 1;
-}
-
-.row {
-  flex-direction: column;
-}
-
-.router-nav.homefit .swiper-slide {
-  margin-right: 60px;
-}
-.router-nav.homefit .swiper-slide:last-child {
-  margin-right: 0;
-}
-
-.router-nav.homefit .swiper-slide.active::after {
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  border: 1px solid #000;
-  content: "";
-  width: 100%;
-}
-</style>

@@ -2,22 +2,44 @@
 .store_nav {
   position: sticky;
   top: 0;
+  background: #fff;
+  z-index: 4;
+  .sub_nav {
+    width: 100%;
+
+    background: #f7f7f7;
+    ul {
+      margin: 0 auto;
+      padding: 0 24px;
+      max-width: 1440px;
+      display: flex;
+      align-items: center;
+      height: 40px;
+    }
+    li {
+      cursor: pointer;
+      margin-right: 40px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+  }
+}
+.nav_option_wrapper {
   margin: 0 auto;
   padding: 0 24px;
   max-width: 1440px;
+  width: 100%;
   display: flex;
   align-items: center;
   height: 72px;
   background: #fff;
-  z-index: 4;
 }
-
 .option_title {
   font-size: 24px;
   margin-right: auto;
 }
 
-.option_cost {
+.option_costs {
   font-size: 18px;
 }
 .option_cart {
@@ -131,17 +153,29 @@
     .option_cost_select {
       margin-top: 16px;
       .option_cost_inner {
+        position: relative;
+        cursor: pointer;
         display: flex;
         justify-content: space-between;
         border: 1px solid #ddd;
         border-radius: 6px;
         height: 52px;
         padding: 16px 24px;
-        box-sizing: border-box;
         font-size: 14px;
         &.activeIndex {
-          border: 2px solid #2189ff;
+          border: 1px solid #2189ff;
           font-weight: 700;
+          &:after {
+            position: absolute;
+            left: -2px;
+            top: -2px;
+            content: '';
+            display: block;
+            border-radius: 6px;
+            width: 100%;
+            height: 100%;
+            border: 2px solid #2189ff;
+          }
         }
         &:nth-child(2) {
           margin: 16px 0;
@@ -182,15 +216,29 @@
   }
 
   .slider_wrapper {
+    .swiper-container {
+      padding: 3px;
+    }
     margin-top: 16px;
     .swiper-slide {
+      position: relative;
+      cursor: pointer;
       max-width: 330px;
       border: 1px solid #dddddd;
       border-radius: 20px;
-      box-sizing: border-box;
-      overflow: hidden;
       &.active {
-        border: 2px solid #2189ff;
+        border: 1px solid #2189ff;
+        &:after {
+          position: absolute;
+          left: -2px;
+          top: -2px;
+          content: '';
+          display: block;
+          border-radius: 20px;
+          width: 100%;
+          height: 100%;
+          border: 2px solid #2189ff;
+        }
       }
       .swiper-slide-inner {
         padding: 24px 33px 33px;
@@ -265,10 +313,26 @@
   }
 }
 
+.swiper-scrollbar {
+  margin: 46px 0 16px;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+}
+.swiper-scrollbar-drag {
+  border-radius: 2px;
+}
+
 @include B767 {
   .store_nav {
     border-bottom: 1px solid #ebebeb;
     height: 22.2222222vw;
+    .sub_nav {
+      display: none;
+    }
+  }
+  .nav_option_wrapper {
+    height: auto;
   }
 
   .option_title {
@@ -277,7 +341,7 @@
     line-height: 5.833333vw;
   }
 
-  .option_cost {
+  .option_costs {
     font-size: 18px;
     display: none;
   }
@@ -409,14 +473,12 @@
     .slider_wrapper {
       margin-top: 16px;
       .swiper-slide {
-        max-width: 330px;
+        max-width: auto;
+        width: calc(50% - 12px);
         border: 1px solid #dddddd;
         border-radius: 20px;
         box-sizing: border-box;
-        overflow: hidden;
-        &.active {
-          border: 2px solid #2189ff;
-        }
+
         .swiper-slide-inner {
           padding: 6.6666666vw 3.333333vw 6.6666666vw 3vw;
           text-align: center;
@@ -458,5 +520,64 @@
         }
       }
     }
+    .total_cost_wrapper {
+      margin-top: 10vw;
+
+      .option_cost {
+        padding: 6.444444vw 0;
+        font-size: 5.333333vw;
+        font-weight: 700;
+        p {
+          font-size: 3.2222222vw;
+          font-weight: 400;
+        }
+        .option_cart {
+          padding: 0 10vw;
+        }
+        a {
+          margin-top: 3.33333333vw;
+          display: block;
+          font-size: 3.888888vw;
+        }
+      }
+    }
+    .section_second_inner {
+      margin-top: 10vw;
+
+      h3 {
+        font-size: 10vw;
+      }
+      p {
+        padding: 0 24px;
+        margin: 3.333333vw 0;
+        font-size: 3.888888vw;
+
+        font-weight: 600;
+      }
+      span {
+        padding: 0 24px;
+        display: inline-block;
+        font-size: 3.888888vw;
+      }
+      figure {
+        margin-top: 32px;
+        width: 100%;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  .swiper-scrollbar {
+    display: block !important;
+    margin: 46px 0 0;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+  }
+  .swiper-scrollbar-drag {
+    border-radius: 2px;
   }
 }

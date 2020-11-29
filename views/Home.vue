@@ -1,184 +1,546 @@
 <template>
   <main id="main" role="main">
     <MainSlider />
-    <section class="main-second-section">
+    <section class="main-section_inner section_inner">
       <div class="title_wrapper">
-        <h3 class="title">Latest Deals</h3>
+        <h3 class="title">Mobile</h3>
       </div>
-      <div class="second-section_wrapper">
-        <div class="second-section-gallery_wrapper">
-          <ul class="second-section-nav">
-            <li class="active">Black Friday</li>
-            <li>Mobile</li>
-            <li>TV & AV</li>
-            <li>Home Appliances</li>
-            <li>IT</li>
-          </ul>
-          <div class="second-section-gallery">
-            <div class="left">
+      <div class="third-section-gallery">
+        <ul class="third-section-nav">
+          <li class="active">Galaxy Z Flip</li>
+          <li>Galaxy S20 | S20+</li>
+          <li>Galaxy Buds+</li>
+          <li>Galaxy Note10+ 5G</li>
+          <li>Galaxy S10</li>
+        </ul>
+        <div class="center_img">
+          <img src="../assets/main/image_mobile.png" alt="mobile" />
+        </div>
+        <div class="desc">
+          <h4>Do it all. All at once</h4>
+        </div>
+        <div class="button_wrapper">
+          <button type="button">Meet Galaxy Z Flip</button>
+          <button type="button">Pre-order now</button>
+        </div>
+      </div>
+    </section>
+    <section class="main-section_inner section_inner">
+      <div class="title_wrapper">
+        <h3 class="title">TV & AV</h3>
+      </div>
+      <div class="third-section-gallery">
+        <ul class="third-section-nav">
+          <li class="active">Galaxy Z Flip</li>
+          <li>QLED 8K</li>
+          <li>QLED</li>
+          <li>The Serif</li>
+          <li>The Frame</li>
+          <li>Big Screen TVs</li>
+        </ul>
+        <div class="center_img">
+          <img src="../assets/main/image_tv_audio.png" alt="mobile" />
+        </div>
+        <div class="desc">
+          <h4>All New QLED 8K</h4>
+        </div>
+        <div class="button_wrapper">
+          <button type="button">See all TV & Audio</button>
+          <button type="button">Learn more</button>
+        </div>
+      </div>
+    </section>
+    <section class="main-section_inner section_inner">
+      <div class="title_wrapper">
+        <h3 class="title">Appliances</h3>
+      </div>
+      <div class="third-section-gallery">
+        <ul class="third-section-nav">
+          <li class="active">Galaxy Z Flip</li>
+          <li>QuickDrive™</li>
+          <li>Family Hub™</li>
+          <li>AirDresser</li>
+          <li>SmartThings</li>
+          <li>Built-In Kitchen Appliances</li>
+        </ul>
+        <div class="center_img">
+          <img src="../assets/main/image_appliance.png" alt="mobile" />
+        </div>
+        <div class="desc">
+          <h4>Making your house work</h4>
+          <span>Steam clean to refresh the laundry between washes</span>
+        </div>
+        <div class="button_wrapper">
+          <button type="button">Meet Galaxy Z Flip</button>
+          <button type="button">Pre-order now</button>
+        </div>
+      </div>
+    </section>
+    <section class="main-section_inner section_inner">
+      <div class="title_wrapper">
+        <h3 class="title">This month’s pick</h3>
+        <span>What people are adding to their wish lists</span>
+      </div>
+      <div class="third-section-gallery">
+        <ul class="third-section-nav">
+          <li class="active">New</li>
+          <li>Popular</li>
+          <li>Mom's Day</li>
+          <li>Black Friday</li>
+          <li>Mobile</li>
+        </ul>
+        <div class="flex_gallery">
+          <div class="left">
+            <figure>
+              <img class="web" src="../assets/main/image_z_flip_thom_browne_edition.png" alt="" />
+              <img
+                class="mobile"
+                src="../assets/main/image_z_flip_thom_browne_edition_mo.png"
+                alt=""
+              />
+            </figure>
+          </div>
+          <div class="right">
+            <div class="img_wrapper">
               <figure>
-                <img
-                  class="web_img"
-                  src="https://images.samsung.com/is/image/samsung/assets/uk/p6_gro1/p6_initial_home/P6_Big_Tile_DT_684x684_QE85Q950TSTXXU-1.png?$684_684_PNG$"
-                />
-                <img
-                  class="mobile_img"
-                  src="https://images.samsung.com/is/image/samsung/assets/uk/p6_gro1/p6_initial_home/MO_624x352_QE85Q950TSTXXU.png?$624_352_PNG$"
-                />
+                <img class="web" src="../assets/main/image_product_zfilp.png" alt="" />
+                <img class="mobile" src="../assets/main/image_productcard_da_2.png" alt="" />
               </figure>
+              <div class="img_desc">
+                <p>Galaxy Z Flip</p>
+                <span class="web">$1,300.00 or $54.17/mo</span>
+              </div>
             </div>
-            <div class="right">
-              <div class="right_box">
-                <a href="javascript:;">
-                  <div class="right-img_wrapper">
-                    <div class="right-img_inner">
-                      <div class="image image--main-loaded">
-                        <img
-                          class="image__main responsive-img image--loaded"
-                          data-desktop-src="//images.samsung.com/is/image/samsung/assets/uk/p6_gro1/p6_initial_home/P6_Small_Tile_DT_160x160_S20-FE.png?$160_160_PNG$"
-                          data-mobile-src="//images.samsung.com/is/image/samsung/assets/uk/p6_gro1/p6_initial_home/P6_Small_Tile_MO_192x192_S20-FE.png?$192_192_PNG$"
-                          alt="£150 off Galaxy S20+ 5G"
-                          src="//images.samsung.com/is/image/samsung/assets/uk/p6_gro1/p6_initial_home/P6_Small_Tile_DT_160x160_S20-FE.png?$160_160_PNG$"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="desc_wrapper">
-                    <div class="desc_inner">
-                      <span class="desc">£150 off Galaxy S20+ 5G</span>
-                      <span>Trade in also available</span>
-                    </div>
-                  </div>
-                </a>
+            <div class="img_wrapper">
+              <figure>
+                <img class="web" src="../assets/main/image_product_quickdrive.png" alt="" />
+                <img class="mobile" src="../assets/main/image_productcard_da_2.png" alt="" />
+              </figure>
+              <div class="img_desc">
+                <p>QuickDrive™</p>
+                <span class="web">$799.00</span>
               </div>
-              <div class="right_box">
-                <a href="javascript:;">
-                  <div class="right-img_wrapper">
-                    <div class="right-img_inner">
-                      <div class="image image--main-loaded">
-                        <img
-                          class="image__main responsive-img image--loaded"
-                          data-desktop-src="//images.samsung.com/is/image/samsung/assets/uk/p6_gro1/p6_initial_home/P6_Small_Tile_DT_160x160_S20-FE.png?$160_160_PNG$"
-                          data-mobile-src="//images.samsung.com/is/image/samsung/assets/uk/p6_gro1/p6_initial_home/P6_Small_Tile_MO_192x192_S20-FE.png?$192_192_PNG$"
-                          alt="£150 off Galaxy S20+ 5G"
-                          src="//images.samsung.com/is/image/samsung/assets/uk/p6_gro1/p6_initial_home/P6_Small_Tile_DT_160x160_S20-FE.png?$160_160_PNG$"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="desc_wrapper">
-                    <div class="desc_inner">
-                      <span class="desc">£150 off Galaxy S20+ 5G</span>
-                      <span>Trade in also available</span>
-                    </div>
-                  </div>
-                </a>
+            </div>
+            <div class="img_wrapper">
+              <figure>
+                <img class="web" src="../assets/main/image_product_ref.png" alt="" />
+                <img class="mobile" src="../assets/main/image_productcard_da_2.png" alt="" />
+              </figure>
+              <div class="img_desc">
+                <p>Family Hub™ Refrigerator</p>
+                <span class="web">$3,799.00</span>
               </div>
-              <div class="right_box">
-                <a href="javascript:;">
-                  <div class="right-img_wrapper">
-                    <div class="right-img_inner">
-                      <div class="image image--main-loaded">
-                        <img
-                          class="image__main responsive-img image--loaded"
-                          data-desktop-src="//images.samsung.com/is/image/samsung/assets/uk/p6_gro1/p6_initial_home/P6_Small_Tile_DT_160x160_S20-FE.png?$160_160_PNG$"
-                          data-mobile-src="//images.samsung.com/is/image/samsung/assets/uk/p6_gro1/p6_initial_home/P6_Small_Tile_MO_192x192_S20-FE.png?$192_192_PNG$"
-                          alt="£150 off Galaxy S20+ 5G"
-                          src="//images.samsung.com/is/image/samsung/assets/uk/p6_gro1/p6_initial_home/P6_Small_Tile_DT_160x160_S20-FE.png?$160_160_PNG$"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="desc_wrapper">
-                    <div class="desc_inner">
-                      <span class="desc">£150 off Galaxy S20+ 5G</span>
-                      <span>Trade in also available</span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="right_box">
-                <a href="javascript:;">
-                  <div class="right-img_wrapper">
-                    <div class="right-img_inner">
-                      <div class="image">
-                        <img
-                          class="image"
-                          data-desktop-src="//images.samsung.com/is/image/samsung/assets/uk/p6_gro1/p6_initial_home/P6_Small_Tile_DT_160x160_S20-FE.png?$160_160_PNG$"
-                          data-mobile-src="//images.samsung.com/is/image/samsung/assets/uk/p6_gro1/p6_initial_home/P6_Small_Tile_MO_192x192_S20-FE.png?$192_192_PNG$"
-                          alt="£150 off Galaxy S20+ 5G"
-                          src="//images.samsung.com/is/image/samsung/assets/uk/p6_gro1/p6_initial_home/P6_Small_Tile_DT_160x160_S20-FE.png?$160_160_PNG$"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="desc_wrapper">
-                    <div class="desc_inner">
-                      <span class="desc">£150 off Galaxy S20+ 5G</span>
-                      <span>Trade in also available</span>
-                    </div>
-                  </div>
-                </a>
+            </div>
+            <div class="img_wrapper">
+              <figure>
+                <img class="web" src="../assets/main/image_product_theframe.png" alt="" />
+                <img class="mobile" src="../assets/main/image_productcard_da_2.png" alt="" />
+              </figure>
+              <div class="img_desc">
+                <p>The Frame</p>
+                <span class="web">$2,199.00</span>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="main-third-section">
+    <section class="main-section_inner section_inner">
       <div class="title_wrapper">
-        <h3 class="title">Mobile</h3>
+        <h3 class="title">Explore your Galaxy</h3>
+        <span
+          >What's waiting to be discovered?
+          <a class="underline" href="javascript:;"> Experience more</a></span
+        >
       </div>
-      <div class="third-section-gallery">
-        <ul class="third-section-nav">
-          <li class="active">Black Friday</li>
-          <li>Mobile</li>
-          <li>TV & AV</li>
-          <li>Home Appliances</li>
-          <li>IT</li>
-        </ul>
-        <div class="img_wrapper">
-          <figure>
-            <img
-              src="https://images.samsung.com/is/image/samsung/assets/uk/Note20_Combo_Home_ProductMarketing_Non5G_KV_1440x810.jpg?$1440_810_JPG$"
-            />
-          </figure>
+      <div class="sub-slider_wrapper">
+        <div class="sub-slider_inner">
+          <div class="web left">
+            <ul class="clearfix">
+              <li>
+                <div class="number">01</div>
+                <div class="desc_wrapper active">
+                  <div class="title" @mouseenter="subswiperSlide(0)">
+                    Digging for Magical Mysteries in Art - Part I
+                  </div>
+                  <p>Art that tells a story: what's behind famous paintings and artists.</p>
+                  <a href="javascript:;" class="learn_more">Learn more</a>
+                </div>
+              </li>
+              <li>
+                <div class="number">02</div>
+                <div class="desc_wrapper">
+                  <div class="title" @mouseenter="subswiperSlide(1)">
+                    Tablet-Powered Schedule Hacks
+                  </div>
+                  <p>
+                    See what the K-pop sensations get up to when they’re not performing #withGalaxy.
+                  </p>
+                  <a href="javascript:;" class="learn_more">Learn more</a>
+                </div>
+              </li>
+              <li>
+                <div class="number">03</div>
+                <div class="desc_wrapper">
+                  <div class="title" @mouseenter="subswiperSlide(2)">
+                    5 Simple Time-Saving Tips
+                  </div>
+                  <p>
+                    Tips to designing a unique space and finding your own style through art.
+                  </p>
+                  <a href="javascript:;" class="learn_more">Learn more</a>
+                </div>
+              </li>
+              <li>
+                <div class="number">04</div>
+                <div class="desc_wrapper">
+                  <div class="title">
+                    Samsung KX: The Home of Innovation
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="number">05</div>
+                <div class="desc_wrapper">
+                  <div class="title">
+                    Missions from Successful Young Entrepreneurs
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="right">
+            <!-- <figure class="">
+              <img src="../assets/main/image_explore_01.png" alt="" />
+            </figure> -->
+            <div class="mobile-slider-wrapper">
+              <div class="mobile-slider swiper-container" ref="mobileSlider">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img src="../assets/main/image_explore_01.png" alt="" />
+                    <div class="mobile swiper_desc">
+                      <h5>
+                        Digging for Magical <br />
+                        Mysteries in Art - Part I
+                      </h5>
+                      <p>
+                        Art that tells a story: what's behind famous <br />
+                        paintings and artists.
+                      </p>
+                      <a class="learn_more" href="javascript:;">Learn more</a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="../assets/main/image_explore_02.png" alt="" />
+                    <div class="mobile swiper_desc">
+                      <h5>
+                        Up Close and Behind <br />
+                        the Scenes With BTS
+                      </h5>
+                      <p>
+                        See what the K-pop sensations get up to when <br />
+                        they’re not performing #withGalaxy.
+                      </p>
+                      <a class="learn_more" href="javascript:;">Learn more</a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="../assets/main/image_explore_03.png" alt="" />
+                    <div class="mobile swiper_desc">
+                      <h5>
+                        Design Your Home and <br />
+                        Redefine Your Style
+                      </h5>
+                      <p>
+                        Tips to designing a unique space and finding your <br />
+                        own style through art.
+                      </p>
+                      <a class="learn_more" href="javascript:;">Learn more</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="mobile swiper-pagination"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-    <section class="main-third-section">
-      <div class="third-section-gallery">
-        <div class="img_wrapper">
-          <figure>
-            <img
-              src="https://images.samsung.com/is/image/samsung/assets/uk/p1_gro1/p6_initial_home/DT_1440x810_QLED-TV.jpg?$1440_810_JPG$"
-            />
-          </figure>
+    <section class="main-section_inner section_inner">
+      <div class="title_wrapper">
+        <h3 class="title">Looking for something else?</h3>
+      </div>
+      <div class="main-form_wrapper">
+        <div class="main-form">
+          <input type="search" />
+          <i></i>
         </div>
       </div>
-    </section>
-    <section class="main-third-section">
-      <div class="third-section-gallery">
-        <div class="img_wrapper">
-          <figure>
-            <img
-              src="https://images.samsung.com/is/image/samsung/assets/uk/home/HP-1440x810-RB7300-PC.png?$1440_810_JPG$"
-            />
-          </figure>
+      <div class="bubble_wrapper">
+        <div class="bubble_inner">
+          <div class="bubble">Z Flip Thom Browne Edition</div>
+          <div class="bubble">Galaxy Watch Golf Edition</div>
+          <div class="bubble">QLED 4K Quantum HDR Smart TV</div>
+          <hr class="mobile breaker" />
+          <div class="bubble">800T QLED 8K HDR Smart TV</div>
+          <hr class="mobile breaker" />
+          <div class="bubble">Family Hub™ American Style</div>
+          <div class="bubble">Dual Cook Flex Oven</div>
+          <div class="bubble">HDR QLED Gaming Monitor</div>
         </div>
       </div>
-    </section>
-    <section class="main-sixth-section">
-      <img
-        src="https://images.samsung.com/is/image/samsung/assets/uk/home/im0081_home-explore-banner_pc_684x512.jpg?$684_512_JPG$"
-        alt
-      />
     </section>
   </main>
 </template>
 
+<style lang="scss">
+@import 'scss/mixins.scss';
+
+.breaker {
+  display: block;
+  width: 100%;
+  height: 0%;
+  margin: 0;
+  content: ' ';
+  border: 0;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.sub-slider_wrapper {
+  padding: 48px 24px 0;
+}
+
+.sub-slider_inner {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  .left,
+  .right {
+    flex-basis: calc(50% - 12px);
+  }
+  figure {
+    width: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .left {
+    padding-top: 82px;
+    li {
+      display: flex;
+      overflow: hidden;
+      cursor: grab;
+      .desc_wrapper {
+        margin-left: 51px;
+        flex-basis: calc(100% - 94px);
+        p,
+        a {
+          opacity: 0;
+          display: none;
+          transition: opacity cubic-bezier(0.4, 0, 0.2, 1) 0.15s;
+        }
+        &.active {
+          margin-top: 0;
+          padding-bottom: 32px;
+          border-top: 2px solid #000;
+          border-bottom: 1px solid #ddd;
+          transition: padding-bottom cubic-bezier(0.4, 0, 0.2, 1) 0.15s;
+          p {
+            display: block;
+            opacity: 1;
+          }
+          a {
+            display: inline-block;
+            opacity: 1;
+          }
+        }
+      }
+
+      p {
+        font-size: 14px;
+        font-weight: 400;
+      }
+
+      .learn_more {
+        margin-top: 22px;
+      }
+      .number {
+        padding-top: 22px;
+        padding-left: 24px;
+        font-weight: bold;
+      }
+      .title {
+        padding: 16px 0;
+        // width: 100%;
+        font-size: 24px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.learn_more {
+  display: inline-block;
+  position: relative;
+  font-size: 14px;
+  &:after {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #000;
+  }
+}
+
+.mobile-slider {
+  .swiper-slide {
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+.main-form_wrapper {
+  margin: 32px 0 0;
+  .main-form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 12px 24px;
+    width: calc(50% - 48px);
+    background: #f7f7f7;
+    border-radius: 24px;
+    input {
+      width: calc(100% - 80px);
+      border: 0;
+      background: #f7f7f7;
+    }
+    i {
+      display: block;
+      width: 16px;
+      height: 16px;
+      background-image: url('../assets/icons//icon_bold_action_search.png');
+      background-size: cover;
+    }
+  }
+}
+.bubble_wrapper {
+  margin-top: 24px;
+  padding: 9px 22px 0;
+
+  .bubble_inner {
+    margin: 0 auto;
+    width: calc(50% - 80px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .bubble {
+    cursor: pointer;
+    font-size: 12px;
+    padding: 6px 14px;
+    border: 2px solid rgba(0, 0, 0, 0.15);
+    border-radius: 16px;
+    &:nth-child(5n + 2) {
+      margin: 0 8px;
+    }
+    &:nth-child(n + 5):nth-child(-n + 9) {
+      margin-top: 8px;
+    }
+  }
+}
+@include B767 {
+  .learn_more {
+    display: inline-block;
+    position: relative;
+    font-size: 14px;
+    &:after {
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      content: '';
+      width: 100%;
+      height: 2px;
+      background: #000;
+    }
+  }
+  .sub-slider_wrapper {
+    padding: 10vw 24px;
+  }
+
+  .sub-slider_inner {
+    .left,
+    .right {
+      flex-basis: auto;
+      .swiper-container {
+        overflow: inherit;
+      }
+      .swiper_desc {
+        margin-top: 5.444444vw;
+        text-align: center;
+        h5 {
+          padding: 3.5vw 0;
+          font-size: 4.444444vw;
+          font-weight: bold;
+          line-height: 1.2;
+        }
+        p {
+          padding-bottom: 5.5vw;
+          font-size: 3.333333vw;
+        }
+        a {
+          font-weight: 700;
+        }
+      }
+    }
+    .swiper-pagination {
+      margin-top: 31px;
+      position: relative;
+      bottom: 0;
+      .swiper-pagination-bullet-active {
+        background-color: #000;
+      }
+    }
+  }
+  .main-form_wrapper {
+    margin-top: 24px;
+    .main-form {
+      width: calc(100% - 48px);
+    }
+  }
+  .bubble_wrapper {
+    width: 100%;
+    .bubble_inner {
+      width: 100%;
+
+      .bubble {
+        font-size: 10px;
+        &:nth-child(3n + 2) {
+          margin: 0;
+        }
+
+        &:nth-child(2n) {
+          margin-left: 8px;
+        }
+        &:nth-child(n + 3):nth-child(n-6) {
+          margin-top: 2.666666vw;
+        }
+      }
+    }
+  }
+}
+</style>
 <script>
-import { mapState, mapGetters, mapMutations, mapActions } from 'vuex';
+import Swiper from 'swiper/bundle';
 import MainSlider from '../components/slider/MainSlider';
 import './Home.scss';
 
@@ -186,13 +548,41 @@ export default {
   created() {
     // this.$store.dispatch('login/LOGOUT', idInfo);
     // const reservation = this.$store.state.login.reservation;
-
+    this.$nextTick(() => {
+      this.mobile_slider = new Swiper(this.$refs.mobileSlider, {
+        direction: 'horizontal',
+        loop: false,
+        slidesPerView: 'auto',
+        spaceBetween: 16,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        breakpoints: {
+          768: {
+            speed: 0,
+          },
+        },
+      });
+    });
     this.$store.dispatch('login/RESERVATIONINIT');
   },
   components: {
     MainSlider,
   },
+  data() {
+    return {
+      mobile_slider: null,
+    };
+  },
+  methods: {
+    subswiperSlide(i) {
+      const desc_wrapper = document.querySelector('.desc_wrapper.active');
 
-  methods: {},
+      desc_wrapper.classList.remove('active');
+      event.target.parentNode.classList.add('active');
+      this.mobile_slider.slideTo(i);
+    },
+  },
 };
 </script>
