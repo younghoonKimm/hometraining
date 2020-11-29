@@ -78,7 +78,7 @@
           </div>
         </div>
       </div>
-      <div class="swiper-pagination_wrapper">
+      <div class="swiper-pagination_wrapper web">
         <div class="swiper-pagination"></div>
         <div>정지</div>
       </div>

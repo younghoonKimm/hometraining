@@ -104,7 +104,7 @@
             <div class="img_wrapper">
               <figure>
                 <img class="web" src="../assets/main/image_product_zfilp.png" alt="" />
-                <img class="mobile" src="../assets/main/image_productcard_da_2.png" alt="" />
+                <img class="mobile" src="../assets/main/image_product_zfilp_mo.png" alt="" />
               </figure>
               <div class="img_desc">
                 <p>Galaxy Z Flip</p>
@@ -124,7 +124,7 @@
             <div class="img_wrapper">
               <figure>
                 <img class="web" src="../assets/main/image_product_ref.png" alt="" />
-                <img class="mobile" src="../assets/main/image_productcard_da_2.png" alt="" />
+                <img class="mobile" src="../assets/main/image_productcard_da_1.png" alt="" />
               </figure>
               <div class="img_desc">
                 <p>Family Hub™ Refrigerator</p>
@@ -134,7 +134,7 @@
             <div class="img_wrapper">
               <figure>
                 <img class="web" src="../assets/main/image_product_theframe.png" alt="" />
-                <img class="mobile" src="../assets/main/image_productcard_da_2.png" alt="" />
+                <img class="mobile" src="../assets/main/image_product_theframe_mo.png" alt="" />
               </figure>
               <div class="img_desc">
                 <p>The Frame</p>
@@ -292,6 +292,53 @@
     </section>
   </main>
 </template>
+<script>
+import Swiper from 'swiper/bundle';
+import MainSlider from '../components/slider/MainSlider';
+import './Home.scss';
+
+export default {
+  created() {
+    // this.$store.dispatch('login/LOGOUT', idInfo);
+    // const reservation = this.$store.state.login.reservation;
+    this.$nextTick(() => {
+      this.mobile_slider = new Swiper(this.$refs.mobileSlider, {
+        direction: 'horizontal',
+        loop: false,
+        slidesPerView: 'auto',
+        spaceBetween: 16,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        breakpoints: {
+          768: {
+            speed: 0,
+          },
+        },
+      });
+    });
+    this.$store.dispatch('login/RESERVATIONINIT');
+  },
+  components: {
+    MainSlider,
+  },
+  data() {
+    return {
+      mobile_slider: null,
+    };
+  },
+  methods: {
+    subswiperSlide(i) {
+      const desc_wrapper = document.querySelector('.desc_wrapper.active');
+
+      desc_wrapper.classList.remove('active');
+      event.target.parentNode.classList.add('active');
+      this.mobile_slider.slideTo(i);
+    },
+  },
+};
+</script>
 
 <style lang="scss">
 @import 'scss/mixins.scss';
@@ -523,7 +570,7 @@
       width: 100%;
 
       .bubble {
-        font-size: 10px;
+        font-size: 2.5vw;
         &:nth-child(3n + 2) {
           margin: 0;
         }
@@ -539,50 +586,3 @@
   }
 }
 </style>
-<script>
-import Swiper from 'swiper/bundle';
-import MainSlider from '../components/slider/MainSlider';
-import './Home.scss';
-
-export default {
-  created() {
-    // this.$store.dispatch('login/LOGOUT', idInfo);
-    // const reservation = this.$store.state.login.reservation;
-    this.$nextTick(() => {
-      this.mobile_slider = new Swiper(this.$refs.mobileSlider, {
-        direction: 'horizontal',
-        loop: false,
-        slidesPerView: 'auto',
-        spaceBetween: 16,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-        breakpoints: {
-          768: {
-            speed: 0,
-          },
-        },
-      });
-    });
-    this.$store.dispatch('login/RESERVATIONINIT');
-  },
-  components: {
-    MainSlider,
-  },
-  data() {
-    return {
-      mobile_slider: null,
-    };
-  },
-  methods: {
-    subswiperSlide(i) {
-      const desc_wrapper = document.querySelector('.desc_wrapper.active');
-
-      desc_wrapper.classList.remove('active');
-      event.target.parentNode.classList.add('active');
-      this.mobile_slider.slideTo(i);
-    },
-  },
-};
-</script>

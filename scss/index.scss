@@ -218,6 +218,23 @@
   }
 }
 
+.router-nav.homefit .swiper-slide {
+  margin-right: 60px;
+}
+.router-nav.homefit .swiper-slide:last-child {
+  margin-right: 0;
+}
+
+.router-nav.homefit .swiper-slide.active::after {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border: 1px solid #000;
+  content: '';
+  width: 100%;
+}
+
 .depth2_wrapper {
   @include nav_hover_bg;
   opacity: 1;
@@ -1066,6 +1083,16 @@ section {
         }
       }
     }
+  }
+}
+
+.router_path_wrapper {
+  width: 100%;
+  .router_path_inner {
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    @include sectioninner;
   }
 }
 

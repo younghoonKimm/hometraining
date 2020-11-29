@@ -1,7 +1,7 @@
 <template>
   <Fragment>
+    <HomeFitNavigation />
     <main id="main" role="main">
-      <HomeFitNavigation />
       <section class="section_sub">
         <p>Workout together</p>
         <p>with your Samsung Devices</p>
@@ -15,11 +15,9 @@
           <div class="swiper-wrapper">
             <div class="swiper-slide" v-for="(v, i) in this.config" :key="i">
               <div class="swiper-slide-inner">
-                <div
-                  class="icons"
-                  @click="onBookMark(i)"
-                  :class="bookMarkClass(i) ? 'on' : ''"
-                >bookmark</div>
+                <div class="icons" @click="onBookMark(i)" :class="bookMarkClass(i) ? 'on' : ''">
+                  bookmark
+                </div>
                 <div class="timer">
                   <TimerUp v-if="i === 1" :minute="i" :sec="i" />
                   <TimerDown v-else :minute="3020" />
@@ -76,34 +74,28 @@
 }
 </style>
 <script>
-import { Fragment } from "vue-fragment";
-import Swiper from "swiper/bundle";
+import { Fragment } from 'vue-fragment';
+import Swiper from 'swiper/bundle';
 
-import { mapGetters, mapActions } from "vuex";
-import { subscribeSliderOptions } from "../config";
-import { getReservationFromCookie } from "../utils/cookies";
+import { mapGetters, mapActions } from 'vuex';
+import { subscribeSliderOptions } from '../config';
+import { getReservationFromCookie } from '../utils/cookies';
 
-import TimerUp from "../components/TimerUp";
-import TimerDown from "../components/TimerDown";
-import HomeFitNavigation from "../components/layout/HomeFitNavigation";
+import TimerUp from '../components/TimerUp';
+import TimerDown from '../components/TimerDown';
+import HomeFitNavigation from '../components/layout/HomeFitNavigation';
 
-import "./HomeFit.scss";
+import './HomeFit.scss';
 
-const config = ["Samsung", "Samsung"];
+const config = ['Samsung', 'Samsung'];
 
 export default {
   created() {
     this.reeservationCount = getReservationFromCookie();
     console.log(this.reeservationCount);
     this.$nextTick(() => {
-      this.first_slider = new Swiper(
-        this.$refs.firstSlider,
-        subscribeSliderOptions[0].option
-      );
-      this.second_slider = new Swiper(
-        this.$refs.secondSlider,
-        subscribeSliderOptions[1].option
-      );
+      this.first_slider = new Swiper(this.$refs.firstSlider, subscribeSliderOptions[0].option);
+      this.second_slider = new Swiper(this.$refs.secondSlider, subscribeSliderOptions[1].option);
       this.second_descSlider = new Swiper(
         this.$refs.secondDescSlider,
         subscribeSliderOptions[2].option
@@ -116,7 +108,7 @@ export default {
     this.initDB();
   },
   computed: {
-    ...mapGetters("bookMark", ["bookMarkLoad"]),
+    ...mapGetters('bookMark', ['bookMarkLoad']),
 
     getState() {
       return (this.subscribeState = this.$store.state.bookMark.bookMarks);
@@ -141,7 +133,7 @@ export default {
   },
 
   methods: {
-    ...mapActions("bookMark", ["initDB"]),
+    ...mapActions('bookMark', ['initDB']),
     onToggleNav(i) {
       this.$router.push(`main/${i}`);
     },
@@ -151,8 +143,8 @@ export default {
     },
 
     onBookMark(i) {
-      console.log("click");
-      this.$store.dispatch("bookMark/createBookMark", i);
+      console.log('click');
+      this.$store.dispatch('bookMark/createBookMark', i);
     },
   },
 };

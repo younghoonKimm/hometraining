@@ -85,7 +85,9 @@
       <ProductSlider />
       <!-- <div @click="$router.push('/subscription/info')">info</div> -->
     </main>
-    <div>Home > Mypage > Subscriptions</div>
+    <div class="router_path_wrapper">
+      <div class="router_path_inner">Home > Mypage > Subscriptions</div>
+    </div>
   </Fragment>
 </template>
 

@@ -18,9 +18,9 @@
                 Ultra
               </p>
               <span>This is the phone that will change photography</span>
-              <div class="main_slider_btn_wrapper">
-                <button>1</button>
-                <button>2</button>
+              <div class="button_wrapper">
+                <button class="learn_more" type="button">Learn more</button>
+                <button>Buy now</button>
               </div>
             </div>
             <img class="web_img" src="../../assets/main/kv_image_1.png" />
@@ -67,8 +67,8 @@
           </div>
         </div>
       </div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev web"></div>
+      <div class="swiper-button-next web"></div>
 
       <div class="slider-button-wrapper">
         <div class="slider-button-inner">
