@@ -1,21 +1,17 @@
 <template>
-  <section class="section_first">
-    <div
-      class="first-slider swiper-container"
-      :class="[{ pause: playToggle }, this.whiteColor ? 'white' : '']"
-      ref="mainSlider"
-    >
+  <section class="section_first section_inner" :class="{ black:blackColor }">
+    <div class="first-slider swiper-container" :class="{ pause: playToggle }" ref="mainSlider">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <div class="swiper-slide-inner">
             <div class="main_slider_desc">
               <p class="mobile">
-                Galaxy S20, S20+ <br />
-                and S20 Ultra
+                Galaxy S20, S20+
+                <br />and S20 Ultra
               </p>
               <p class="web">
-                Galaxy S20, S20+ and S20 <br />
-                Ultra
+                Galaxy S20, S20+ and S20
+                <br />Ultra
               </p>
               <span>This is the phone that will change photography</span>
               <div class="button_wrapper">
@@ -29,6 +25,30 @@
         </div>
         <div class="swiper-slide">
           <div class="swiper-slide-inner">
+            <div class="main_slider_desc">
+              <p>
+                Experience The best
+                <br />Samsung HomeFit
+              </p>
+              <span>Experience diverse, fun filled Live+ Group classes</span>
+              <div class="button_wrapper">
+                <button class="learn_more" type="button">Learn more</button>
+                <button>Buy now</button>
+              </div>
+            </div>
+            <img class="web_img" src="../../assets/main/kv_image_2.png" />
+            <img class="mobile_img" src="../../assets/main/kv_image_2_mo.png" />
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="swiper-slide-inner">
+            <div class="main_slider_desc">
+              <p>Galaxy S20 FE</p>
+              <div class="button_wrapper">
+                <button class="learn_more" type="button">Learn more</button>
+                <button>Buy now</button>
+              </div>
+            </div>
             <video
               muted
               playsinline
@@ -42,6 +62,13 @@
         </div>
         <div class="swiper-slide">
           <div class="swiper-slide-inner">
+            <div class="main_slider_desc">
+              <p>Unrivalled QLED 8K</p>
+              <div class="button_wrapper">
+                <button class="learn_more" type="button">Learn more</button>
+                <button>Buy now</button>
+              </div>
+            </div>
             <video
               muted
               playsinline
@@ -55,6 +82,14 @@
         </div>
         <div class="swiper-slide">
           <div class="swiper-slide-inner">
+            <div class="main_slider_desc">
+              <p>Smart, simple and fully loaded</p>
+              <span>The new ecobubble™ range</span>
+              <div class="button_wrapper">
+                <button class="learn_more" type="button">Learn more</button>
+                <button>Buy now</button>
+              </div>
+            </div>
             <video
               muted
               playsinline
@@ -92,80 +127,83 @@
 </style>
 
 <script>
-import Swiper from 'swiper/bundle';
+import Swiper from "swiper/bundle";
 
 export const mainSliderMobileVideo = [
   {
     src:
-      'https://images.samsung.com/is/content/samsung/assets/uk/home/P6-Home-KV_WW9800T_MO_200807.mp4',
+      "https://images.samsung.com/is/content/samsung/assets/uk/home/P6-Home-KV_WW9800T_MO_200807.mp4",
   },
   {
     src:
-      'https://images.samsung.com/is/content/samsung/assets/uk/home/S20_FE_Home_MainCarousel_Animated_KV_6Colors_720X10801.mp4',
+      "https://images.samsung.com/is/content/samsung/assets/uk/home/S20_FE_Home_MainCarousel_Animated_KV_6Colors_720X10801.mp4",
   },
   {
     src:
-      'https://images.samsung.com/is/content/samsung/assets/uk/p6_gro1/p6_initial_home/homekv_vd_qled_mo_720x1080.mp4',
+      "https://images.samsung.com/is/content/samsung/assets/uk/p6_gro1/p6_initial_home/homekv_vd_qled_mo_720x1080.mp4",
   },
   {
     src:
-      'https://images.samsung.com/is/content/samsung/assets/uk/home/P6-Home-KV_WW9800T_MO_200807.mp4',
+      "https://images.samsung.com/is/content/samsung/assets/uk/home/P6-Home-KV_WW9800T_MO_200807.mp4",
   },
 ];
 
 export const mainSliderWebVideo = [
   {
     src:
-      'https://images.samsung.com/is/content/samsung/assets/uk/home/P6-Home-KV_WW9800T_PC_200807.mp4',
+      "https://images.samsung.com/is/content/samsung/assets/uk/home/P6-Home-KV_WW9800T_PC_200807.mp4",
   },
   {
     src:
-      'https://images.samsung.com/is/content/samsung/assets/uk/home/S20_FE_Home_MainCarousel_Animated_KV_6Colors_1440X6401.mp4',
+      "https://images.samsung.com/is/content/samsung/assets/uk/home/S20_FE_Home_MainCarousel_Animated_KV_6Colors_1440X6401.mp4",
   },
   {
     src:
-      'https://images.samsung.com/is/content/samsung/assets/uk/p6_gro1/p6_initial_home/200616_Unrivaled_QLED_8K_PC_1440x640.mp4',
+      "https://images.samsung.com/is/content/samsung/assets/uk/p6_gro1/p6_initial_home/200616_Unrivaled_QLED_8K_PC_1440x640.mp4",
   },
   {
     src:
-      'https://images.samsung.com/is/content/samsung/assets/uk/home/P6-Home-KV_WW9800T_PC_200807.mp4',
+      "https://images.samsung.com/is/content/samsung/assets/uk/home/P6-Home-KV_WW9800T_PC_200807.mp4",
   },
 ];
 
 export default {
   created() {
     this.$nextTick(() => {
-      this.mainSlider = new Swiper(this.$refs.mainSlider, this.mainSliderOption);
+      this.mainSlider = new Swiper(
+        this.$refs.mainSlider,
+        this.mainSliderOption
+      );
       this.resizeBullet();
       this.autoPlaySlider();
       this.onChangeSlideVideoSet();
       this.responsiveVideo();
       this.sliderFontColorChange();
     });
-    window.addEventListener('resize', this.init);
+    window.addEventListener("resize", this.init);
   },
   data() {
     return {
       timer: null,
       playToggle: false,
       mainSlider: null,
-      whiteColor: true,
+      blackColor: false,
       mainSliderOption: {
-        direction: 'horizontal',
+        direction: "horizontal",
         loop: true,
-        effect: 'fade',
+        effect: "fade",
         preventClicks: false,
         preventClicksPropagation: false,
         slideToClickedSlide: true,
-        touchEventsTarget: 'wrapper',
+        touchEventsTarget: "wrapper",
         navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
         },
         pagination: {
-          el: '.swiper-pagination',
+          el: ".swiper-pagination",
           clickable: true,
-          renderBullet: function(index, className) {
+          renderBullet: function (index, className) {
             return `<div class=${className}>
                     <div class='activebar'>
                     </div>
@@ -191,16 +229,18 @@ export default {
   mounted() {},
 
   beforeDestroy() {
-    window.removeEventListener('resize', this.init);
+    window.removeEventListener("resize", this.init);
     window.clearInterval(this.timer);
   },
 
   methods: {
     onChangeSlideVideoSet() {
-      this.mainSlider.on('slideChangeTransitionStart', () => {
+      this.mainSlider.on("slideChangeTransitionStart", () => {
         const mainSlider = this.$refs.mainSlider;
-        const videos = mainSlider.querySelectorAll('video');
-        const activeVideoFind = mainSlider.querySelector('.swiper-slide-active video');
+        const videos = mainSlider.querySelectorAll("video");
+        const activeVideoFind = mainSlider.querySelector(
+          ".swiper-slide-active video"
+        );
 
         if (activeVideoFind) {
           this.activeVideo = activeVideoFind;
@@ -225,7 +265,7 @@ export default {
 
     resizeBullet() {
       this.mainSliderBulletWidth = this.$refs.mainSlider.querySelector(
-        '.swiper-pagination-bullet-active'
+        ".swiper-pagination-bullet-active"
       ).clientWidth;
       return this.mainSliderBulletWidth;
     },
@@ -233,16 +273,17 @@ export default {
     canAutoPlayWidthNotPaused(nowBulletWidth) {
       return (
         nowBulletWidth > 0 &&
-        nowBulletWidth >= this.mainSliderBulletWidth - 1 &&
+        nowBulletWidth >= this.mainSliderBulletWidth - 2 &&
         this.playToggle == false
       );
     },
 
     autoPlaySlider() {
       this.timer = setInterval(() => {
-        const nowBulletWidth = this.$refs.mainSlider.querySelector(
-          '.swiper-pagination-bullet-active .activebar'
+        const nowBulletWidth = document.querySelector(
+          ".swiper-pagination-bullet-active .activebar"
         ).clientWidth;
+
         if (nowBulletWidth === undefined) window.clearInterval(this.timer);
         if (this.canAutoPlayWidthNotPaused(nowBulletWidth)) {
           return this.mainSlider.slideNext(500);
@@ -250,16 +291,18 @@ export default {
       }, 280);
     },
 
-    sliderFontColorChange() {
-      this.mainSlider.on('slideChangeTransitionStart', function() {
-        if (this.realIndex === 3) {
-          this.whiteColor = false;
-          console.log(this.whiteColor);
+    sliderFontColorChange(target) {
+      this.mainSlider.on("slideChangeTransitionStart", () => {
+        const index = this.mainSlider.realIndex;
+        if (index === 2 || index === 4) {
+          this.blackColor = true;
         } else {
-          this.whiteColor = true;
+          this.blackColor = false;
+          console.log(2);
         }
       });
     },
+
     toggleSliderPlayPause(e) {
       e.stopPropagation();
       if (this.playToggle === false) {
@@ -273,10 +316,10 @@ export default {
     },
 
     responsiveVideoSet(videos, nowBullet, srcArray, device) {
-      const activebar = 'activebar';
+      const activebar = "activebar";
       videos.forEach((video, i) => {
-        if (video.getAttribute('data-media') === device) return;
-        video.setAttribute('data-media', device);
+        if (video.getAttribute("data-media") === device) return;
+        video.setAttribute("data-media", device);
         video.src = srcArray[i].src;
         video.load();
         nowBullet.classList.remove(activebar);
@@ -287,12 +330,19 @@ export default {
 
     responsiveVideo() {
       const windowInnerWidth = window.innerWidth;
-      const videos = document.querySelectorAll('video');
-      const nowBullet = document.querySelector('.swiper-pagination-bullet-active .activebar');
+      const videos = document.querySelectorAll("video");
+      const nowBullet = document.querySelector(
+        ".swiper-pagination-bullet-active .activebar"
+      );
       if (windowInnerWidth > 767) {
-        this.responsiveVideoSet(videos, nowBullet, mainSliderWebVideo, 'web');
+        this.responsiveVideoSet(videos, nowBullet, mainSliderWebVideo, "web");
       } else {
-        this.responsiveVideoSet(videos, nowBullet, mainSliderMobileVideo, 'mobile');
+        this.responsiveVideoSet(
+          videos,
+          nowBullet,
+          mainSliderMobileVideo,
+          "mobile"
+        );
       }
     },
 

@@ -8,7 +8,7 @@
               <!-- <img src="../assets/mypage/image_product_watchactive_2.png" /> -->
               <div class="swiper-slide-inner">
                 <div class="text">
-                  <h4 class="bold">
+                  <h4 class="sansbold">
                     The Sero Navy Blue
                     <br />+ The Sero wheel
                   </h4>
@@ -30,9 +30,7 @@
               <!-- <img src="../assets/mypage/image_product_watchactive_2.png" /> -->
               <div class="swiper-slide-inner">
                 <div class="text">
-                  <h4 class="bold">
-                    Galaxy Watch Active 2
-                  </h4>
+                  <h4 class="sansbold">Galaxy Watch Active 2</h4>
                 </div>
                 <figure>
                   <img src="../../assets/mypage/image_product_watchactive_2.png" />
@@ -51,9 +49,7 @@
               <!-- <img src="../assets/mypage/image_product_watchactive_2.png" /> -->
               <div class="swiper-slide-inner">
                 <div class="text">
-                  <h4 class="bold">
-                    Galaxy Buds Live
-                  </h4>
+                  <h4 class="sansbold">Galaxy Buds Live</h4>
                 </div>
                 <figure>
                   <img src="../../assets/mypage/image_product_buds.png" />
@@ -79,8 +75,10 @@
         </div>
       </div>
       <div class="swiper-pagination_wrapper web">
-        <div class="swiper-pagination"></div>
-        <div>정지</div>
+        <div class="swiper-pagination_inner">
+          <div class="swiper-pagination"></div>
+          <div class="pause"></div>
+        </div>
       </div>
       <div class="swiper-button-prev"></div>
       <div class="swiper-button-next"></div>
@@ -89,7 +87,7 @@
 </template>
 
 <script>
-import Swiper from 'swiper/bundle';
+import Swiper from "swiper/bundle";
 export default {
   created() {
     this.$nextTick(() => {
@@ -98,25 +96,25 @@ export default {
         preventClicks: true,
         preventClicksPropagation: true,
         slideToClickedSlide: true,
-        direction: 'vertical',
+        direction: "vertical",
         spaceBetween: 24,
-        slidesPerView: 'auto',
+        slidesPerView: "auto",
         allowSlideNext: false,
         allowSlidePrev: false,
         navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
         },
         pagination: {
-          el: '.swiper-pagination',
+          el: ".swiper-pagination",
           clickable: true,
-          renderBullet: function(index, className) {
+          renderBullet: function (index, className) {
             return `<div class=${className}></div>`;
           },
         },
         breakpoints: {
           768: {
-            direction: 'horizontal',
+            direction: "horizontal",
             slidesPerView: 3,
           },
         },

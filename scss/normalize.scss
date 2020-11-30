@@ -92,7 +92,7 @@ textarea,
 select,
 button,
 table {
-  font-family: 'SamsungOne', 'Malgun-Gothic', dotum, '돋움', sans-serif;
+  font-family: 'SamsungOne', 'SamsungOneSharpSans', 'Malgun-Gothic', dotum, '돋움', sans-serif;
   color: #000;
   font-size: 16px;
   line-height: 1.5;
@@ -252,17 +252,23 @@ h6 {
 @font-face {
   font-family: 'SamsungOne';
   font-weight: 400;
-  src: url('../assets/font/SamsungOneUI-400.845b6745.woff2') format('woff2');
+  src: url('../assets/font/SamsungOneKorean-400_v1.2_hinted_20180830.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'SamsungOne';
   font-weight: 600;
-  src: url('../assets/font/SamsungOneUI-600.65950013.woff') format('woff');
+  src: url('../assets/font/SamsungOneKorean-600_v1.2_hinted_20180830.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'SamsungOne';
   font-weight: 700;
-  src: url('../assets/font/SamsungOneUI-700V3.0.367e5d62.woff2') format('woff2');
+  src: url('../assets/font/SamsungOneKorean-700_v1.2_hinted_20180830.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'SamsungOneSharpSans';
+  font-weight: bold;
+  src: url('../assets/font/SamsungSharpSans-Bold.woff2') format('woff2');
 }

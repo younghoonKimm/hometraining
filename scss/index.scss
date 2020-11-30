@@ -14,6 +14,11 @@
   font-weight: 700 !important;
 }
 
+.sansbold {
+  font-family: 'SamsungOneSharpSans';
+  font-weight: bold !important;
+}
+
 .section_inner {
   @include sectioninner;
 }
@@ -976,15 +981,9 @@ section {
 .mobile_img {
   display: none !important;
 }
-@include B767 {
-  .web,
-  .web_img {
-    display: none !important;
-  }
-  .mobile,
-  .mobile_img {
-    display: block !important;
-  }
+
+.web_inline {
+  display: inline-block !important;
 }
 
 #footer {
@@ -1035,57 +1034,6 @@ section {
   }
 }
 
-@include mobile {
-  #footer {
-    position: relative;
-
-    .footer-inner {
-      position: relative;
-      margin: 0 auto;
-      max-width: 1440px;
-      border-top: 1px solid #d9d9d9;
-      border-bottom: 1px solid #d9d9d9;
-      .footer_list {
-        display: flex;
-        flex-direction: column;
-        > li {
-          flex: 1;
-          padding: 0 24px 24px;
-          border-right: 1px solid #d9d9d9;
-          &:last-child {
-            border-right: none;
-          }
-          &.over {
-            flex: 2;
-            > ul {
-              display: none;
-            }
-          }
-          ul {
-            display: none;
-            float: left;
-          }
-          h3 {
-            display: block;
-            height: 56px;
-            padding: 16px 0;
-            font-size: 18px;
-            line-height: 1.33;
-            font-weight: 700;
-          }
-          a {
-            display: block;
-            padding: 7px 24px;
-            font-size: 14px;
-            line-height: 1.33;
-            color: #000;
-          }
-        }
-      }
-    }
-  }
-}
-
 .router_path_wrapper {
   width: 100%;
   .router_path_inner {
@@ -1096,7 +1044,25 @@ section {
   }
 }
 
+@include B768-1440 {
+  .section_inner {
+    max-width: unset;
+    width: 100%;
+  }
+}
+
 @include B767 {
+  .web,
+  .web_img {
+    display: none !important;
+  }
+  .mobile,
+  .mobile_img {
+    display: block !important;
+  }
+  .web_inline {
+    display: none !important;
+  }
   #header {
     border-bottom: none;
     .icons {

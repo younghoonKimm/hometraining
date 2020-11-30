@@ -23,7 +23,7 @@
                   <li>
                     <a href="javascript:;" class="product_close"></a>
                     <figure>
-                      <img src="../assets/card/image_product_cart_premiummembership.png" alt="" />
+                      <img src="../assets/card/image_product_cart_premiummembership.png" alt />
                     </figure>
                     <div class="cart_product_desc">
                       <h4>Samsung Home Fitness Service</h4>
@@ -38,12 +38,10 @@
                       <div class="option">1</div>
                     </div>
                     <figure>
-                      <img src="../assets/card/image_product_cart_theserow_buds.png" alt="" />
+                      <img src="../assets/card/image_product_cart_theserow_buds.png" alt />
                     </figure>
                     <div class="cart_product_desc">
-                      <h5 class="web">
-                        Buy together to Save even more when you buy (KQ43LST05B-MS)
-                      </h5>
+                      <h5 class="web">Buy together to Save even more when you buy (KQ43LST05B-MS)</h5>
                       <h4>The Sero Space White + Galaxy Buds Live</h4>
                       <span>KQ43LST05B-MS</span>
                       <p class="price">$1,988.00</p>
@@ -59,34 +57,65 @@
                 </div>
                 <div class="cost_option mobile">
                   <ul class="cost_list">
-                    <li><span>Subtotal</span><span class="bold">$ 2,066.00</span></li>
-                    <li><span>Discount</span><span class="bold">$ 0</span></li>
-                    <li><span>Shipping</span><span class="bold">$ 0</span></li>
-                    <li><span>Estimated taxi</span><span class="bold">$ 0</span></li>
+                    <li>
+                      <span>Subtotal</span>
+                      <span class="bold">$ 2,066.00</span>
+                    </li>
+                    <li>
+                      <span>Discount</span>
+                      <span class="bold">$ 0</span>
+                    </li>
+                    <li>
+                      <span>Shipping</span>
+                      <span class="bold">$ 0</span>
+                    </li>
+                    <li>
+                      <span>Estimated taxi</span>
+                      <span class="bold">$ 0</span>
+                    </li>
                   </ul>
                 </div>
                 <div class="cost_box">
-                  <h4 class="bold">Total $ 2,066.00</h4>
+                  <h4 class="sansbold">Total $ 2,066.00</h4>
                   <p>(VAT Included)</p>
-                  <button type="submit">Checkout</button>
-                  <a class="save_btn bold" href="javascript"
-                    ><i class="mail_icon"></i> Save this cart</a
-                  >
+                  <button type="button" @click="$router.push('/order')">Checkout</button>
+                  <a class="save_btn bold" href="javascript">
+                    <i class="mail_icon"></i> Save this cart
+                  </a>
                 </div>
                 <div class="cost_option web">
                   <ul class="cost_list">
-                    <li><span>Subtotal</span><span class="bold">$ 2,066.00</span></li>
-                    <li><span>Discount</span><span class="bold">$ 0</span></li>
-                    <li><span>Shipping</span><span class="bold">$ 0</span></li>
-                    <li><span>Estimated taxi</span><span class="bold">$ 0</span></li>
+                    <li>
+                      <span>Subtotal</span>
+                      <span class="bold">$ 2,066.00</span>
+                    </li>
+                    <li>
+                      <span>Discount</span>
+                      <span class="bold">$ 0</span>
+                    </li>
+                    <li>
+                      <span>Shipping</span>
+                      <span class="bold">$ 0</span>
+                    </li>
+                    <li>
+                      <span>Estimated taxi</span>
+                      <span class="bold">$ 0</span>
+                    </li>
                   </ul>
                 </div>
               </div>
               <div class="policy_wrapper">
                 By submitting your order, you agree to the
-                <a class="link" href="javascript:;">Terms & conditions</a> and we <br />will use
+                <a
+                  class="link"
+                  href="javascript:;"
+                >Terms & conditions</a> and we
+                <br />will use
                 your personal data in accordance with our
-                <a class="link" href="javascript:;">Privacy policy.</a>
+                <a
+                  class="link"
+                  href="javascript:;"
+                >Privacy policy.</a>
 
                 <p class="web">Order ID : QS929201</p>
               </div>
@@ -133,8 +162,14 @@
             <p>Any questions, call 0330 7267 467</p>
 
             <p>
-              <span>What is your policy regarding <a href="javascript:;">returns?</a></span>
-              <span> When can I expect my <a href="javascript:;">order?</a> </span>
+              <span>
+                What is your policy regarding
+                <a href="javascript:;">returns?</a>
+              </span>
+              <span>
+                When can I expect my
+                <a href="javascript:;">order?</a>
+              </span>
             </p>
 
             <p>Copyright© 1995-2019 SAMSUNG. All rights reserved</p>
@@ -144,17 +179,17 @@
           <div class="subject_inner">
             <span>
               Subject to Status. Terms and Conditions apply. Samsung Electronics UK LTD acts as a
-              broker and offers finance from a restricted range of finance providers.</span
-            >
+              broker and offers finance from a restricted range of finance providers.
+            </span>
             <span>
               PayPal Credit is a trading name of PayPal (Europe) S.à r.l. et Cie, S.C.A., 22-24
-              Boulevard Royal L-2449, Luxembourg.</span
-            >
-            <span> Representative Example </span>
-            <span
-              >£1,200 Assumed Credit Limit Representative 19.9% APR (variable).19.9% pa Purchase
-              Rate (variable).</span
-            >
+              Boulevard Royal L-2449, Luxembourg.
+            </span>
+            <span>Representative Example</span>
+            <span>
+              £1,200 Assumed Credit Limit Representative 19.9% APR (variable).19.9% pa Purchase
+              Rate (variable).
+            </span>
           </div>
         </div>
       </article>
@@ -163,10 +198,10 @@
 </template>
 
 <script>
-import { Fragment } from 'vue-fragment';
-import { dummyProduct } from '../config';
-import './MyScriptions.scss';
-import ProductSlider from '../components/slider/ProductSlider';
+import { Fragment } from "vue-fragment";
+import { dummyProduct } from "../config";
+import "./MyScriptions.scss";
+import ProductSlider from "../components/slider/ProductSlider";
 
 export default {
   created() {},
@@ -182,14 +217,14 @@ export default {
 
   methods: {
     onSubmit() {
-      this.$store.dispatch('login/CHANGERESERVATION');
+      this.$store.dispatch("login/CHANGERESERVATION");
     },
   },
 };
 </script>
 
 <style lang="scss">
-@import 'scss/mixins.scss';
+@import "scss/mixins.scss";
 .notice_wrapper {
   position: sticky;
   top: 0;
@@ -259,7 +294,7 @@ input {
       display: block;
       width: 16px;
       height: 16px;
-      background-image: url('../assets/card/icon_regular_action_cancel_close.png');
+      background-image: url("../assets/card/icon_regular_action_cancel_close.png");
       background-size: cover;
     }
     .select_option_btn {
@@ -273,7 +308,7 @@ input {
       &::before {
         position: absolute;
         top: 10px;
-        content: '';
+        content: "";
         display: block;
         width: 12px;
         height: 12px;
@@ -283,13 +318,13 @@ input {
       &::after {
         right: 8px;
 
-        background-image: url('../assets/card/icon_bold_action_plus.png');
+        background-image: url("../assets/card/icon_bold_action_plus.png");
       }
 
       &::before {
         left: 8px;
 
-        background-image: url('../assets/card/icon_bold_action_minus.png');
+        background-image: url("../assets/card/icon_bold_action_minus.png");
       }
 
       .option {
@@ -316,12 +351,12 @@ input {
     }
     .cart_product_desc {
       margin-left: 24px;
-      font-weight: bold;
+      @include SansBold;
       h5 {
         font-size: 14px;
       }
       h4 {
-        font-weight: bold;
+        @include SansBold;
         font-size: 16px;
       }
       span {
@@ -385,7 +420,7 @@ input {
         display: inline-block;
         width: 16px;
         height: 16px;
-        background-image: url('../assets/icons/icon_bold_communication_email_outline.png');
+        background-image: url("../assets/icons/icon_bold_communication_email_outline.png");
         background-size: cover;
       }
     }
@@ -477,8 +512,7 @@ input {
 
 @include B767 {
   .notice_wrapper {
-    font-size: 12px;
-    text-align: center;
+    font-size: 3.33333vw;
     span {
       display: block;
     }
@@ -582,6 +616,7 @@ input {
         p {
           font-size: 3.33333333vw;
           &.price {
+            white-space: nowrap;
             font-size: 3.888888888vw;
           }
         }
@@ -612,13 +647,10 @@ input {
           font-size: 2.5vw;
         }
         button {
-          padding: 8px 118.5px;
-          margin-top: 16px;
-          font-size: 14px;
-          background: #2189ff;
-          color: #fff;
-          font-weight: 700;
-          border-radius: 20px;
+          padding: 2.66666vw 33.555555vw;
+          margin-top: 4.44444vw;
+          font-size: 3.666666vw;
+          border-radius: 6.5vw;
         }
       }
       .save_btn {
@@ -633,7 +665,7 @@ input {
           display: inline-block;
           width: 16px;
           height: 16px;
-          background-image: url('../assets/icons/icon_bold_communication_email_outline.png');
+          background-image: url("../assets/icons/icon_bold_communication_email_outline.png");
           background-size: cover;
         }
       }

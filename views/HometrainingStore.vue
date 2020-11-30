@@ -1,12 +1,11 @@
 <template>
   <Fragment>
     <nav class="store_nav">
-      <div class="nav_option_wrapper ">
-        <div class="option_title bold">
-          Premium Membership, 1:8 Group Training Class Subscription
-        </div>
+      <div class="nav_option_wrapper">
+        <div class="option_title sansbold">Premium Membership, 1:8 Group Training Class Subscription</div>
         <div class="option_costs bold">{{ setRealCost() }}</div>
-        <div class="option_cart" @click.prevent="onSubmit()">
+        <div class="option_arrow_btn mobile"></div>
+        <div class="option_cart option_cart_top" @click.prevent="onSubmit()">
           <a href="javascript:;" class="bold">Add to cart</a>
         </div>
       </div>
@@ -29,8 +28,8 @@
               <a class="link" href="javascript:;"></a>
               <a class="heart" href="javascript:;"></a>
             </div>
-            <h4 class="bold">Samsung Home Fitness Service</h4>
-            <p class="bold">Premium membership</p>
+            <h4 class="sansbold">Samsung Home Fitness Service</h4>
+            <p class="sansbold">Premium membership</p>
             <span class="product_id">DF10T9701BT7Q1</span>
             <div class="star_wrapper">
               <ul>
@@ -88,10 +87,10 @@
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <div class="swiper-slide-inner">
-                    <div class="title web">
+                    <div class="title web_title">
                       <h5 class="bold">Daily Juice 7Days</h5>
                     </div>
-                    <div class="title mobile">
+                    <div class="title mobile_title">
                       <h5 class="bold">
                         Daily Juice
                         <br />7Days
@@ -107,16 +106,14 @@
                 </div>
                 <div class="swiper-slide" @click="clickable" ref="checkedSwiper">
                   <div class="swiper-slide-inner">
-                    <div class="title web">
+                    <div class="title bold web_title">
                       <h5 class="bold">
                         The Sero Space White
                         <br />+ Galaxy Buds Live
                       </h5>
                     </div>
-                    <div class="title mobile">
-                      <h5 class="bold">
-                        The Sero Space White + Galaxy Buds Live
-                      </h5>
+                    <div class="title mobile_title">
+                      <h5 class="bold">The Sero Space White + Galaxy Buds Live</h5>
                     </div>
                     <span class="bold">KQ43LST05B-MS</span>
                     <figure>
@@ -143,7 +140,7 @@
       </section>
       <section class="section_second">
         <div class="section_second_inner section_inner">
-          <h3 class="bold">Online Coaching</h3>
+          <h3 class="sansbold">Online Coaching</h3>
           <p>
             You can get live feedback from the best trainers as well as the
             <br />workout analysis through wearable device.
@@ -154,7 +151,7 @@
           </figure>
         </div>
         <div class="section_second_inner section_inner">
-          <h3 class="bold">Let's get fit together</h3>
+          <h3 class="sansbold">Let's get fit together</h3>
           <p>
             You can virtually train with others who share similar fitness goals to boost your
             motivation.
@@ -175,46 +172,44 @@
 .cardsection {
   height: 200px;
 }
-
-article {
-  position: fixed;
-  bottom: 0;
-  z-index: 7;
-}
-.section_second_product_slider .swiper-slide {
-  width: 500px;
-}
 </style>
 <script>
-import { mapState, mapGetters, mapMutations, mapActions } from 'vuex';
-import Swiper from 'swiper/bundle';
-import { Fragment } from 'vue-fragment';
-import './Hometraining.scss';
-import { dummycost, dummyProduct } from '../config';
+import { mapState, mapGetters, mapMutations, mapActions } from "vuex";
+import Swiper from "swiper/bundle";
+import { Fragment } from "vue-fragment";
+import "./Hometraining.scss";
+import { dummycost, dummyProduct } from "../config";
 
-const dummy = ['베이직', '베이직', '베이직', '베이직', '프리미엄', '1:1트레이닝'];
+const dummy = [
+  "베이직",
+  "베이직",
+  "베이직",
+  "베이직",
+  "프리미엄",
+  "1:1트레이닝",
+];
 
 export default {
   created() {
     this.$nextTick(() => {
       this.nav_slider = new Swiper(this.$refs.navSlider, {
-        direction: 'horizontal',
+        direction: "horizontal",
         touchStartPreventDefault: true,
         preventClicks: true,
         preventClicksPropagation: true,
         slideToClickedSlide: false,
-        touchEventsTarget: 'wrapper',
-        slidesPerView: 'auto',
+        touchEventsTarget: "wrapper",
+        slidesPerView: "auto",
         spaceBetween: 16,
         scrollbar: {
-          el: '.swiper-scrollbar',
+          el: ".swiper-scrollbar",
           draggable: true,
           snapOnRelease: true,
           dragSize: 171,
         },
         breakpoints: {
           768: {
-            slidesPerView: 'auto',
+            slidesPerView: "auto",
             spaceBetween: 24,
           },
         },
@@ -261,11 +256,11 @@ export default {
     },
 
     onSubmit() {
-      return this.$router.push('/cart');
+      return this.$router.push("/cart");
     },
     clickable(i) {
-      this.$refs.checkedSwiper.classList.toggle('active');
-      if (this.$refs.checkedSwiper.classList.contains('active')) {
+      this.$refs.checkedSwiper.classList.toggle("active");
+      if (this.$refs.checkedSwiper.classList.contains("active")) {
         this.productCost = 1782.16;
       } else {
         this.productCost = 0;
@@ -273,7 +268,9 @@ export default {
     },
 
     setRealCost() {
-      return this.productCost === 0 ? '$' + this.RealCost + '.00' : '$' + this.RealCost;
+      return this.productCost === 0
+        ? "$" + this.RealCost + ".00"
+        : "$" + this.RealCost;
     },
   },
 };

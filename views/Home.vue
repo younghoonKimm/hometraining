@@ -56,8 +56,7 @@
       </div>
       <div class="third-section-gallery">
         <ul class="third-section-nav">
-          <li class="active">Galaxy Z Flip</li>
-          <li>QuickDrive™</li>
+          <li class="active">QuickDrive™</li>
           <li>Family Hub™</li>
           <li>AirDresser</li>
           <li>SmartThings</li>
@@ -71,8 +70,8 @@
           <span>Steam clean to refresh the laundry between washes</span>
         </div>
         <div class="button_wrapper">
-          <button type="button">Meet Galaxy Z Flip</button>
-          <button type="button">Pre-order now</button>
+          <button type="button">See all Washing Machine</button>
+          <button type="button">Learn more</button>
         </div>
       </div>
     </section>
@@ -92,19 +91,26 @@
         <div class="flex_gallery">
           <div class="left">
             <figure>
-              <img class="web" src="../assets/main/image_z_flip_thom_browne_edition.png" alt="" />
-              <img
-                class="mobile"
-                src="../assets/main/image_z_flip_thom_browne_edition_mo.png"
-                alt=""
-              />
+              <div class="new_product bold web">NEW</div>
+              <img class="web" src="../assets/main/image_z_flip_thom_browne_edition.png" alt />
+              <img class="mobile" src="../assets/main/image_z_flip_thom_browne_edition_mo.png" alt />
             </figure>
+            <div class="left_desc">
+              <div class="mobile_new_product bold">NEW</div>
+              <p>
+                Galaxy Z Flip
+                <br />Thom Browne Edition
+              </p>
+              <span class="cost mobile">$2,280.00 or $95.00/mo</span>
+              <button class="web_inline" type="button">Buy now</button>
+            </div>
           </div>
           <div class="right">
             <div class="img_wrapper">
+              <div class="new_product bold">NEW</div>
               <figure>
-                <img class="web" src="../assets/main/image_product_zfilp.png" alt="" />
-                <img class="mobile" src="../assets/main/image_product_zfilp_mo.png" alt="" />
+                <img class="web" src="../assets/main/image_product_zfilp.png" alt />
+                <img class="mobile" src="../assets/main/image_product_zfilp_mo.png" alt />
               </figure>
               <div class="img_desc">
                 <p>Galaxy Z Flip</p>
@@ -112,9 +118,10 @@
               </div>
             </div>
             <div class="img_wrapper">
+              <div class="new_product bold">NEW</div>
               <figure>
-                <img class="web" src="../assets/main/image_product_quickdrive.png" alt="" />
-                <img class="mobile" src="../assets/main/image_productcard_da_2.png" alt="" />
+                <img class="web" src="../assets/main/image_product_quickdrive.png" alt />
+                <img class="mobile" src="../assets/main/image_productcard_da_2.png" alt />
               </figure>
               <div class="img_desc">
                 <p>QuickDrive™</p>
@@ -122,9 +129,10 @@
               </div>
             </div>
             <div class="img_wrapper">
+              <div class="new_product bold">NEW</div>
               <figure>
-                <img class="web" src="../assets/main/image_product_ref.png" alt="" />
-                <img class="mobile" src="../assets/main/image_productcard_da_1.png" alt="" />
+                <img class="web" src="../assets/main/image_product_ref.png" alt />
+                <img class="mobile" src="../assets/main/image_productcard_da_1.png" alt />
               </figure>
               <div class="img_desc">
                 <p>Family Hub™ Refrigerator</p>
@@ -132,9 +140,10 @@
               </div>
             </div>
             <div class="img_wrapper">
+              <div class="new_product bold">NEW</div>
               <figure>
-                <img class="web" src="../assets/main/image_product_theframe.png" alt="" />
-                <img class="mobile" src="../assets/main/image_product_theframe_mo.png" alt="" />
+                <img class="web" src="../assets/main/image_product_theframe.png" alt />
+                <img class="mobile" src="../assets/main/image_product_theframe_mo.png" alt />
               </figure>
               <div class="img_desc">
                 <p>The Frame</p>
@@ -148,10 +157,10 @@
     <section class="main-section_inner section_inner">
       <div class="title_wrapper">
         <h3 class="title">Explore your Galaxy</h3>
-        <span
-          >What's waiting to be discovered?
-          <a class="underline" href="javascript:;"> Experience more</a></span
-        >
+        <span>
+          What's waiting to be discovered?
+          <a class="underline" href="javascript:;">Experience more</a>
+        </span>
       </div>
       <div class="sub-slider_wrapper">
         <div class="sub-slider_inner">
@@ -160,9 +169,10 @@
               <li>
                 <div class="number">01</div>
                 <div class="desc_wrapper active">
-                  <div class="title" @mouseenter="subswiperSlide(0)">
-                    Digging for Magical Mysteries in Art - Part I
-                  </div>
+                  <div
+                    class="title"
+                    @mouseenter="subswiperSlide(0)"
+                  >Digging for Magical Mysteries in Art - Part I</div>
                   <p>Art that tells a story: what's behind famous paintings and artists.</p>
                   <a href="javascript:;" class="learn_more">Learn more</a>
                 </div>
@@ -170,41 +180,29 @@
               <li>
                 <div class="number">02</div>
                 <div class="desc_wrapper">
-                  <div class="title" @mouseenter="subswiperSlide(1)">
-                    Tablet-Powered Schedule Hacks
-                  </div>
-                  <p>
-                    See what the K-pop sensations get up to when they’re not performing #withGalaxy.
-                  </p>
+                  <div class="title" @mouseenter="subswiperSlide(1)">Tablet-Powered Schedule Hacks</div>
+                  <p>See what the K-pop sensations get up to when they’re not performing #withGalaxy.</p>
                   <a href="javascript:;" class="learn_more">Learn more</a>
                 </div>
               </li>
               <li>
                 <div class="number">03</div>
                 <div class="desc_wrapper">
-                  <div class="title" @mouseenter="subswiperSlide(2)">
-                    5 Simple Time-Saving Tips
-                  </div>
-                  <p>
-                    Tips to designing a unique space and finding your own style through art.
-                  </p>
+                  <div class="title" @mouseenter="subswiperSlide(2)">5 Simple Time-Saving Tips</div>
+                  <p>Tips to designing a unique space and finding your own style through art.</p>
                   <a href="javascript:;" class="learn_more">Learn more</a>
                 </div>
               </li>
               <li>
                 <div class="number">04</div>
                 <div class="desc_wrapper">
-                  <div class="title">
-                    Samsung KX: The Home of Innovation
-                  </div>
+                  <div class="title">Samsung KX: The Home of Innovation</div>
                 </div>
               </li>
               <li>
                 <div class="number">05</div>
                 <div class="desc_wrapper">
-                  <div class="title">
-                    Missions from Successful Young Entrepreneurs
-                  </div>
+                  <div class="title">Missions from Successful Young Entrepreneurs</div>
                 </div>
               </li>
             </ul>
@@ -212,48 +210,48 @@
           <div class="right">
             <!-- <figure class="">
               <img src="../assets/main/image_explore_01.png" alt="" />
-            </figure> -->
+            </figure>-->
             <div class="mobile-slider-wrapper">
               <div class="mobile-slider swiper-container" ref="mobileSlider">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
-                    <img src="../assets/main/image_explore_01.png" alt="" />
+                    <img src="../assets/main/image_explore_01.png" alt />
                     <div class="mobile swiper_desc">
                       <h5>
-                        Digging for Magical <br />
-                        Mysteries in Art - Part I
+                        Digging for Magical
+                        <br />Mysteries in Art - Part I
                       </h5>
                       <p>
-                        Art that tells a story: what's behind famous <br />
-                        paintings and artists.
+                        Art that tells a story: what's behind famous
+                        <br />paintings and artists.
                       </p>
                       <a class="learn_more" href="javascript:;">Learn more</a>
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <img src="../assets/main/image_explore_02.png" alt="" />
+                    <img src="../assets/main/image_explore_02.png" alt />
                     <div class="mobile swiper_desc">
                       <h5>
-                        Up Close and Behind <br />
-                        the Scenes With BTS
+                        Up Close and Behind
+                        <br />the Scenes With BTS
                       </h5>
                       <p>
-                        See what the K-pop sensations get up to when <br />
-                        they’re not performing #withGalaxy.
+                        See what the K-pop sensations get up to when
+                        <br />they’re not performing #withGalaxy.
                       </p>
                       <a class="learn_more" href="javascript:;">Learn more</a>
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <img src="../assets/main/image_explore_03.png" alt="" />
+                    <img src="../assets/main/image_explore_03.png" alt />
                     <div class="mobile swiper_desc">
                       <h5>
-                        Design Your Home and <br />
-                        Redefine Your Style
+                        Design Your Home and
+                        <br />Redefine Your Style
                       </h5>
                       <p>
-                        Tips to designing a unique space and finding your <br />
-                        own style through art.
+                        Tips to designing a unique space and finding your
+                        <br />own style through art.
                       </p>
                       <a class="learn_more" href="javascript:;">Learn more</a>
                     </div>
@@ -293,9 +291,9 @@
   </main>
 </template>
 <script>
-import Swiper from 'swiper/bundle';
-import MainSlider from '../components/slider/MainSlider';
-import './Home.scss';
+import Swiper from "swiper/bundle";
+import MainSlider from "../components/slider/MainSlider";
+import "./Home.scss";
 
 export default {
   created() {
@@ -303,12 +301,12 @@ export default {
     // const reservation = this.$store.state.login.reservation;
     this.$nextTick(() => {
       this.mobile_slider = new Swiper(this.$refs.mobileSlider, {
-        direction: 'horizontal',
+        direction: "horizontal",
         loop: false,
-        slidesPerView: 'auto',
+        slidesPerView: "auto",
         spaceBetween: 16,
         pagination: {
-          el: '.swiper-pagination',
+          el: ".swiper-pagination",
           clickable: true,
         },
         breakpoints: {
@@ -318,7 +316,7 @@ export default {
         },
       });
     });
-    this.$store.dispatch('login/RESERVATIONINIT');
+    this.$store.dispatch("login/RESERVATIONINIT");
   },
   components: {
     MainSlider,
@@ -330,10 +328,10 @@ export default {
   },
   methods: {
     subswiperSlide(i) {
-      const desc_wrapper = document.querySelector('.desc_wrapper.active');
+      const desc_wrapper = document.querySelector(".desc_wrapper.active");
 
-      desc_wrapper.classList.remove('active');
-      event.target.parentNode.classList.add('active');
+      desc_wrapper.classList.remove("active");
+      event.target.parentNode.classList.add("active");
       this.mobile_slider.slideTo(i);
     },
   },
@@ -341,14 +339,14 @@ export default {
 </script>
 
 <style lang="scss">
-@import 'scss/mixins.scss';
+@import "scss/mixins.scss";
 
 .breaker {
   display: block;
   width: 100%;
   height: 0%;
   margin: 0;
-  content: ' ';
+  content: " ";
   border: 0;
 }
 
@@ -418,13 +416,13 @@ export default {
       .number {
         padding-top: 22px;
         padding-left: 24px;
-        font-weight: bold;
+        @include SansBold;
       }
       .title {
         padding: 16px 0;
         // width: 100%;
         font-size: 24px;
-        font-weight: bold;
+        @include SansBold;
       }
     }
   }
@@ -439,7 +437,7 @@ export default {
     position: absolute;
     left: 0;
     bottom: 0;
-    content: '';
+    content: "";
     width: 100%;
     height: 2px;
     background: #000;
@@ -474,7 +472,7 @@ export default {
       display: block;
       width: 16px;
       height: 16px;
-      background-image: url('../assets/icons//icon_bold_action_search.png');
+      background-image: url("../assets/icons//icon_bold_action_search.png");
       background-size: cover;
     }
   }
@@ -504,6 +502,34 @@ export default {
     }
   }
 }
+
+@include B768-1440 {
+  .sub-slider_inner {
+    .left {
+      li {
+        .number {
+          padding-top: 1.4999999vw;
+          font-size: 1.11111111vw;
+        }
+        .title {
+          padding-top: 1.4444444vw;
+          font-size: 1.11111111vw;
+        }
+        p {
+          font-size: 0.9722222vw;
+        }
+      }
+    }
+  }
+  .bubble_wrapper {
+    flex-wrap: wrap;
+    .bubble {
+      font-size: 0.7722222vw;
+      margin: 0 !important;
+    }
+  }
+}
+
 @include B767 {
   .learn_more {
     display: inline-block;
@@ -514,7 +540,7 @@ export default {
       position: absolute;
       left: 0;
       bottom: 0;
-      content: '';
+      content: "";
       width: 100%;
       height: 2px;
       background: #000;
@@ -537,7 +563,7 @@ export default {
         h5 {
           padding: 3.5vw 0;
           font-size: 4.444444vw;
-          font-weight: bold;
+          @include SansBold;
           line-height: 1.2;
         }
         p {

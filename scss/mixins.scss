@@ -1,4 +1,11 @@
 @import './scss/breakpoints';
+
+$blue-color: #2189ff;
+
+@mixin SansBold {
+  font-family: 'SamsungOneSharpSans';
+  font-weight: bold;
+}
 @mixin nav_hover_bg {
   position: absolute;
   top: 80px;
@@ -26,9 +33,28 @@
   margin: 0 auto;
 }
 
+@mixin contentsWrapper {
+  padding: 0 24px;
+}
+
 @mixin radius_card {
   border-radius: 20px;
   background: #ccc;
+}
+
+@mixin CircleButton {
+  padding: 9px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+@mixin afterLine {
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  display: block;
+  content: '';
+  width: 100%;
 }
 
 @mixin mainSubNav {
@@ -46,7 +72,7 @@
     &:first-child {
       &:after {
         position: absolute;
-        bottom: 0;
+        bottom: -2px;
         left: 0;
         content: '';
         display: block;

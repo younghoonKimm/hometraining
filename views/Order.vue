@@ -3,14 +3,19 @@
     <!-- <button type="button" @click="onSubmit()">구매하기</button> -->
     <section class="section_first">
       <div class="order_section_inner section_inner">
-        <div class="check_img_wrapper"><div class="check_img"></div></div>
+        <div class="check_img_wrapper">
+          <div class="check_img"></div>
+        </div>
         <div class="desc_wrapper">
-          <h4 class="bold">
-            <span>Thank you. Your order has</span>
-            <span> been received</span>
+          <h4>
+            <span class="sansbold">Thank you. Your order has</span>
+            <span class="sansbold">been received</span>
           </h4>
           <span class="order_id bold">Order # UK3067774462</span>
-          <p>View your order status in <span> My account</span></p>
+          <p>
+            View your order status in
+            <span>My account</span>
+          </p>
         </div>
         <div class="order_button_wrapper">
           <button type="button">Continue shopping</button>
@@ -33,11 +38,11 @@
 </template>
 
 <script>
-import { mapState, mapGetters, mapMutations, mapActions } from 'vuex';
+import { mapState, mapGetters, mapMutations, mapActions } from "vuex";
 
-import { dummyProduct } from '../config';
-import './MyScriptions.scss';
-import ProductSlider from '../components/slider/ProductSlider';
+import { dummyProduct } from "../config";
+import "./MyScriptions.scss";
+import ProductSlider from "../components/slider/ProductSlider";
 
 export default {
   created() {},
@@ -52,14 +57,14 @@ export default {
 
   methods: {
     onSubmit() {
-      this.$store.dispatch('login/CHANGERESERVATION');
+      this.$store.dispatch("login/CHANGERESERVATION");
     },
   },
 };
 </script>
 
 <style lang="scss">
-@import 'scss/mixins.scss';
+@import "scss/mixins.scss";
 
 .order_section_inner {
   padding: 32px 0;
@@ -118,7 +123,7 @@ export default {
 .check_img {
   width: 48px;
   height: 48px;
-  background-image: url('../assets/icons/icon_regular_action_con_rmation_result.png');
+  background-image: url("../assets/icons/icon_regular_action_con_rmation_result.png");
   background-size: cover;
 }
 
