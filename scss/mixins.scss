@@ -28,6 +28,12 @@ $blue-color: #2189ff;
   font-size: 0.97222222vw;
 }
 
+@mixin btn787 {
+  padding: 2.5vw 4.55555vw;
+  font-size: 3.3333333vw;
+  border-radius: 5.55555vw;
+}
+
 @mixin sectioninner {
   max-width: 1440px;
   margin: 0 auto;

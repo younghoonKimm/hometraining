@@ -41,7 +41,9 @@
                       <img src="../assets/card/image_product_cart_theserow_buds.png" alt />
                     </figure>
                     <div class="cart_product_desc">
-                      <h5 class="web">Buy together to Save even more when you buy (KQ43LST05B-MS)</h5>
+                      <h5 class="web">
+                        Buy together to Save even more when you buy (KQ43LST05B-MS)
+                      </h5>
                       <h4>The Sero Space White + Galaxy Buds Live</h4>
                       <span>KQ43LST05B-MS</span>
                       <p class="price">$1,988.00</p>
@@ -106,16 +108,9 @@
               </div>
               <div class="policy_wrapper">
                 By submitting your order, you agree to the
-                <a
-                  class="link"
-                  href="javascript:;"
-                >Terms & conditions</a> and we
-                <br />will use
+                <a class="link" href="javascript:;">Terms & conditions</a> and we <br />will use
                 your personal data in accordance with our
-                <a
-                  class="link"
-                  href="javascript:;"
-                >Privacy policy.</a>
+                <a class="link" href="javascript:;">Privacy policy.</a>
 
                 <p class="web">Order ID : QS929201</p>
               </div>
@@ -187,8 +182,8 @@
             </span>
             <span>Representative Example</span>
             <span>
-              £1,200 Assumed Credit Limit Representative 19.9% APR (variable).19.9% pa Purchase
-              Rate (variable).
+              £1,200 Assumed Credit Limit Representative 19.9% APR (variable).19.9% pa Purchase Rate
+              (variable).
             </span>
           </div>
         </div>
@@ -198,10 +193,10 @@
 </template>
 
 <script>
-import { Fragment } from "vue-fragment";
-import { dummyProduct } from "../config";
-import "./MyScriptions.scss";
-import ProductSlider from "../components/slider/ProductSlider";
+import { Fragment } from 'vue-fragment';
+import { dummyProduct } from '../config';
+import './MyScriptions.scss';
+import ProductSlider from '../components/slider/ProductSlider';
 
 export default {
   created() {},
@@ -217,14 +212,14 @@ export default {
 
   methods: {
     onSubmit() {
-      this.$store.dispatch("login/CHANGERESERVATION");
+      this.$store.dispatch('login/CHANGERESERVATION');
     },
   },
 };
 </script>
 
 <style lang="scss">
-@import "scss/mixins.scss";
+@import 'scss/mixins.scss';
 .notice_wrapper {
   position: sticky;
   top: 0;
@@ -294,7 +289,7 @@ input {
       display: block;
       width: 16px;
       height: 16px;
-      background-image: url("../assets/card/icon_regular_action_cancel_close.png");
+      background-image: url('../assets/card/icon_regular_action_cancel_close.png');
       background-size: cover;
     }
     .select_option_btn {
@@ -308,7 +303,7 @@ input {
       &::before {
         position: absolute;
         top: 10px;
-        content: "";
+        content: '';
         display: block;
         width: 12px;
         height: 12px;
@@ -318,13 +313,13 @@ input {
       &::after {
         right: 8px;
 
-        background-image: url("../assets/card/icon_bold_action_plus.png");
+        background-image: url('../assets/card/icon_bold_action_plus.png');
       }
 
       &::before {
         left: 8px;
 
-        background-image: url("../assets/card/icon_bold_action_minus.png");
+        background-image: url('../assets/card/icon_bold_action_minus.png');
       }
 
       .option {
@@ -420,7 +415,7 @@ input {
         display: inline-block;
         width: 16px;
         height: 16px;
-        background-image: url("../assets/icons/icon_bold_communication_email_outline.png");
+        background-image: url('../assets/icons/icon_bold_communication_email_outline.png');
         background-size: cover;
       }
     }
@@ -507,6 +502,97 @@ input {
   p {
     margin-top: 7px;
     font-size: 14px;
+  }
+}
+@include B768-1440 {
+  .form {
+    button {
+      font-size: 0.77777777vw;
+    }
+  }
+  input {
+    &::placeholder {
+      font-size: 1.25vw;
+    }
+  }
+  .cart_selected_wapper {
+    .cart_product_wrapper {
+      padding: 0 1.66666667vw;
+      .cart_product_desc {
+        margin-left: 1.66666667vw;
+
+        h4 {
+          font-size: 1.25vw;
+        }
+        h5 {
+          font-size: 0.9722222vw;
+        }
+        p {
+          font-size: 0.9722222vw;
+          &.price {
+            font-size: 1.66666667vw;
+          }
+        }
+      }
+      figure {
+        margin-left: 4vw;
+      }
+    }
+    .cart_cost_wapper {
+      max-width: 29.2222vw;
+      .cart_cost_inner {
+        p {
+          font-size: 0.9722222vw;
+        }
+        h4 {
+          font-size: 1.66666667vw;
+        }
+      }
+      .cost_option {
+        .cost_list {
+          li {
+            font-size: 0.9722222vw;
+          }
+        }
+      }
+      .save_btn {
+        font-size: 1.111111vw;
+      }
+      .cost_box {
+        button {
+          padding: 8px 7.7vw;
+          font-size: 0.9722222vw;
+        }
+      }
+      .policy_wrapper {
+        font-size: 0.7777777vw;
+        p {
+          font-size: 0.9722222vw;
+        }
+      }
+    }
+  }
+  .support_wrapper {
+    h5 {
+      font-size: 1.25vw;
+    }
+    .support_card_wrapper {
+      li {
+        margin-right: 1.666667vw;
+        height: 1.3vw;
+        min-height: 16px;
+      }
+    }
+    .info {
+      p {
+        font-size: 0.777777vw;
+      }
+    }
+    .subject_wrapper {
+      margin: 1.95vw 0 0;
+      font-size: 0.777777vw;
+      padding: 2vw 24px;
+    }
   }
 }
 
@@ -665,7 +751,7 @@ input {
           display: inline-block;
           width: 16px;
           height: 16px;
-          background-image: url("../assets/icons/icon_bold_communication_email_outline.png");
+          background-image: url('../assets/icons/icon_bold_communication_email_outline.png');
           background-size: cover;
         }
       }

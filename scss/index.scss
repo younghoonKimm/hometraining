@@ -226,9 +226,6 @@
 .router-nav.homefit .swiper-slide {
   margin-right: 60px;
 }
-.router-nav.homefit .swiper-slide:last-child {
-  margin-right: 0;
-}
 
 .router-nav.homefit .swiper-slide.active::after {
   display: block;
@@ -1049,6 +1046,9 @@ section {
     max-width: unset;
     width: 100%;
   }
+  // .router-nav.homefit .swiper-slide {
+  //   margin-right: 60px;
+  // }
 }
 
 @include B767 {
@@ -1070,6 +1070,9 @@ section {
         margin-right: 14px;
       }
     }
+  }
+  .router-nav.homefit .swiper-slide {
+    margin-right: 5.829111111vw;
   }
 }
 

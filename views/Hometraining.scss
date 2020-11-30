@@ -403,12 +403,26 @@
         font-size: 0.9722222vw;
       }
     }
+    .section_second_inner {
+      h3 {
+        font-size: 3.3333vw;
+      }
+      p {
+        font-size: 1.25vw;
+      }
+      span {
+        font-size: 1.25vw;
+      }
+    }
   }
 
   .hometraining_main {
     .slider_wrapper {
       margin-top: 16px;
       .swiper-slide {
+        &:first-child {
+          margin-right: 1.111111vw !important;
+        }
         width: 22.66666vw;
         .swiper-slide-inner {
           padding: 1.66666667vw 2.333333vw 2.333333vw;
@@ -424,7 +438,27 @@
               font-size: 1.1111vw;
             }
           }
+          figure {
+            padding: 0 2.7vw;
+          }
         }
+      }
+    }
+    .total_cost_wrapper {
+      .option_cost {
+        font-size: 1.95vw;
+      }
+    }
+  }
+
+  .swiper-scrollbar {
+    margin: 3vw 0 1.11111vw;
+  }
+  .store_nav {
+    .sub_nav {
+      li {
+        font-size: 0.9722222vw;
+        margin-right: 2.7777778vw;
       }
     }
   }

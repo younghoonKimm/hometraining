@@ -38,11 +38,11 @@
 </template>
 
 <script>
-import { mapState, mapGetters, mapMutations, mapActions } from "vuex";
+import { mapState, mapGetters, mapMutations, mapActions } from 'vuex';
 
-import { dummyProduct } from "../config";
-import "./MyScriptions.scss";
-import ProductSlider from "../components/slider/ProductSlider";
+import { dummyProduct } from '../config';
+import './MyScriptions.scss';
+import ProductSlider from '../components/slider/ProductSlider';
 
 export default {
   created() {},
@@ -57,14 +57,14 @@ export default {
 
   methods: {
     onSubmit() {
-      this.$store.dispatch("login/CHANGERESERVATION");
+      this.$store.dispatch('login/CHANGERESERVATION');
     },
   },
 };
 </script>
 
 <style lang="scss">
-@import "scss/mixins.scss";
+@import 'scss/mixins.scss';
 
 .order_section_inner {
   padding: 32px 0;
@@ -123,7 +123,7 @@ export default {
 .check_img {
   width: 48px;
   height: 48px;
-  background-image: url("../assets/icons/icon_regular_action_con_rmation_result.png");
+  background-image: url('../assets/icons/icon_regular_action_con_rmation_result.png');
   background-size: cover;
 }
 
@@ -178,7 +178,7 @@ export default {
     border-top: 1px solid #dddddd;
     .copyright {
       padding: 15px 24px;
-      font-size: 3.33333vw;
+      font-size: 12px;
       em {
         display: block;
       }
