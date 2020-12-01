@@ -5,6 +5,22 @@
     </section>-->
     <section class="section_first">
       <div class="section_inner">
+        <div class="homefit_main_desc_wrapper">
+          <h2 class="web sansbold">
+            Experience
+            <br />the best Samsung Homefit
+          </h2>
+          <h2 class="mobile sansbold">
+            Experience
+            <br />the best
+            <br />Samsung Homefit
+          </h2>
+          <p>
+            Experience the best online workout programs
+            <br />with the corps Personal Trainers from Shilla Hotel
+          </p>
+          <button type="button">Go to Samsung HomeFit</button>
+        </div>
         <figure>
           <img class="web_img" src="../assets/main/kv_image_2.png" />
           <img class="mobile_img" src="../assets/main/kv_image_2_mo.png" />
@@ -305,16 +321,7 @@ import Swiper from "swiper/bundle";
 import WeekCalender from "../components/WeekCalender";
 import "./CommunityMain.scss";
 
-const nav = ["베이직", "프리미엄", "1:1트레이닝"];
-
-const dummy = [
-  "베이직",
-  "베이직",
-  "베이직",
-  "베이직",
-  "프리미엄",
-  "1:1트레이닝",
-];
+const nav = ["Basic", "Premium", "1:1 Training"];
 
 export default {
   created() {
@@ -338,7 +345,6 @@ export default {
   data() {
     return {
       nav,
-      dummy,
       pageSlider: null,
       third_Slider: null,
     };
@@ -404,10 +410,35 @@ export default {
       }
     }
   }
-
+  .homefit_main_desc_wrapper {
+    position: absolute;
+    color: #fff;
+    top: 50%;
+    left: 88px;
+    transform: translatey(-50%);
+    h2 {
+      font-size: 48px;
+      line-height: 1.22;
+    }
+    p {
+      margin-top: 20px;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+    button {
+      margin-top: 87px;
+      background: #fff;
+      padding: 10px 24px;
+      border-radius: 20px;
+      font-weight: bold;
+    }
+  }
   .swiper-pagination_wrapper {
     position: absolute;
+    top: 34px;
     left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
   }
   .swiper-pagination {
     position: relative;
@@ -418,13 +449,18 @@ export default {
     justify-content: center;
     li {
       position: relative;
-      margin-right: 48px;
+      margin-right: 32px;
+      font-size: 18px;
+      font-weight: bold;
       &:last-child {
         margin-right: 0;
       }
       &.active {
         &:after {
           @include afterLine;
+          background: #000;
+          bottom: -1px;
+          height: 2px;
         }
       }
     }
@@ -606,6 +642,30 @@ export default {
 
 @include B768-1440 {
   .homefitness_main {
+    .homefit_main_desc_wrapper {
+      left: 6.1111vw;
+
+      h2 {
+        font-size: 3.3333vw;
+      }
+      p {
+        margin-top: 1.3889vw;
+        font-size: 1.25vw;
+      }
+      button {
+        margin-top: 6.0417vw;
+        padding: 10px 1.6667vw;
+        font-size: 0.9722vw;
+        font-weight: bold;
+      }
+    }
+    .swiper-pagination {
+      li {
+        position: relative;
+        margin-right: 2.2222vw;
+        font-size: 1.25vw;
+      }
+    }
     .page_slider-desc {
       padding-top: 11.8056vw;
       text-align: center;
@@ -701,6 +761,51 @@ export default {
 
 @include B767 {
   .homefitness_main {
+    .homefit_main_desc_wrapper {
+      width: 100%;
+      top: 11.1111vw;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      h2 {
+        font-size: 8.3333vw;
+        line-height: 1.35;
+      }
+      p {
+        margin-top: 4.44444vw;
+        font-size: 3.3333333vw;
+      }
+      button {
+        margin-top: 60vw;
+        padding: 10px 6.6667vw;
+        border-radius: 6.6667vw;
+      }
+    }
+    .swiper-pagination_wrapper {
+      top: 9.4444vw;
+    }
+    .swiper-pagination {
+      width: 100%;
+      li {
+        position: relative;
+        margin-right: 8.8889vw;
+        font-size: 3.8889vw;
+        width: 100%;
+        &:last-child {
+          margin-right: 0;
+          white-space: nowrap;
+        }
+        &.active {
+          font-weight: bold;
+          &:after {
+            @include afterLine;
+            background: #000;
+            bottom: -1px;
+            height: 2px;
+          }
+        }
+      }
+    }
     .page_slider-desc {
       padding-top: 26.6667vw;
       p {
