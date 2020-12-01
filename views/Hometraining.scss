@@ -74,7 +74,7 @@
 //   margin: 0 auto;
 // }
 .hometraining_main {
-  padding-bottom: 48px;
+  padding-bottom: 18px;
   .first_section_inner {
     padding: 0 24px;
   }
@@ -209,8 +209,11 @@
       width: 100%;
     }
     li {
-      list-style: disc;
-      list-style-position: inside;
+      background-image: url('../assets/icons/icon_bold_information_bullet.png');
+      background-repeat: no-repeat;
+      background-position: left 4px;
+      background-size: 12px;
+      padding-left: 14px;
       font-size: 14px;
       &:last-child {
         margin-top: 1px;
@@ -395,6 +398,9 @@
         font-size: 1.25vw;
       }
       li {
+        background-position: left 0.1111111vw;
+        background-size: 0.9722222vw;
+        padding-left: 0.9722222vw;
         font-size: 0.9722222vw;
       }
     }
@@ -403,26 +409,12 @@
         font-size: 0.9722222vw;
       }
     }
-    .section_second_inner {
-      h3 {
-        font-size: 3.3333vw;
-      }
-      p {
-        font-size: 1.25vw;
-      }
-      span {
-        font-size: 1.25vw;
-      }
-    }
   }
 
   .hometraining_main {
     .slider_wrapper {
       margin-top: 16px;
       .swiper-slide {
-        &:first-child {
-          margin-right: 1.111111vw !important;
-        }
         width: 22.66666vw;
         .swiper-slide-inner {
           padding: 1.66666667vw 2.333333vw 2.333333vw;
@@ -438,33 +430,16 @@
               font-size: 1.1111vw;
             }
           }
-          figure {
-            padding: 0 2.7vw;
-          }
         }
-      }
-    }
-    .total_cost_wrapper {
-      .option_cost {
-        font-size: 1.95vw;
-      }
-    }
-  }
-
-  .swiper-scrollbar {
-    margin: 3vw 0 1.11111vw;
-  }
-  .store_nav {
-    .sub_nav {
-      li {
-        font-size: 0.9722222vw;
-        margin-right: 2.7777778vw;
       }
     }
   }
 }
 
 @include B767 {
+  .hometraining_main {
+    padding-bottom: 13.4444444vw;
+  }
   .store_nav {
     border-bottom: 1px solid #ebebeb;
     height: 22.2222222vw;
@@ -603,11 +578,12 @@
         width: 100%;
       }
       li {
-        list-style: disc;
-        list-style-position: inside;
+        background-position: left 0.8888888vw;
+        background-size: 3.3333333vw;
+        padding-left: 4.444444vw;
         font-size: 3.3333333vw;
         &:last-child {
-          margin-top: 1px;
+          margin-top: 1vw;
         }
       }
       span {
@@ -704,6 +680,7 @@
 
       h3 {
         font-size: 10vw;
+        line-height: 1.2;
       }
       p {
         padding: 0 24px;

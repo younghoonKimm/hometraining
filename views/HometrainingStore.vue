@@ -2,9 +2,7 @@
   <Fragment>
     <nav class="store_nav">
       <div class="nav_option_wrapper">
-        <div class="option_title sansbold">
-          Premium Membership, 1:8 Group Training Class Subscription
-        </div>
+        <div class="option_title sansbold">Premium Membership, 1:8 Group Training Class Subscription</div>
         <div class="option_costs bold">{{ setRealCost() }}</div>
         <div class="option_arrow_btn mobile"></div>
         <div class="option_cart option_cart_top" @click.prevent="onSubmit()">
@@ -72,10 +70,17 @@
                 Based on the initial payment date, your card will be charged automatically every
                 month.
               </li>
-              <li>
+              <li class="web">
                 If you choose to terminate subscription, classes you've attended or the number of
                 days
                 <br />you've enrolled will be deducted. Refunds will be made to the original payment
+                method.
+              </li>
+              <li class="mobile">
+                If you choose to terminate subscription, classes you've
+                <br />attended or the number of days you've enrolled will
+                <br />be deducted. Refunds will be made to the original
+                <br />payment
                 method.
               </li>
             </ul>
@@ -166,7 +171,14 @@
         </div>
       </section>
     </main>
-    <div>Home > Smart Home > Home Fitness >Basic Membership</div>
+    <div class="router_path_wrapper">
+      <div class="router_path_inner">
+        <span>Home</span>
+        <span>Smart Home</span>
+        <span>Home Fitness</span>
+        <span>Basic Membership</span>
+      </div>
+    </div>
   </Fragment>
 </template>
 
@@ -176,35 +188,42 @@
 }
 </style>
 <script>
-import { mapState, mapGetters, mapMutations, mapActions } from 'vuex';
-import Swiper from 'swiper/bundle';
-import { Fragment } from 'vue-fragment';
-import './Hometraining.scss';
-import { dummycost, dummyProduct } from '../config';
+import { mapState, mapGetters, mapMutations, mapActions } from "vuex";
+import Swiper from "swiper/bundle";
+import { Fragment } from "vue-fragment";
+import "./Hometraining.scss";
+import { dummycost, dummyProduct } from "../config";
 
-const dummy = ['베이직', '베이직', '베이직', '베이직', '프리미엄', '1:1트레이닝'];
+const dummy = [
+  "베이직",
+  "베이직",
+  "베이직",
+  "베이직",
+  "프리미엄",
+  "1:1트레이닝",
+];
 
 export default {
   created() {
     this.$nextTick(() => {
       this.nav_slider = new Swiper(this.$refs.navSlider, {
-        direction: 'horizontal',
+        direction: "horizontal",
         touchStartPreventDefault: true,
         preventClicks: true,
         preventClicksPropagation: true,
         slideToClickedSlide: false,
-        touchEventsTarget: 'wrapper',
-        slidesPerView: 'auto',
+        touchEventsTarget: "wrapper",
+        slidesPerView: "auto",
         spaceBetween: 16,
         scrollbar: {
-          el: '.swiper-scrollbar',
+          el: ".swiper-scrollbar",
           draggable: true,
           snapOnRelease: true,
           dragSize: 171,
         },
         breakpoints: {
           768: {
-            slidesPerView: 'auto',
+            slidesPerView: "auto",
             spaceBetween: 24,
           },
         },
@@ -251,11 +270,11 @@ export default {
     },
 
     onSubmit() {
-      return this.$router.push('/cart');
+      return this.$router.push("/cart");
     },
     clickable(i) {
-      this.$refs.checkedSwiper.classList.toggle('active');
-      if (this.$refs.checkedSwiper.classList.contains('active')) {
+      this.$refs.checkedSwiper.classList.toggle("active");
+      if (this.$refs.checkedSwiper.classList.contains("active")) {
         this.productCost = 1782.16;
       } else {
         this.productCost = 0;
@@ -263,7 +282,9 @@ export default {
     },
 
     setRealCost() {
-      return this.productCost === 0 ? '$' + this.RealCost + '.00' : '$' + this.RealCost;
+      return this.productCost === 0
+        ? "$" + this.RealCost + ".00"
+        : "$" + this.RealCost;
     },
   },
 };

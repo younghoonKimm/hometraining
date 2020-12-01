@@ -1,6 +1,6 @@
 <template>
   <nav class="router-nav clearfix homefit" v-if="this.$route.path !== '/scription'">
-    <div class="router-nav_wrapper">
+    <div class="router-nav_wrapper clearfix">
       <h4>My page</h4>
       <div class="router-nav_list clearfix swiper-container" ref="slide">
         <div class="swiper-wrapper">
@@ -28,19 +28,19 @@
 </template>
 
 <script>
-import { Fragment } from 'vue-fragment';
-import Swiper from 'swiper/bundle';
-import '../../views/Mypage.scss';
-import SubscribePage from './SubscribePage';
+import { Fragment } from "vue-fragment";
+import Swiper from "swiper/bundle";
+import "../../views/Mypage.scss";
+import SubscribePage from "./SubscribePage";
 
 const list = [
-  'My Products',
-  'Orders',
-  'Wishlist',
-  'Subscriptions',
-  'Rewards',
-  'Vouchers',
-  'Service',
+  "My Products",
+  "Orders",
+  "Wishlist",
+  "Subscriptions",
+  "Rewards",
+  "Vouchers",
+  "Service",
 ];
 
 export default {
@@ -61,14 +61,13 @@ export default {
   // },
 
   created() {
-    this.routerPathSwitch(this.$route.path);
     this.$nextTick(() => {
       this.navSlider = new Swiper(this.$refs.slide, {
         loop: false,
         preventClicks: true,
         preventClicksPropagation: true,
         slideToClickedSlide: false,
-        slidesPerView: 'auto',
+        slidesPerView: "auto",
         allowSlideNext: true,
         allowSlidePrev: true,
         breakpoints: {
@@ -78,13 +77,14 @@ export default {
           },
         },
       });
+      this.routerPathSwitch(this.$route.path);
       this.navSlider.slideTo(this.activeNumber, false, false);
     });
-    window.addEventListener('resize', this.onResize);
+    window.addEventListener("resize", this.onResize);
   },
 
   beforeDestroy() {
-    window.removeEventListener('resize', this.onResize);
+    window.removeEventListener("resize", this.onResize);
   },
 
   components: {
@@ -102,11 +102,11 @@ export default {
 
   methods: {
     onToggleSection(i) {
-      const sectionAll = document.querySelectorAll('section');
+      const sectionAll = document.querySelectorAll("section");
       sectionAll.forEach((v, index) => {
-        v.classList.remove('on');
+        v.classList.remove("on");
         if (index === i) {
-          v.classList.add('on');
+          v.classList.add("on");
         }
       });
     },
@@ -118,7 +118,7 @@ export default {
     },
     routerPathSwitch(path) {
       switch (true) {
-        case path.includes('subscription'):
+        case path.includes("subscription"):
           return (this.activeNumber = 4);
           break;
         default:

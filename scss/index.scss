@@ -234,7 +234,7 @@
   left: 0;
   border: 1px solid #000;
   content: '';
-  width: 100%;
+  width: calc(100% - 2px);
 }
 
 .depth2_wrapper {
@@ -830,54 +830,6 @@ section {
   position: relative;
 }
 //footer
-#footer {
-  position: relative;
-  .footer-inner {
-    border-top: 1px solid #d9d9d9;
-    border-bottom: 1px solid #d9d9d9;
-    position: relative;
-    margin: 0 auto;
-    max-width: 1440px;
-
-    .footer_list {
-      display: flex;
-      flex-direction: row;
-      overflow: hidden;
-      > li {
-        flex: 1;
-        padding: 0 24px 24px;
-        border-right: 1px solid #d9d9d9;
-        &:last-child {
-          border-right: none;
-        }
-        &.over {
-          flex: 2;
-          > ul {
-            width: 50%;
-          }
-        }
-        ul {
-          float: left;
-        }
-        h3 {
-          display: block;
-          height: 56px;
-          padding: 16px 0;
-          font-size: 18px;
-          line-height: 1.33;
-          font-weight: 700;
-        }
-        a {
-          display: block;
-          padding: 7px 24px;
-          font-size: 14px;
-          line-height: 1.33;
-          color: #000;
-        }
-      }
-    }
-  }
-}
 
 @include hoverNav {
   #header {
@@ -983,61 +935,41 @@ section {
   display: inline-block !important;
 }
 
-#footer {
-  position: relative;
-
-  .footer-inner {
-    position: relative;
-    margin: 0 auto;
-    max-width: 1440px;
-    border-top: 1px solid #d9d9d9;
-    border-bottom: 1px solid #d9d9d9;
-    .footer_list {
-      display: flex;
-      flex-direction: row;
-      > li {
-        flex: 1;
-        padding: 0 24px 24px;
-        border-right: 1px solid #d9d9d9;
-        &:last-child {
-          border-right: none;
-        }
-        &.over {
-          flex: 2;
-          > ul {
-            width: 50%;
-          }
-        }
-        ul {
-          float: left;
-        }
-        h3 {
-          display: block;
-          height: 56px;
-          padding: 16px 0;
-          font-size: 18px;
-          line-height: 1.33;
-          font-weight: 700;
-        }
-        a {
-          display: block;
-          padding: 7px 24px;
-          font-size: 14px;
-          line-height: 1.33;
-          color: #000;
-        }
-      }
-    }
-  }
-}
-
 .router_path_wrapper {
   width: 100%;
   .router_path_inner {
-    display: flex;
-    align-items: center;
-    padding: 0 24px;
+    width: 100%;
+    border-top: 1px solid #ddd;
+    padding: 18px 24px;
     @include sectioninner;
+    span {
+      position: relative;
+      display: inline-block;
+      font-size: 14px;
+      padding: 0 20px 0 4px;
+      &:first-child {
+        padding: 0 20px 0 0;
+      }
+      &:last-child {
+        color: #8f8f8f;
+        font-weight: bold;
+        &::after {
+          display: none;
+        }
+      }
+      &::after {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        content: '';
+        display: block;
+        width: 16px;
+        height: 16px;
+        background-image: url('../assets/icons/icon_bold_navigation_next_gray.png');
+        background-size: cover;
+      }
+    }
   }
 }
 
@@ -1046,9 +978,29 @@ section {
     max-width: unset;
     width: 100%;
   }
-  // .router-nav.homefit .swiper-slide {
-  //   margin-right: 60px;
-  // }
+  .router_path_wrapper {
+    .router_path_inner {
+      span {
+        font-size: 0.9722222vw;
+        padding: 0 1.3vw 0 4px;
+        &:first-child {
+          padding: 0 1.3vw 0 0;
+        }
+        &:last-child {
+          color: #8f8f8f;
+          font-weight: bold;
+          &::after {
+            display: none;
+          }
+        }
+        &:after {
+          width: 1.1111vw;
+          height: 1.1111vw;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
 }
 
 @include B767 {
@@ -1071,8 +1023,39 @@ section {
       }
     }
   }
+
+  .router-nav {
+    .router-nav_wrapper {
+      padding: 0 12s;
+      .swiper-container {
+        overflow: inherit;
+      }
+    }
+  }
   .router-nav.homefit .swiper-slide {
-    margin-right: 5.829111111vw;
+    margin-right: 6.6667vw;
+    font-size: 3.8889vw;
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  .router_path_wrapper {
+    .router_path_inner {
+      padding: 4vw 24px;
+      span {
+        font-size: 14px;
+        padding: 0 4.444444vw 0 1vw;
+        &:first-child {
+          padding: 0 4.444444vw 0 0;
+        }
+        &:last-child {
+          margin-top: 0.5vw;
+          padding: 0;
+          display: block;
+        }
+      }
+    }
   }
 }
 

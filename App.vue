@@ -4,17 +4,17 @@
     <Header :path="path" />
     <!-- VIEWS -->
     <router-view />
-    <Footer />
+    <Footer :path="path" />
   </div>
 </template>
 
 <style></style>
 
 <script>
-import Header from './components/layout/Header';
-import Footer from './components/layout/Footer';
-import MypageNavigation from './components/layout/MypageNavigation';
-import './assets/favicon.ico';
+import Header from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
+import MypageNavigation from "./components/layout/MypageNavigation";
+import "./assets/favicon.ico";
 
 export default {
   watch: {
@@ -31,7 +31,7 @@ export default {
 
   data() {
     return {
-      path: '/',
+      path: "/",
     };
   },
 };

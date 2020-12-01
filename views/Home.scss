@@ -259,9 +259,6 @@
     padding: 48px 0;
     .desc {
       padding: 17px 0 0;
-      h4 {
-        line-height: 1.2;
-      }
     }
     .button_wrapper {
       margin-top: 24px;
@@ -320,7 +317,7 @@
     margin-top: 10px;
     text-align: center;
     button {
-      @include SansBold;
+      font-weight: 700;
       position: relative;
       &:first-child {
         &:after {
@@ -643,9 +640,13 @@
       background-image: url('../assets/main/image_appliances_bg_mo.png');
       background-size: cover;
       padding: 48px 0;
+
       .desc {
         padding: 17px 0 0;
         width: 90vw;
+        h4 {
+          line-height: 1.2;
+        }
       }
       .button_wrapper {
         margin-top: 24px;

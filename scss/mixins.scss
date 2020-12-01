@@ -93,6 +93,36 @@ $blue-color: #2189ff;
   }
 }
 
+@mixin button_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  text-align: center;
+  button {
+    position: relative;
+    &:first-child {
+      &:after {
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        content: '';
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: #000;
+      }
+    }
+    &:last-child {
+      margin-left: 20px;
+      padding: 9px 20px;
+      border-radius: 20px;
+      background: #000;
+      color: #fff;
+    }
+  }
+}
+
 @mixin mobile {
   @media (min-width: #{$breakpoint-mobile}) and (max-width: #{$breakpoint-tablet - 1px}) {
     @content;

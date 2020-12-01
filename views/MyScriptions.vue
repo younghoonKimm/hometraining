@@ -89,7 +89,11 @@
       <!-- <div @click="$router.push('/subscription/info')">info</div> -->
     </main>
     <div class="router_path_wrapper">
-      <div class="router_path_inner">Home > Mypage > Subscriptions</div>
+      <div class="router_path_inner">
+        <span>Home</span>
+        <span>Mypage</span>
+        <span>Subscriptions</span>
+      </div>
     </div>
   </Fragment>
 </template>

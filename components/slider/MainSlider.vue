@@ -291,7 +291,7 @@ export default {
       }, 280);
     },
 
-    sliderFontColorChange(target) {
+    sliderFontColorChange() {
       this.mainSlider.on("slideChangeTransitionStart", () => {
         const index = this.mainSlider.realIndex;
         if (index === 2 || index === 4) {

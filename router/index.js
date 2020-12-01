@@ -80,6 +80,11 @@ const routes = [
     path: '/video',
     component: () => import('~/views/video'),
   },
+  {
+    name: 'HomeFiness',
+    path: '/homefitness',
+    component: () => import('~/views/HomeFitness'),
+  },
 ];
 
 export default new VueRouter({
