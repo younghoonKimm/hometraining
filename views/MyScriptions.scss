@@ -176,7 +176,7 @@
 
   .section_third_inner {
     position: relative;
-    margin: 48px auto;
+    margin: 48px auto 0;
     padding: 0 24px;
     .slider_wrapper {
       margin: 0 auto;
@@ -194,7 +194,7 @@
         .text {
           display: flex;
           width: 100%;
-          height: 48px;
+          height: 44px;
           align-items: center;
           justify-content: center;
         }
@@ -203,7 +203,7 @@
           line-height: 1.3;
         }
         figure {
-          margin-top: 12px;
+          margin-top: 8px;
           width: 100%;
           padding: 0 67px;
           img {
@@ -212,10 +212,13 @@
           }
         }
         .slide_desc {
-          margin-top: 80px;
+          margin-top: 90px;
           font-size: 14px;
           &.margin {
-            margin-top: 64px;
+            margin-top: 59px;
+            a {
+              margin-top: 31px;
+            }
           }
           .cost {
             margin-bottom: 3px;
@@ -233,21 +236,21 @@
           a {
             margin-top: 12px;
             display: inline-block;
-            padding: 10px 40px;
+            padding: 9px 40px;
             font-size: 14px;
             border-radius: 20px;
             border: 1px solid #000;
           }
         }
         .color-picker {
-          margin-top: 12px;
+          margin-top: 8px;
           width: 100%;
           text-align: center;
           li {
             display: inline-block;
             position: relative;
-            width: 16px;
-            height: 16px;
+            width: 18px;
+            height: 18px;
             border-radius: 50%;
             background: #000;
             margin-left: 19px;
@@ -272,8 +275,8 @@
               margin-left: 0;
               &:after {
                 position: absolute;
-                left: -5px;
-                top: -5px;
+                left: -4px;
+                top: -4px;
                 content: '';
                 display: block;
                 width: 22px;
@@ -293,6 +296,9 @@
     .swiper-button-prev,
     .swiper-button-next {
       color: #000000;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
     }
     .swiper-button-next,
     .swiper-container-rtl .swiper-button-prev {
@@ -310,6 +316,9 @@
       justify-content: center;
       align-items: center;
       .swiper-pagination_inner {
+        padding: 0 8px 0 13px;
+        border-radius: 16px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -320,7 +329,7 @@
           background-size: cover;
         }
         .swiper-pagination-bullet {
-          margin-right: 8px;
+          margin-right: 10px;
         }
         .swiper-pagination-bullet-active {
           background: #2189ff;
@@ -328,6 +337,9 @@
       }
       .swiper-pagination {
         position: relative;
+        .swiper-pagination-bullet-active {
+          background: #000;
+        }
       }
     }
   }
@@ -350,6 +362,12 @@
     }
   }
   @include B768-1440 {
+    .swiper-button-prev,
+    .swiper-button-next {
+      &:after {
+        font-size: 2.9861vw;
+      }
+    }
     .section_first_inner {
       h3 {
         font-size: 2.66666vw;
@@ -414,6 +432,15 @@
       }
     }
     .section_third_inner {
+      .swiper-pagination_wrapper {
+        margin-top: 2.2222vw;
+      }
+      .swiper-button-next,
+      .swiper-button-prev {
+        &:after {
+          font-size: 2.9861vw;
+        }
+      }
       .slider_wrapper {
         margin: 0 auto;
 
@@ -421,9 +448,11 @@
           max-width: 100%;
           background-color: #f7f7f7;
           border-radius: 20px;
+
           .color-picker {
             li {
               margin-left: 1.3vw;
+
               &:nth-child(2) {
                 margin-left: 1.3vw;
               }
@@ -436,10 +465,11 @@
             padding: 0 5vw;
           }
           .slide_desc {
-            margin-top: 5.5vw;
             font-size: 0.9722222vw;
             &.margin {
-              margin-top: 3.188888vw;
+              a {
+                margin-top: 2.2917vw;
+              }
             }
             .cost {
               font-size: 1.4333333vw;
@@ -450,6 +480,7 @@
               }
             }
             a {
+              margin-top: 0.8333vw;
               padding: 10px 2.4vw;
               font-size: 0.9722222vw;
             }
@@ -598,6 +629,9 @@
     .section_third_inner {
       margin: 24px auto;
       padding: 0 24px;
+      .swiper-pagination_wrapper {
+        display: none;
+      }
       .slider_wrapper {
         margin: 0 auto;
         width: 100%;

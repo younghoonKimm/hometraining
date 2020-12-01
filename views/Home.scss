@@ -467,6 +467,17 @@
 
 @include B768-1440 {
   .first-slider {
+    .swiper-button-prev,
+    .swiper-button-next {
+      width: 3.8889vw;
+      height: 3.8889vw;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 50%;
+      &:after {
+        width: 3.8889vw;
+        height: 3.8889vw;
+      }
+    }
     .slider-button-wrapper {
       .slider-button-inner {
         .swiper-pagination-bullet {
@@ -474,6 +485,7 @@
         }
       }
     }
+
     .button_wrapper {
       margin-top: 2.77777778vw;
       button {

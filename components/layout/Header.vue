@@ -79,7 +79,9 @@
                           <div class="depth3_inner">
                             <ul>
                               <li>
-                                <a href="javascript:;">Work out at Your Homefit</a>
+                                <a href="javascript:;" @click="goToMyPage('/homefitness')"
+                                  >Work out at Your Homefit</a
+                                >
                               </li>
                             </ul>
                           </div>
@@ -115,7 +117,12 @@
           </ul>
 
           <div class="icons">
-            <button class="cart" type="button" :class="cartPage ? 'active' : ''">
+            <button
+              class="cart"
+              type="button"
+              :class="cartPage ? 'active' : ''"
+              @click="goToMyPage('/store')"
+            >
               <span class="ir_su">카트</span>
             </button>
             <button class="search" type="button">
@@ -133,10 +140,8 @@
                   <i></i>
                   <h5>Clair Watson</h5>
                 </div>
-
                 <ul>
-                  <li @click="$router.push('/mypage')">My page</li>
-
+                  <li @click="goToMyPage('/subscription')">My page</li>
                   <li>Orders</li>
                   <li>Wishlist</li>
                   <li>Subscriptions</li>
@@ -190,10 +195,7 @@
                       <div class="depth3_inner">
                         <ul class="slide_gnb_depth3">
                           <li>
-                            <a
-                              href="javascript:;"
-                              @click="$router.push('/subscription')"
-                            >View All Packages</a>
+                            <a href="javascript:;">View All Packages</a>
                           </li>
                         </ul>
                       </div>
@@ -248,7 +250,9 @@
                       <div class="depth3_inner">
                         <ul class="slide_gnb_depth3">
                           <li>
-                            <a href="javascript:;">Workout at Your HomeFit</a>
+                            <a href="javascript:;" @click="goToMyPage('/homefitness')"
+                              >Workout at Your HomeFit</a
+                            >
                           </li>
                         </ul>
                       </div>
@@ -280,9 +284,9 @@
           </ul>
           <ul class="slider_gnb_main noarrow" :class="{ on: navToggle }">
             <li>
-              <a href="#">Client</a>
+              <a class="bold" href="#"><i></i> Clair Watson</a>
             </li>
-            <li @click="goToMyPage('/mypage')">
+            <li @click="goToMyPage('/subscription')">
               <a href="#">My page</a>
             </li>
             <li>
@@ -310,10 +314,10 @@
 <style></style>
 
 <script>
-import { Fragment } from "vue-fragment";
-import "../../assets/logo.svg";
-import "../../assets/icons/icon_bold_shopping_cart.png";
-import { navList, depth2SmatHomeList } from "../../config";
+import { Fragment } from 'vue-fragment';
+import '../../assets/logo.svg';
+import '../../assets/icons/icon_bold_shopping_cart.png';
+import { navList, depth2SmatHomeList } from '../../config';
 
 export default {
   props: {
@@ -333,13 +337,13 @@ export default {
   },
   computed: {
     cartPage() {
-      if (this.path === "/cart") return true;
+      if (this.path === '/cart') return true;
     },
   },
 
   methods: {
     secondNav() {
-      return this.$route.path == "/main";
+      return this.$route.path == '/main';
     },
 
     onToggleNav() {
@@ -350,49 +354,49 @@ export default {
     onMouseEnter(i) {
       this.navDepthToggle = true;
       this.activeIndex = i;
-      this.$refs.depth2.classList.add("open");
+      this.$refs.depth2.classList.add('open');
     },
 
     onMouseLeave() {
       this.navDepthToggle = false;
       this.activeIndex = null;
-      this.$refs.depth2.classList.remove("open");
+      this.$refs.depth2.classList.remove('open');
     },
 
     onDepth2Open(i) {
-      return this.navDepthToggle && this.activeIndex === i ? "open" : "";
+      return this.navDepthToggle && this.activeIndex === i ? 'open' : '';
     },
 
     onMouseToggleProfile() {
-      this.$refs.profileRef.classList.add("on");
+      this.$refs.profileRef.classList.add('on');
     },
 
     onLeaveToggleProfile() {
-      this.$refs.profileRef.classList.remove("on");
+      this.$refs.profileRef.classList.remove('on');
     },
 
     slideGnbOpen(i) {
       if (i === 5) {
-        this.$refs.nav_slide_wrapper.classList.add("slide");
-        this.$refs.gnb5[0].classList.add("open");
+        this.$refs.nav_slide_wrapper.classList.add('slide');
+        this.$refs.gnb5[0].classList.add('open');
       } else if (i == 6) {
-        this.$refs.nav_slide_wrapper.classList.add("slide");
-        this.$refs.gnb5[1].classList.add("open");
+        this.$refs.nav_slide_wrapper.classList.add('slide');
+        this.$refs.gnb5[1].classList.add('open');
       }
       return;
     },
 
     slideGnbDepth3Open(i) {
-      if (i === 5) return this.$refs.depth3[0].classList.toggle("open");
-      if (i === 6) return this.$refs.depth3[1].classList.toggle("open");
+      if (i === 5) return this.$refs.depth3[0].classList.toggle('open');
+      if (i === 6) return this.$refs.depth3[1].classList.toggle('open');
     },
 
     slideGnbRemove() {
-      this.$refs.nav_slide_wrapper.classList.remove("slide");
-      this.$refs.gnb5[0].classList.remove("open");
-      this.$refs.gnb5[1].classList.remove("open");
-      this.$refs.depth3[0].classList.remove("open");
-      this.$refs.depth3[1].classList.remove("open");
+      this.$refs.nav_slide_wrapper.classList.remove('slide');
+      this.$refs.gnb5[0].classList.remove('open');
+      this.$refs.gnb5[1].classList.remove('open');
+      this.$refs.depth3[0].classList.remove('open');
+      this.$refs.depth3[1].classList.remove('open');
     },
 
     slideGnbClose() {
@@ -409,7 +413,7 @@ export default {
   watch: {
     $route(to, from) {
       this.navToggle = false;
-      this.$refs.navSlideRef.classList.remove("on");
+      this.$refs.navSlideRef.classList.remove('on');
       this.slideGnbRemove();
       this.onMouseLeave();
       this.onLeaveToggleProfile();

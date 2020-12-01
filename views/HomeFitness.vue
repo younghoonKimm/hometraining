@@ -12,8 +12,7 @@
           </h2>
           <h2 class="mobile sansbold">
             Experience
-            <br />the best
-            <br />Samsung Homefit
+            <br />the best <br />Samsung Homefit
           </h2>
           <p>
             Experience the best online workout programs
@@ -31,7 +30,9 @@
       <div class="section_inner">
         <div class="swiper-pagination_wrapper">
           <ul class="swiper-pagination">
-            <li v-for="(v, i) in this.nav" :key="i" @click="clickToSlide(i)" ref="bullet">{{v}}</li>
+            <li v-for="(v, i) in this.nav" :key="i" @click="clickToSlide(i)" ref="bullet">
+              {{ v }}
+            </li>
           </ul>
         </div>
         <div class="section_secnond_slider page_slider swiper-container" ref="navSlider">
@@ -46,9 +47,9 @@
                       Basic
                       <br />Membership
                     </h4>
-                    <p
-                      class="web"
-                    >Experience diverse, fun filled Live+ Group classes with Basic Membership</p>
+                    <p class="web">
+                      Experience diverse, fun filled Live+ Group classes with Basic Membership
+                    </p>
                     <p class="mobile">
                       Experience diverse, fun filled Live+ Group classes
                       <br />with Basic Membership
@@ -69,9 +70,7 @@
                     </h4>
                     <h4 class="mobile sansbold">
                       Stay safe at home
-                      <br />and
-                      get the most out of
-                      <br />your workout plan
+                      <br />and get the most out of <br />your workout plan
                     </h4>
                     <p>
                       With Premium at-home workout Membership program,
@@ -104,11 +103,15 @@
                       per month
                     </p>
                     <ul class="cleafix">
-                      <li>Based on the initial payment date, your card will be charged automatically every month.</li>
                       <li>
-                        If you choose to terminate subscription, classes you've attended or the number of days
-                        <br />you've enrolled will be deducted.
-                        <br />Refunds will be made to the original payment method.
+                        Based on the initial payment date, your card will be charged automatically
+                        every month.
+                      </li>
+                      <li>
+                        If you choose to terminate subscription, classes you've attended or the
+                        number of days
+                        <br />you've enrolled will be deducted. <br />Refunds will be made to the
+                        original payment method.
                       </li>
                     </ul>
                     <button>Learn more</button>
@@ -126,9 +129,9 @@
                       Premium
                       <br />Membership
                     </h4>
-                    <p
-                      class="web"
-                    >With Premium Membership, indulge in 1 to 8 ratio small group classes</p>
+                    <p class="web">
+                      With Premium Membership, indulge in 1 to 8 ratio small group classes
+                    </p>
                     <p class="mobile">
                       With Premium Membership,
                       <br />indulge in 1 to 8 ratio small group classes
@@ -184,11 +187,15 @@
                       per month
                     </p>
                     <ul class="cleafix">
-                      <li>Based on the initial payment date, your card will be charged automatically every month.</li>
                       <li>
-                        If you choose to terminate subscription, classes you've attended or the number of days
-                        <br />you've enrolled will be deducted.
-                        <br />Refunds will be made to the original payment method.
+                        Based on the initial payment date, your card will be charged automatically
+                        every month.
+                      </li>
+                      <li>
+                        If you choose to terminate subscription, classes you've attended or the
+                        number of days
+                        <br />you've enrolled will be deducted. <br />Refunds will be made to the
+                        original payment method.
                       </li>
                     </ul>
                     <button>Learn more</button>
@@ -207,8 +214,7 @@
                       <br />Membership
                     </h4>
                     <p class="web">
-                      Train with motivating fitness coaches
-                      to make the best out of your sessions
+                      Train with motivating fitness coaches to make the best out of your sessions
                     </p>
                     <p class="mobile">
                       Train with motivating fitness coaches
@@ -231,12 +237,13 @@
                     </h4>
                     <p class="web">
                       From Shilla Hotel's top rated trainers,
-                      <br />you don’t want to miss a personalized workout experience our all of tailored to you.
+                      <br />you don’t want to miss a personalized workout experience our all of
+                      tailored to you.
                     </p>
                     <p class="mobile">
                       From Shilla Hotel's top rated trainers,
-                      <br />you don’t want to miss a personalized workout experience
-                      <br />our all of tailored to you.
+                      <br />you don’t want to miss a personalized workout experience <br />our all
+                      of tailored to you.
                     </p>
                   </div>
                   <div class="button_wrapper">
@@ -270,11 +277,15 @@
                       per month
                     </p>
                     <ul class="cleafix">
-                      <li>Based on the initial payment date, your card will be charged automatically every month.</li>
                       <li>
-                        If you choose to terminate subscription, classes you've attended or the number of days
-                        <br />you've enrolled will be deducted.
-                        <br />Refunds will be made to the original payment method.
+                        Based on the initial payment date, your card will be charged automatically
+                        every month.
+                      </li>
+                      <li>
+                        If you choose to terminate subscription, classes you've attended or the
+                        number of days
+                        <br />you've enrolled will be deducted. <br />Refunds will be made to the
+                        original payment method.
                       </li>
                     </ul>
                     <button>Learn more</button>
@@ -316,23 +327,23 @@
 </template>
 
 <script>
-import Swiper from "swiper/bundle";
+import Swiper from 'swiper/bundle';
 
-import WeekCalender from "../components/WeekCalender";
-import "./CommunityMain.scss";
+import WeekCalender from '../components/WeekCalender';
+import './CommunityMain.scss';
 
-const nav = ["Basic", "Premium", "1:1 Training"];
+const nav = ['Basic', 'Premium', '1:1 Training'];
 
 export default {
   created() {
     this.$nextTick(() => {
       this.pageSlider = new Swiper(this.$refs.navSlider, {
-        direction: "horizontal",
+        direction: 'horizontal',
         // preventClicks: false,
         // preventClicksPropagation: false,
         // slideToClickedSlide: true,
         // stopOnLastSlide: true,
-        touchEventsTarget: "wrapper",
+        touchEventsTarget: 'wrapper',
         resistanceRatio: 0,
       });
       this.defaultSlide();
@@ -359,9 +370,9 @@ export default {
       this.pageSlider.slideTo(i, false, false);
       this.$refs.bullet.forEach((v, index) => {
         if (i === index) {
-          v.classList.add("active");
+          v.classList.add('active');
         } else {
-          v.classList.remove("active");
+          v.classList.remove('active');
         }
       });
     },
@@ -369,21 +380,20 @@ export default {
     setActiveBullet(i) {
       this.$refs.bullet.forEach((v, index) => {
         if (i === index) {
-          v.classList.add("active");
+          v.classList.add('active');
         } else {
-          v.classList.remove("active");
+          v.classList.remove('active');
         }
       });
     },
 
     clickToSlide(i) {
-      console.log(i);
       this.pageSlider.slideTo(i, false, false);
       this.setActiveBullet(i);
     },
 
     sliderFontColorChange() {
-      this.pageSlider.on("slideChangeTransitionStart", () => {
+      this.pageSlider.on('slideChangeTransitionStart', () => {
         const index = this.pageSlider.realIndex;
         this.setActiveBullet(index);
       });
@@ -396,9 +406,8 @@ export default {
 };
 </script>
 
-
 <style lang="scss">
-@import "scss/mixins.scss";
+@import 'scss/mixins.scss';
 
 .homefitness_main {
   .section_inner {
@@ -469,12 +478,12 @@ export default {
     .swiper-slide {
       &:nth-child(2) {
         .top {
-          background-image: url("../assets/homefit/image_csp_premium_bg.png");
+          background-image: url('../assets/homefit/image_csp_premium_bg.png');
         }
       }
       &:nth-child(3) {
         .top {
-          background-image: url("../assets/homefit/image_csp_1_to_1_bg.png");
+          background-image: url('../assets/homefit/image_csp_1_to_1_bg.png');
         }
       }
     }
@@ -484,7 +493,7 @@ export default {
       position: relative;
       width: 100%;
       padding-bottom: 43px;
-      background-image: url("../assets/homefit/image_csp_basic_bg.png");
+      background-image: url('../assets/homefit/image_csp_basic_bg.png');
       background-size: cover;
       background-position: top;
       figure {
@@ -531,7 +540,7 @@ export default {
           float: left;
         }
         li {
-          background-image: url("../assets/icons/icon_bold_information_bullet.png");
+          background-image: url('../assets/icons/icon_bold_information_bullet.png');
           background-repeat: no-repeat;
           background-position: left 7px;
           background-size: 12px;
@@ -610,7 +619,7 @@ export default {
         display: block;
         width: 16px;
         height: 16px;
-        background-image: url("../assets/icons//icon_bold_action_search.png");
+        background-image: url('../assets/icons//icon_bold_action_search.png');
         background-size: cover;
       }
     }
@@ -720,7 +729,7 @@ export default {
             margin-top: 3.6111vw;
           }
           li {
-            background-image: url("../assets/icons/icon_bold_information_bullet.png");
+            background-image: url('../assets/icons/icon_bold_information_bullet.png');
             background-repeat: no-repeat;
             background-position: left 0.4861vw;
             background-size: 0.8333vw;

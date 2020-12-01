@@ -19,7 +19,7 @@
         </div>
         <div class="order_button_wrapper">
           <button type="button">Continue shopping</button>
-          <button type="button">Go to My samsung</button>
+          <button type="button" @click="$router.push('/subscription')">Go to My samsung</button>
         </div>
       </div>
     </section>

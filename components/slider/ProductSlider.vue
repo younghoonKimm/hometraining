@@ -73,21 +73,21 @@
             </div>
           </div>
         </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
       </div>
-      <div class="swiper-pagination_wrapper web">
+      <div class="swiper-pagination_wrapper">
         <div class="swiper-pagination_inner">
           <div class="swiper-pagination"></div>
           <div class="pause"></div>
         </div>
       </div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
     </div>
   </section>
 </template>
 
 <script>
-import Swiper from "swiper/bundle";
+import Swiper from 'swiper/bundle';
 export default {
   created() {
     this.$nextTick(() => {
@@ -96,25 +96,26 @@ export default {
         preventClicks: true,
         preventClicksPropagation: true,
         slideToClickedSlide: true,
-        direction: "vertical",
+        direction: 'vertical',
         spaceBetween: 24,
-        slidesPerView: "auto",
+        slidesPerView: 'auto',
         allowSlideNext: false,
         allowSlidePrev: false,
         navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+          clickable: false,
         },
         pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-          renderBullet: function (index, className) {
+          el: '.swiper-pagination',
+          clickable: false,
+          renderBullet: function(index, className) {
             return `<div class=${className}></div>`;
           },
         },
         breakpoints: {
           768: {
-            direction: "horizontal",
+            direction: 'horizontal',
             slidesPerView: 3,
           },
         },

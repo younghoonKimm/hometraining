@@ -6,7 +6,7 @@
         <span>Free, easy and convenient returns.</span>
       </div>
     </article>
-    <main id="main" role="main" class="myscription_main padding-bottom-0">
+    <main id="main" role="main" class="myscription_main">
       <!-- <button type="button" @click="onSubmit()">구매하기</button> -->
       <section class="section_first">
         <div class="cart_section_inner section_inner">
@@ -119,76 +119,76 @@
         </div>
       </section>
       <ProductSlider />
-      <article class="support_wrapper">
-        <div class="support_inner">
-          <h5 class="bold">Supported payment types</h5>
-          <div class="support_card_wrapper">
-            <ul>
-              <li>
-                <img src="../assets/card/visa.png" alt="visa" />
-              </li>
-              <li>
-                <img src="../assets/card/masetro.png" alt="visa" />
-              </li>
-              <li>
-                <img src="../assets/card/mastercard.png" alt="visa" />
-              </li>
-              <li>
-                <img src="../assets/card/american_express.png" alt="visa" />
-              </li>
-              <li>
-                <img src="../assets/card/samsung_pay.png" alt="visa" />
-              </li>
-              <li>
-                <img src="../assets/card/paypal.png" alt="visa" />
-              </li>
-              <li>
-                <img src="../assets/card/paypal_credit.png" alt="visa" />
-              </li>
-              <li>
-                <img src="../assets/card/adyen.png" alt="visa" />
-              </li>
-              <li>
-                <img src="../assets/card/klarna.png" alt="visa" />
-              </li>
-            </ul>
-          </div>
-          <div class="info">
-            <p>Any questions, call 0330 7267 467</p>
-
-            <p>
-              <span>
-                What is your policy regarding
-                <a href="javascript:;">returns?</a>
-              </span>
-              <span>
-                When can I expect my
-                <a href="javascript:;">order?</a>
-              </span>
-            </p>
-
-            <p>Copyright© 1995-2019 SAMSUNG. All rights reserved</p>
-          </div>
-        </div>
-        <div class="subject_wrapper">
-          <div class="subject_inner">
-            <span>
-              Subject to Status. Terms and Conditions apply. Samsung Electronics UK LTD acts as a
-              broker and offers finance from a restricted range of finance providers.
-            </span>
-            <span>
-              PayPal Credit is a trading name of PayPal (Europe) S.à r.l. et Cie, S.C.A., 22-24
-              Boulevard Royal L-2449, Luxembourg.
-            </span>
-            <span>Representative Example</span>
-            <span>
-              £1,200 Assumed Credit Limit Representative 19.9% APR (variable).19.9% pa Purchase Rate
-              (variable).
-            </span>
-          </div>
-        </div>
-      </article>
     </main>
+    <article class="support_wrapper">
+      <div class="support_inner">
+        <h5 class="bold">Supported payment types</h5>
+        <div class="support_card_wrapper">
+          <ul>
+            <li>
+              <img src="../assets/card/visa.png" alt="visa" />
+            </li>
+            <li>
+              <img src="../assets/card/masetro.png" alt="visa" />
+            </li>
+            <li>
+              <img src="../assets/card/mastercard.png" alt="visa" />
+            </li>
+            <li>
+              <img src="../assets/card/american_express.png" alt="visa" />
+            </li>
+            <li>
+              <img src="../assets/card/samsung_pay.png" alt="visa" />
+            </li>
+            <li>
+              <img src="../assets/card/paypal.png" alt="visa" />
+            </li>
+            <li>
+              <img src="../assets/card/paypal_credit.png" alt="visa" />
+            </li>
+            <li>
+              <img src="../assets/card/adyen.png" alt="visa" />
+            </li>
+            <li>
+              <img src="../assets/card/klarna.png" alt="visa" />
+            </li>
+          </ul>
+        </div>
+        <div class="info">
+          <p>Any questions, call 0330 7267 467</p>
+
+          <p>
+            <span>
+              What is your policy regarding
+              <a href="javascript:;">returns?</a>
+            </span>
+            <span>
+              When can I expect my
+              <a href="javascript:;">order?</a>
+            </span>
+          </p>
+
+          <p>Copyright© 1995-2019 SAMSUNG. All rights reserved</p>
+        </div>
+      </div>
+      <div class="subject_wrapper">
+        <div class="subject_inner">
+          <span>
+            Subject to Status. Terms and Conditions apply. Samsung Electronics UK LTD acts as a
+            broker and offers finance from a restricted range of finance providers.
+          </span>
+          <span>
+            PayPal Credit is a trading name of PayPal (Europe) S.à r.l. et Cie, S.C.A., 22-24
+            Boulevard Royal L-2449, Luxembourg.
+          </span>
+          <span>Representative Example</span>
+          <span>
+            £1,200 Assumed Credit Limit Representative 19.9% APR (variable).19.9% pa Purchase Rate
+            (variable).
+          </span>
+        </div>
+      </div>
+    </article>
   </Fragment>
 </template>
 

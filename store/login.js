@@ -65,7 +65,7 @@ const actions = {
     return;
   },
   RESERVATIONINIT({ commit }) {
-    const firstReservationValue = 8;
+    const firstReservationValue = 7;
     saveReservationToCookie(firstReservationValue);
     commit('setResrvation', firstReservationValue);
   },

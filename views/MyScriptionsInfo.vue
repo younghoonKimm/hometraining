@@ -73,17 +73,23 @@
         </div>
       </section>
     </main>
-    <div>Home > Mypage > Subscriptions > Manage Subscription</div>
+    <div class="router_path_wrapper">
+      <div class="router_path_inner">
+        <span>Home</span>
+        <span>Mypage</span>
+        <span>Manage Subscription</span>
+      </div>
+    </div>
   </Fragment>
 </template>
 
 <script>
-import { Fragment } from "vue-fragment";
-import Swiper from "swiper/bundle";
+import { Fragment } from 'vue-fragment';
+import Swiper from 'swiper/bundle';
 
-import SubscribePage from "../components/layout/SubscribePage";
-import MypageNavigation from "../components/layout/MypageNavigation";
-import "./MyScriptions.scss";
+import SubscribePage from '../components/layout/SubscribePage';
+import MypageNavigation from '../components/layout/MypageNavigation';
+import './MyScriptions.scss';
 
 export default {
   created() {
@@ -93,23 +99,23 @@ export default {
         preventClicks: true,
         preventClicksPropagation: true,
         slideToClickedSlide: true,
-        direction: "vertical",
+        direction: 'vertical',
         spaceBetween: 24,
-        slidesPerView: "auto",
+        slidesPerView: 'auto',
         navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
         },
         pagination: {
-          el: ".swiper-pagination",
+          el: '.swiper-pagination',
           clickable: true,
-          renderBullet: function (index, className) {
+          renderBullet: function(index, className) {
             return `<div class=${className}></div>`;
           },
         },
         breakpoints: {
           768: {
-            direction: "horizontal",
+            direction: 'horizontal',
             slidesPerView: 3,
           },
         },
@@ -131,11 +137,11 @@ export default {
 
   methods: {
     onToggleSection(i) {
-      const sectionAll = document.querySelectorAll("section");
+      const sectionAll = document.querySelectorAll('section');
       sectionAll.forEach((v, index) => {
-        v.classList.remove("on");
+        v.classList.remove('on');
         if (index === i) {
-          v.classList.add("on");
+          v.classList.add('on');
         }
       });
     },

@@ -2,7 +2,9 @@
   <Fragment>
     <nav class="store_nav">
       <div class="nav_option_wrapper">
-        <div class="option_title sansbold">Premium Membership, 1:8 Group Training Class Subscription</div>
+        <div class="option_title sansbold">
+          Premium Membership, 1:8 Group Training Class Subscription
+        </div>
         <div class="option_costs bold">{{ setRealCost() }}</div>
         <div class="option_arrow_btn mobile"></div>
         <div class="option_cart option_cart_top" @click.prevent="onSubmit()">
@@ -78,10 +80,8 @@
               </li>
               <li class="mobile">
                 If you choose to terminate subscription, classes you've
-                <br />attended or the number of days you've enrolled will
-                <br />be deducted. Refunds will be made to the original
-                <br />payment
-                method.
+                <br />attended or the number of days you've enrolled will <br />be deducted. Refunds
+                will be made to the original <br />payment method.
               </li>
             </ul>
           </div>
@@ -154,7 +154,8 @@
           </p>
           <span>* This product does not include wearable device.</span>
           <figure>
-            <img src="../assets/hometraining/image_pd_1.png" alt />
+            <img class="web" src="../assets/hometraining/image_pd_1.png" alt />
+            <img class="mobile" src="../assets/hometraining/image_pd_1_mo.png" alt />
           </figure>
         </div>
         <div class="section_second_inner section_inner">
@@ -166,7 +167,8 @@
           </p>
           <span>*This service links your contacts with Samsung Account</span>
           <figure>
-            <img src="../assets/hometraining/image_pd_2.png" alt />
+            <img class="web" src="../assets/hometraining/image_pd_2.png" alt />
+            <img class="mobile" src="../assets/hometraining/image_pd_2_mo.png" alt />
           </figure>
         </div>
       </section>
@@ -188,42 +190,35 @@
 }
 </style>
 <script>
-import { mapState, mapGetters, mapMutations, mapActions } from "vuex";
-import Swiper from "swiper/bundle";
-import { Fragment } from "vue-fragment";
-import "./Hometraining.scss";
-import { dummycost, dummyProduct } from "../config";
+import { mapState, mapGetters, mapMutations, mapActions } from 'vuex';
+import Swiper from 'swiper/bundle';
+import { Fragment } from 'vue-fragment';
+import './Hometraining.scss';
+import { dummycost, dummyProduct } from '../config';
 
-const dummy = [
-  "베이직",
-  "베이직",
-  "베이직",
-  "베이직",
-  "프리미엄",
-  "1:1트레이닝",
-];
+const dummy = ['베이직', '베이직', '베이직', '베이직', '프리미엄', '1:1트레이닝'];
 
 export default {
   created() {
     this.$nextTick(() => {
       this.nav_slider = new Swiper(this.$refs.navSlider, {
-        direction: "horizontal",
+        direction: 'horizontal',
         touchStartPreventDefault: true,
         preventClicks: true,
         preventClicksPropagation: true,
         slideToClickedSlide: false,
-        touchEventsTarget: "wrapper",
-        slidesPerView: "auto",
+        touchEventsTarget: 'wrapper',
+        slidesPerView: 'auto',
         spaceBetween: 16,
         scrollbar: {
-          el: ".swiper-scrollbar",
+          el: '.swiper-scrollbar',
           draggable: true,
           snapOnRelease: true,
           dragSize: 171,
         },
         breakpoints: {
           768: {
-            slidesPerView: "auto",
+            slidesPerView: 'auto',
             spaceBetween: 24,
           },
         },
@@ -270,11 +265,11 @@ export default {
     },
 
     onSubmit() {
-      return this.$router.push("/cart");
+      return this.$router.push('/cart');
     },
     clickable(i) {
-      this.$refs.checkedSwiper.classList.toggle("active");
-      if (this.$refs.checkedSwiper.classList.contains("active")) {
+      this.$refs.checkedSwiper.classList.toggle('active');
+      if (this.$refs.checkedSwiper.classList.contains('active')) {
         this.productCost = 1782.16;
       } else {
         this.productCost = 0;
@@ -282,9 +277,7 @@ export default {
     },
 
     setRealCost() {
-      return this.productCost === 0
-        ? "$" + this.RealCost + ".00"
-        : "$" + this.RealCost;
+      return this.productCost === 0 ? '$' + this.RealCost + '.00' : '$' + this.RealCost;
     },
   },
 };

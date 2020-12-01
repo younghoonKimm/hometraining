@@ -93,7 +93,11 @@
             <figure>
               <div class="new_product bold web">NEW</div>
               <img class="web" src="../assets/main/image_z_flip_thom_browne_edition.png" alt />
-              <img class="mobile" src="../assets/main/image_z_flip_thom_browne_edition_mo.png" alt />
+              <img
+                class="mobile"
+                src="../assets/main/image_z_flip_thom_browne_edition_mo.png"
+                alt
+              />
             </figure>
             <div class="left_desc">
               <div class="mobile_new_product bold">NEW</div>
@@ -169,10 +173,9 @@
               <li>
                 <div class="number">01</div>
                 <div class="desc_wrapper active">
-                  <div
-                    class="title"
-                    @mouseenter="subswiperSlide(0)"
-                  >Digging for Magical Mysteries in Art - Part I</div>
+                  <div class="title" @mouseenter="subswiperSlide(0)">
+                    Digging for Magical Mysteries in Art - Part I
+                  </div>
                   <p>Art that tells a story: what's behind famous paintings and artists.</p>
                   <a href="javascript:;" class="learn_more">Learn more</a>
                 </div>
@@ -180,8 +183,12 @@
               <li>
                 <div class="number">02</div>
                 <div class="desc_wrapper">
-                  <div class="title" @mouseenter="subswiperSlide(1)">Tablet-Powered Schedule Hacks</div>
-                  <p>See what the K-pop sensations get up to when they’re not performing #withGalaxy.</p>
+                  <div class="title" @mouseenter="subswiperSlide(1)">
+                    Tablet-Powered Schedule Hacks
+                  </div>
+                  <p>
+                    See what the K-pop sensations get up to when they’re not performing #withGalaxy.
+                  </p>
                   <a href="javascript:;" class="learn_more">Learn more</a>
                 </div>
               </li>
@@ -266,7 +273,11 @@
     </section>
     <section class="main-section_inner section_inner">
       <div class="title_wrapper">
-        <h3 class="title">Looking for something else?</h3>
+        <h3 class="web title">Looking for something else?</h3>
+        <h3 class="mobile title">
+          Looking for <br />
+          something else?
+        </h3>
       </div>
       <div class="main-form_wrapper">
         <div class="main-form">
@@ -291,9 +302,9 @@
   </main>
 </template>
 <script>
-import Swiper from "swiper/bundle";
-import MainSlider from "../components/slider/MainSlider";
-import "./Home.scss";
+import Swiper from 'swiper/bundle';
+import MainSlider from '../components/slider/MainSlider';
+import './Home.scss';
 
 export default {
   created() {
@@ -301,12 +312,12 @@ export default {
     // const reservation = this.$store.state.login.reservation;
     this.$nextTick(() => {
       this.mobile_slider = new Swiper(this.$refs.mobileSlider, {
-        direction: "horizontal",
+        direction: 'horizontal',
         loop: false,
-        slidesPerView: "auto",
+        slidesPerView: 'auto',
         spaceBetween: 16,
         pagination: {
-          el: ".swiper-pagination",
+          el: '.swiper-pagination',
           clickable: true,
         },
         breakpoints: {
@@ -316,7 +327,7 @@ export default {
         },
       });
     });
-    this.$store.dispatch("login/RESERVATIONINIT");
+    this.$store.dispatch('login/RESERVATIONINIT');
   },
   components: {
     MainSlider,
@@ -328,10 +339,10 @@ export default {
   },
   methods: {
     subswiperSlide(i) {
-      const desc_wrapper = document.querySelector(".desc_wrapper.active");
+      const desc_wrapper = document.querySelector('.desc_wrapper.active');
 
-      desc_wrapper.classList.remove("active");
-      event.target.parentNode.classList.add("active");
+      desc_wrapper.classList.remove('active');
+      event.target.parentNode.classList.add('active');
       this.mobile_slider.slideTo(i);
     },
   },
@@ -339,14 +350,14 @@ export default {
 </script>
 
 <style lang="scss">
-@import "scss/mixins.scss";
+@import 'scss/mixins.scss';
 
 .breaker {
   display: block;
   width: 100%;
   height: 0%;
   margin: 0;
-  content: " ";
+  content: ' ';
   border: 0;
 }
 
@@ -437,7 +448,7 @@ export default {
     position: absolute;
     left: 0;
     bottom: 0;
-    content: "";
+    content: '';
     width: 100%;
     height: 2px;
     background: #000;
@@ -472,7 +483,7 @@ export default {
       display: block;
       width: 16px;
       height: 16px;
-      background-image: url("../assets/icons//icon_bold_action_search.png");
+      background-image: url('../assets/icons//icon_bold_action_search.png');
       background-size: cover;
     }
   }
@@ -543,7 +554,7 @@ export default {
       position: absolute;
       left: 0;
       bottom: 0;
-      content: "";
+      content: '';
       width: 100%;
       height: 2px;
       background: #000;
